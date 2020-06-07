@@ -7,16 +7,18 @@ import {
     Switch,
     Route,
 } from 'react-router-dom'
+
 class Main extends Component {
     render() {
         return (
-            <div>
+            <div style = {{position:'relative'}}>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
                     <Route path="/trips" component={Trips} />
                     <Route path="/contact" component={Contact} />
                 </Switch>
+                
             </div>
         );
     }
