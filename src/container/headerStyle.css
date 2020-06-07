@@ -1,0 +1,28 @@
+.header {
+    display:flex;
+    flex-direction: row;
+    border-bottom:1px solid #607d8b;
+}
+.logo{
+    flex:1;
+}
+.tab-page{
+    flex :1;
+    display:flex;
+    color: #7C7C7C;
+    font-size:24px;
+}
+.tab-ele {
+    display:flex;
+    flex-direction: row; 
+    margin:0;
+}
+li {
+    list-style-type: none;
+}
+
+.ele {
+    
+}
+
+
