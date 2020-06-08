@@ -56,15 +56,15 @@ create table Orders
 	ID_User char(20) foreign key references Users(ID_User) on delete cascade
 )
 
+
+
 --function tính tổng tiền của hóa đơn
-create function fn_TotalMoney
-(
-)
+create function fn_TotalMoney(@idhotel char(20),@idvehicle char(20))
 returns money
 as
 begin
 	declare @p_totalmoney money
-	set @p_totalmoney = (select PriceHotel from Hotels) + (select PriceVehicle from Vehicles)
+	set @p_totalmoney = (select PriceHotel from Hotels where ID_Hotel=@idhotel) + (select PriceVehicle from Vehicles where ID_Vehicle=@idvehicle)
 	if @p_totalmoney is null
 		set @p_totalmoney=0
 	return @p_totalmoney
