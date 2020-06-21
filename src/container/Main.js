@@ -3,6 +3,7 @@ import Home from "../components/Home"
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Trips from '../components/Trips';
+import Register from '../components/Register';
 import {
     Switch,
     Route,
@@ -17,8 +18,8 @@ class Main extends Component {
                     <Route path="/about" component={About} />
                     <Route path="/trips" component={Trips} />
                     <Route path="/contact" component={Contact} />
+                    <Route path="/register" component={Register}/>
                 </Switch>
-                
             </div>
         );
     }

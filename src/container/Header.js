@@ -16,7 +16,7 @@ class Header extends Component {
             isClicked: !this.state.isClicked
         });
     };
-    
+
     render() {
         return (
             <div className="header">
@@ -38,49 +38,14 @@ class Header extends Component {
                         <li className="ele login" onClick={this.loginOn}>
                             Login
                         </li>
+                        <li className="ele">
+                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
+                        </li>
                     </ul>
                 </div>
-                {this.state.isClicked && <Login />}
+                {this.state.isClicked && <Login toggle={this.loginOn}/>}
             </div>
         );
     }
 }
-
-
-
-// const Header = () => {
-//     const [clicked, setClicked] = useState(false);
-
-//     const handleClicked = () => {
-//         let check = !clicked;
-//         setClicked(check);
-//     }
-
-//     return (
-//         <div className="header">
-//             <div className="logo"></div>
-//             <div className="tab-page">
-//                 <ul className="tab-ele">
-//                     <li className="ele" >
-//                         <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">Home</Link>
-//                     </li>
-//                     <li className="ele" >
-//                         <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/about">About</Link>
-//                     </li>
-//                     <li className="ele" >
-//                         <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/trips">Trips</Link>
-//                     </li>
-//                     <li className="ele" >
-//                         <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/contact">Contact</Link>
-//                     </li>
-//                     <li className="ele login" onClick={handleClicked}>
-//                         Login
-//                     </li>
-//                 </ul>
-//             </div>
-//             {clicked ? <Login clicked={clicked} setClicked={setClicked} /> : ''}
-//         </div>
-//     );
-// }
-
 export default Header;
