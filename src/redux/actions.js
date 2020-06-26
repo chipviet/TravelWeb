@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {createActions} from 'redux-actions';
-import {connect} from 'mongoose';
+import { createActions } from 'redux-actions';
+import { connect } from 'mongoose';
 
 var user = 0;
 const {
@@ -8,9 +8,9 @@ const {
   registerUserSuccess,
   registerUserFail,
 } = createActions({
-  REGISTER_USER_REQUEST: () => {},
-  REGISTER_USER_SUCCESS: data => ({data}),
-  REGISTER_USER_FAIL: error => ({error}),
+  REGISTER_USER_REQUEST: () => { },
+  REGISTER_USER_SUCCESS: data => ({ data }),
+  REGISTER_USER_FAIL: error => ({ error }),
 });
 
 export const register = (username, email, password) => async dispatch => {
@@ -28,10 +28,10 @@ export const register = (username, email, password) => async dispatch => {
   }
 };
 
-const {loginRequest, loginSuccess, loginFail} = createActions({
-  LOGIN_REQUEST: () => {},
+const { loginRequest, loginSuccess, loginFail } = createActions({
+  LOGIN_REQUEST: () => { },
   LOGIN_SUCCESS: data => data,
-  LOGIN_FAIL: error => ({error}),
+  LOGIN_FAIL: error => ({ error }),
 });
 
 export const login = (username, password) => async dispatch => {

@@ -1,0 +1,23 @@
+button {
+    width: 200px;
+    float: right;
+    display: inline;
+}
+
+.btnCategory {
+    width: 100px;
+}
+
+.style{
+    display: inline;
+}
+.ele {
+    padding : 5px 10px;
+    margin: 15px 30px;
+    opacity: 0.8;
+}
+.tab-ele {
+    display:flex;
+    flex-direction: row; 
+    margin:0;
+}
