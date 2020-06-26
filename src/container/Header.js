@@ -41,6 +41,9 @@ class Header extends Component {
                         <li className="ele">
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
                         </li>
+                        <li className="ele">
+                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/management">Management</Link>
+                        </li>
                     </ul>
                 </div>
                 {this.state.isClicked && <Login toggle={this.loginOn}/>}
