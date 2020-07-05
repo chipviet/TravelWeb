@@ -5,30 +5,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles.css';
 import { Link } from 'react-router-dom'
 
-export class VehicleAdmin extends Component {
+export class FoodAdmin extends Component {
   
   render() {
     return (
       <div>
         <h2 id="ccp-user-heading"  >
-            <h3 className="text-capitalize ">Vehicle </h3>
-            <FontAwesomeIcon icon="plus" />
-            <button 
-                    type ="button" 
-                    className="btn btn-primary ">
-                    Create new Vehicle  
-            </button> 
-
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/hotel">Hotel</Link>
-            </li>
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/place">Place</Link>
-            </li>
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/guest">Guest</Link>
-            </li>
-            
+        <div className = "headerNavigation">
+            <h3 className="text-capitalize ">Food </h3>
+              <FontAwesomeIcon icon="plus" />
+              <Link to="/food-update" className="btn btn-primary button">Create new food</Link> 
+          </div>
+           
         </h2>
         <div className="table-responsive">
 
@@ -36,20 +24,22 @@ export class VehicleAdmin extends Component {
               <thead>
                 <tr>
                   <th className="hand">
-                  <h4 className="text-capitalize">ID </h4>
-                    
+                    <h4 className="text-capitalize">ID </h4>  
                   </th>
                   <th className="hand" >
                     <h4 className="text-capitalize ">Name</h4>
                   </th>
                   <th className="hand" >
-                    <h4 className="text-capitalize ">Type</h4>
+                    <h4 className="text-capitalize ">Place</h4>
                   </th>
                   <th className="hand" >
                     <h4 className="text-capitalize ">Price</h4>
                   </th>
                   <th className="hand" >
-                    <h4 className="text-capitalize ">Status</h4>
+                    <h4 className="text-capitalize ">Star Rating</h4>
+                  </th>
+                  <th className="hand" >
+                    <h4 className="text-capitalize ">Description</h4>
                   </th>
                   <th />
                 </tr>
@@ -98,4 +88,4 @@ export class VehicleAdmin extends Component {
   }
 }
 
-export default VehicleAdmin ;
+export default FoodAdmin ;

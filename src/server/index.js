@@ -22,7 +22,7 @@ mongoose.connect('mongodb://localhost:27017/travel', {
 const Schema = mongoose.Schema;
 
 var MyModel = mongoose.model(
-  'Works_Dailies',
+  'Travel',
   new Schema({
     userId: String,
     title: {

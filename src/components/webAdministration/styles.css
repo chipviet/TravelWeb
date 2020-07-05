@@ -1,5 +1,8 @@
-button {
-    width: 200px;
+
+.button {
+    margin: 10px;
+    width: 150px;
+    height: 40px;
     float: right;
     display: inline;
 }
@@ -16,8 +19,23 @@ button {
     margin: 15px 30px;
     opacity: 0.8;
 }
+.headerNavigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .tab-ele {
     display:flex;
     flex-direction: row; 
     margin:0;
+}
+
+.update-label{
+    padding-top: 20px;
+}
+
+.text-capitalize{
+    display: flex-start;
+    padding-top : 12px;
+    padding-left: 24px;
 }
