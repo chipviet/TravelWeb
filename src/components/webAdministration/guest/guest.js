@@ -1,34 +1,22 @@
 import React, { Component } from 'react';
 import { Button, Col, Row, Table } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles.css';
 import { Link } from 'react-router-dom'
 
 export class GuestAdmin extends Component {
   
   render() {
-
     return (
       <div>
         <h2 id="ccp-user-heading"  >
+        <div className = "headerNavigation">
             <h3 className="text-capitalize ">Guest </h3>
-            <FontAwesomeIcon icon="plus" />
-            <button 
-                    type ="button" 
-                    className="btn btn-primary ">
-                    Create new guest  
-            </button> 
-
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/vehicle">Vehicle</Link>
-            </li>
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/place">Place</Link>
-            </li>
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/hotel">Hotel</Link>
-            </li>
+              <FontAwesomeIcon icon="plus" />
+          
+            <Link to="/guest-update" className="button btn btn-primary">Create new guest</Link>
+          </div>
+            
             
         </h2>
         <div className="table-responsive">
@@ -44,10 +32,13 @@ export class GuestAdmin extends Component {
                     <h4 className="text-capitalize ">Name</h4>
                   </th>
                   <th className="hand" >
-                    <h4 className="text-capitalize ">Type</h4>
+                    <h4 className="text-capitalize ">username</h4>
                   </th>
                   <th className="hand" >
-                    <h4 className="text-capitalize ">Price</h4>
+                    <h4 className="text-capitalize ">Creation Day</h4>
+                  </th>
+                  <th className="hand" >
+                    <h4 className="text-capitalize ">Type</h4>
                   </th>
                   <th className="hand" >
                     <h4 className="text-capitalize ">Status</h4>

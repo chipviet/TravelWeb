@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Col, Row, Table } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles.css';
 import { Link } from 'react-router-dom'
 
@@ -13,24 +12,11 @@ export class PlaceAdmin extends Component {
     return (
       <div>
         <h2 id="ccp-user-heading"  >
+        <div className = "headerNavigation">
             <h3 className="text-capitalize ">Place </h3>
-            <FontAwesomeIcon icon="plus" />
-            <button 
-                    type ="button" 
-                    className="btn btn-primary ">
-                    Create new place  
-            </button> 
-
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/vehicle">Vehicle</Link>
-            </li>
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/hotel">Hotel</Link>
-            </li>
-            <li className="ele" >
-                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/guest">Guest</Link>
-            </li>
-            
+              <FontAwesomeIcon icon="plus" />
+              <Link to="/place-update" className="button btn btn-primary">Create new place</Link> 
+          </div>       
         </h2>
         <div className="table-responsive">
 
@@ -45,14 +31,9 @@ export class PlaceAdmin extends Component {
                     <h4 className="text-capitalize ">Name</h4>
                   </th>
                   <th className="hand" >
-                    <h4 className="text-capitalize ">Type</h4>
+                    <h4 className="text-capitalize ">Country</h4>
                   </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Price</h4>
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Status</h4>
-                  </th>
+                  
                   <th />
                 </tr>
               </thead>

@@ -27,6 +27,12 @@ li {
     margin: 15px 30px;
     opacity: 0.8;
 }
+
+.ele-man{
+    padding : 5px 10px;
+    margin: 15px 30px;
+}
+
 .login {
     background-color:#F0BC71;
     color:white;
@@ -36,5 +42,23 @@ li {
     opacity: 0.7;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
 
