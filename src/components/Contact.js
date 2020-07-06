@@ -10,7 +10,7 @@ class Contact extends Component {
                     <div className="info">
                         <p>Adress: 193 Nguyen Luong Bang,Da Nang,Vietnam</p>
                         <p>Hotline: 0123456789</p>
-                        <p>Email: travelcailontao@gmail.com</p>
+                        <p>Email: travelToCalifornia@gmail.com</p>
                     </div>
                     <div className="contact-form">
                         <div className="name">

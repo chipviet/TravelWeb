@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import './loginStyle.css'
-import {register,login} from '../redux/actions';
-import {connect} from 'react-redux';
+import { register, login } from '../redux/actions';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username:'',
-            password:'',
+            username: '',
+            password: '',
         }
     }
     render() {
         return (
-            <div>
+            <div className="root">
                 <div className="overlay">
                     <div className="loginForm">
                         <div className="from">
@@ -27,20 +27,21 @@ class Login extends Component {
                                 <label htmlFor="uname"><b>Username</b></label>
                                 <input type="text" placeholder="Enter Username" name="uname" required onChange={e => {
                                     this.setState({
-                                        username:e.target.value,
+                                        username: e.target.value,
                                     })
                                 }} />
 
                                 <label htmlFor="psw"><b>Password</b></label>
-                                 <input type="password" placeholder="Enter Password" name="psw" required onChange={e => {
+                                <input type="password" placeholder="Enter Password" name="psw" required onChange={e => {
                                     this.setState({
-                                        password:e.target.value,
-                                    }) }}
-                                    />
+                                        password: e.target.value,
+                                    })
+                                }}
+                                />
 
                                 <button type="submit" onClick={this.handleLogin} >Sign In</button>
                                 <div className="remember-area">
-                                    <input type="checkbox" name="remember" />
+                                    <input className="remember" type="checkbox" name="remember" />
                                     <label className="remember" htmlFor="remember">Remember me</label>
                                 </div>
 
@@ -97,16 +98,16 @@ class Login extends Component {
 // }
 
 export default connect(
-    state => ({rWorks: state.works,}),
+    state => ({ rWorks: state.works, }),
     dispatch =>
-      bindActionCreators(
-        {
-         register,
-         login,
-        },
-        dispatch
-      )
-  )(Login);
-  
+        bindActionCreators(
+            {
+                register,
+                login,
+            },
+            dispatch
+        )
+)(Login);
+
 
 //export default Login;

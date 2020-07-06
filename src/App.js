@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './container/Header';
 import Main from './container/Main';
 
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import configureStore from '../src/redux/store';
 
 
@@ -13,8 +13,8 @@ class App extends Component {
     return (
       <div>
         <Provider store={store}>
-        <Header />
-        <Main />
+          <Header />
+          <Main />
         </Provider>
       </div>
     );

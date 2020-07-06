@@ -6,45 +6,43 @@ import '../styles.css';
 import { Link } from 'react-router-dom'
 
 export class FoodAdmin extends Component {
-  
   render() {
     return (
       <div>
         <h2 id="ccp-user-heading"  >
-        <div className = "headerNavigation">
+          <div className="headerNavigation">
             <h3 className="text-capitalize ">Food </h3>
-              <FontAwesomeIcon icon="plus" />
-              <Link to="/food-update" className="btn btn-primary button">Create new food</Link> 
+            <FontAwesomeIcon icon="plus" />
+            <Link to="/food-update" className="btn btn-primary button">Create new food</Link>
           </div>
-           
+
         </h2>
         <div className="table-responsive">
-
-            <Table responsive aria-describedby="ccp-user-heading">
-              <thead>
-                <tr>
-                  <th className="hand">
-                    <h4 className="text-capitalize">ID </h4>  
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Name</h4>
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Place</h4>
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Price</h4>
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Star Rating</h4>
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Description</h4>
-                  </th>
-                  <th />
-                </tr>
-              </thead>
-              {/* <tbody>
+          <Table responsive aria-describedby="ccp-user-heading">
+            <thead>
+              <tr>
+                <th className="hand">
+                  <h4 className="text-capitalize">ID </h4>
+                </th>
+                <th className="hand" >
+                  <h4 className="text-capitalize ">Name</h4>
+                </th>
+                <th className="hand" >
+                  <h4 className="text-capitalize ">Place</h4>
+                </th>
+                <th className="hand" >
+                  <h4 className="text-capitalize ">Price</h4>
+                </th>
+                <th className="hand" >
+                  <h4 className="text-capitalize ">Star Rating</h4>
+                </th>
+                <th className="hand" >
+                  <h4 className="text-capitalize ">Description</h4>
+                </th>
+                <th />
+              </tr>
+            </thead>
+            {/* <tbody>
                 {cCPUserList.map((cCPUser, i) => (
                   <tr key={`entity-${i}`}>
                     <td>
@@ -80,12 +78,12 @@ export class FoodAdmin extends Component {
                   </tr>
                 ))}
               </tbody> */}
-            </Table>
-         
+          </Table>
+
         </div>
       </div>
     );
   }
 }
 
-export default FoodAdmin ;
+export default FoodAdmin;

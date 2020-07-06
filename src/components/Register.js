@@ -12,6 +12,7 @@ import './registerStyle.css';
 //     re_password: Yup.string().required(),
 // })
 
+
 export default class Register extends Component {
 
     handleRegister = () => {
@@ -33,7 +34,7 @@ export default class Register extends Component {
                             <h1>REGISTER</h1>
                         </div>
 
-                        <div className="container">
+                        <div className="container1">
                             <label htmlFor="psw"><b>Username</b></label>
                             <input type="text" placeholder="Enter Username" name="uname" required onChange={e => {
                                 this.setState({
@@ -64,7 +65,7 @@ export default class Register extends Component {
                             />
 
                             <div className="remember-area">
-                                <input type="checkbox" name="remember" />
+                                <input className="remember" type="checkbox" name="remember" />
                                 <label className="remember" htmlFor="remember">I accept the Terms of Service</label>
                             </div>
                             <button type="submit" onClick={this.handleRegister} >Register</button>

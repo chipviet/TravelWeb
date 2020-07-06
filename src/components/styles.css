@@ -69,7 +69,7 @@
 input {
     background-color: transparent;
     border: 1px solid #b5b5b4;
-    height: 25px;
+    height: 50px;
     padding: 10px 20px;
     font-size: 15px;
     color: #c9c9c8;
@@ -79,25 +79,25 @@ input {
 
 .email {
     margin: 0 20px;
-    width: 88%;
+    width: 94%;
 }
 
 .message {
     background-color: transparent;
     border: 1px solid #b5b5b4;
-    height: 60px;
+    height: 150px;
     padding: 10px 20px;
     font-size: 15px;
     color: #c9c9c8;
     outline: none;
     margin: 20px;
-    width: 88%;
+    width: 94%;
     font-family: Sitka Heading;
 }
 
 .submit {
     background-color: #F0BC71;
-    margin: 10px 20px;
+    margin: 0 20px;
     padding: 15px 35px;
     font-family: Sitka Heading;
     color: white;
