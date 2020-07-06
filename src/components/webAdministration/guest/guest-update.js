@@ -9,7 +9,7 @@ export class GuestUpdateAdmin extends Component {
   render() {
     return (
       <div>
-      <Row className="justify-content-center">
+      <Row className="justify-content-center update-label">
         <Col md="8">
           <h2>
             Create or edit a Guest
