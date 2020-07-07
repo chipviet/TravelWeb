@@ -1,18 +1,5 @@
 import React, { Component } from 'react';
 import './registerStyle.css';
-// import { Formik } from 'formik';
-// import * as Yup from 'yup';
-
-// const signupSchema = Yup.object().shape({
-//     username: {
-//         type: String,
-//         required: true,
-//     },
-//     password: Yup.string().required(),
-//     re_password: Yup.string().required(),
-// })
-
-
 export default class Register extends Component {
 
     handleRegister = () => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './headerStyle.css';
 import Login from './Login'
+import Logo from '../assets/logo.png'
 import "bootstrap/dist/css/bootstrap.min.css";
 class Header extends Component {
     constructor(props) {
@@ -21,7 +22,12 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                <div className="logo"></div>
+                <div className="logo">
+                    <span>
+                        <img src={Logo} width="120" height="70" />
+                    </span>
+                    {/* <p>Your Life</p> */}
+                </div>
                 <div className="tab-page">
                     <ul className="tab-ele">
                         <li className="ele" >
@@ -42,27 +48,27 @@ class Header extends Component {
                         <li className="ele">
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
                         </li>
-                
+
                         <div class="dropdown ele-man">
                             <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
                             <div class="dropdown-content">
                                 <div>
-                                    <Link to = "/guest">Guest</Link>
+                                    <Link to="/guest">Guest</Link>
                                 </div>
                                 <div>
-                                    <Link to = "/place">Place</Link>
+                                    <Link to="/place">Place</Link>
                                 </div>
                                 <div>
-                                    <Link to = "/hotel">Hotel</Link>
+                                    <Link to="/hotel">Hotel</Link>
                                 </div>
                                 <div>
-                                    <Link to = "/food" >Food</Link>
-                                </div>   
+                                    <Link to="/food" >Food</Link>
+                                </div>
                             </div>
                         </div>
                     </ul>
                 </div>
-                {this.state.isClicked && <Login toggle={this.loginOn}/>}
+                {this.state.isClicked && <Login toggle={this.loginOn} />}
             </div>
         );
     }

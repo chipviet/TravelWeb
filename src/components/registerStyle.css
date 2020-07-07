@@ -9,7 +9,6 @@
   align-items: center;
   position: relative;
   background-position: center;
-  color: white;
 }
 
 .main-content {
@@ -17,8 +16,13 @@
 }
 
 .registerForm {
-  position: absolute;
   top: 0;
+  position: absolute;
+  margin: 0 30%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  opacity: 0.8;
 }
 
 body {
@@ -33,7 +37,6 @@ input[type=password] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  color: white;
 }
 
 .remember-area {
@@ -56,9 +59,7 @@ button {
   width: 100%;
 }
 
-.container1 b {
-  color: white
-}
+
 
 button:hover {
   opacity: 0.8;
@@ -101,11 +102,8 @@ span.psw {
   }
 }
 
-b {
-  color: white;
-}
+
 
 ::placeholder {
-  color: white;
-  opacity: 0.7
+  opacity: 1
 }
