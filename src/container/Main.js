@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Home from "../components/Home"
-import About from '../components/About';
-import Contact from '../components/Contact';
-import Trips from '../components/Trips';
-import Register from '../components/Register';
+import Home from "../components/home/Home"
+import About from '../components/about/About';
+import Contact from '../components/contact/Contact';
+import Trips from '../components/trips/Trips';
+import Register from '../components/register/Register';
 import HotelAdmin from '../components/webAdministration/hotel/hotel';
 import PlaceAdmin from '../components/webAdministration/place/place';
 import FoodAdmin from '../components/webAdministration/food/food';

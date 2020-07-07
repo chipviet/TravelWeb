@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./styles.css"
+import "../styles.css"
 class Home extends Component {
     render() {
         return (
@@ -15,7 +15,7 @@ class Home extends Component {
                     </div>
                 </div>
             </div>
-            
+
         );
     }
 }

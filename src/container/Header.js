@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './headerStyle.css';
-import Login from './Login'
+import Login from '../components/login/Login'
 import Logo from '../assets/logo.png'
 import "bootstrap/dist/css/bootstrap.min.css";
 class Header extends Component {
