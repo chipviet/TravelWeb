@@ -64,6 +64,16 @@
   color: orange;
 }
 
+.place-name {
+  text-align: center;
+  margin: 5px;
+  font-size: 20px;
+}
+
+.place-name p {
+  margin: 0;
+}
+
 .place-rating-price {
   display: flex;
   flex-direction: row;
@@ -71,13 +81,17 @@
 
 .place-rating {
   flex: 2;
+  font-size: 16px;
 }
 
 .place-price {
   flex: 1;
   color: blue;
   font-size: 20px;
-  ;
+}
+
+.place-price p {
+  margin: 0;
 }
 
 .place-description {

@@ -30,7 +30,6 @@ class Header extends Component {
                         <div class="logo-name">
                             <p>TravelLove</p>
                         </div>
-
                     </div>
                 </Link>
                 <div className="tab-page">
