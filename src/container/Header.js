@@ -22,12 +22,17 @@ class Header extends Component {
     render() {
         return (
             <div className="header">
-                <div className="logo">
-                    <span>
-                        <img src={Logo} width="120" height="70" />
-                    </span>
-                    {/* <p>Your Life</p> */}
-                </div>
+                <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">
+                    <div className="logo">
+                        <span>
+                            <img src={Logo} width="90" height="70" />
+                        </span>
+                        <div class="logo-name">
+                            <p>TravelLove</p>
+                        </div>
+
+                    </div>
+                </Link>
                 <div className="tab-page">
                     <ul className="tab-ele">
                         <li className="ele" >

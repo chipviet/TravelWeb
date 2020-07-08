@@ -32,16 +32,18 @@
   flex: 1;
   margin: 0 50px 0 0;
 }
+
 .title {
   flex: 2;
   padding: 0 0 0 40%;
 }
+
 .search-input {
-  padding: 0;
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-right: none;
 }
+
 .search-button {
   width: 20%;
   font-size: 15px;
@@ -49,4 +51,37 @@
   border-top-right-radius: 5px !important;
   border-bottom-right-radius: 5px !important;
 }
+
+.list-item {
+  padding: 50px 150px;
+}
+
+.item {
+  width: 200px;
+}
+
+.checked {
+  color: orange;
+}
+
+.place-rating-price {
+  display: flex;
+  flex-direction: row;
+}
+
+.place-rating {
+  flex: 2;
+}
+
+.place-price {
+  flex: 1;
+  color: blue;
+  font-size: 20px;
+  ;
+}
+
+.place-description {
+  text-align: left;
+}
+
 /* border:1px solid black; */

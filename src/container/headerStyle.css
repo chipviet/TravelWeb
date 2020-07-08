@@ -10,9 +10,11 @@
     flex-direction: row;
 }
 
-.logo p {
-    margin: 0;
-    padding: 10px;
+.logo-name {
+    padding: 25px 0 0 0;
+    z-index: 9999;
+    color: #F0BC71;
+    font-size: 20px;
 }
 
 .tab-page {
@@ -20,6 +22,7 @@
     display: flex;
     color: #7C7C7C;
     font-size: 20px;
+    justify-content: flex-end;
 }
 
 .tab-ele {
