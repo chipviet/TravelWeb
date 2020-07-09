@@ -4,7 +4,7 @@ export default function Place() {
     return (
         <div className="item">
             <div className="place-image" >
-                <img src={image} width="200px" height="250px"></img>
+                <img src={image} alt='' width="200px" height="250px"></img>
             </div>
             <div className="place-name">
                 <p><b>Thanh Hoa, Vietnam</b></p>
