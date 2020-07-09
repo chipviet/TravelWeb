@@ -1,0 +1,22 @@
+.tab-change {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 30%;
+}
+
+.chosen-navigation {
+    background-color: white;
+    color: black;
+    font-size: 24px;
+}
+
+.chosen-navigation:focus {
+    color: #F0BC71;
+    outline: none;
+    border-bottom: 1px solid #F0BC71;
+}
+
+.list-container {
+    padding: 50px 150px;
+}
