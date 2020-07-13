@@ -27,7 +27,7 @@ class Header extends Component {
                         <span>
                             <img src={Logo} width="90" height="70" />
                         </span>
-                        <div class="logo-name">
+                        <div className="logo-name">
                             <p>TravelLove</p>
                         </div>
                     </div>
@@ -53,9 +53,9 @@ class Header extends Component {
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
                         </li>
 
-                        <div class="dropdown ele-man">
+                        <div className="dropdown ele-man">
                             <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
-                            <div class="dropdown-content">
+                            <div className="dropdown-content">
                                 <div>
                                     <Link to="/guest">Guest</Link>
                                 </div>

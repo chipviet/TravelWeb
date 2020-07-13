@@ -1,5 +1,6 @@
 import React from 'react'
 import image from '../../../../assets/thanhhoafood.jpg'
+
 export default function Food() {
     return (
         <div className="item">
