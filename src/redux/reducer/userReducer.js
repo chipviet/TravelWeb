@@ -1,5 +1,4 @@
 import {handleActions} from 'redux-actions';
-import {combineActions} from 'redux-actions';
 
 const initialState = {
     requesting: false,

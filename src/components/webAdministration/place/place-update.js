@@ -5,14 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles.css';
 import { Link } from 'react-router-dom'
 
+
 export class PlaceUpdateAdmin extends Component {
+
+
   render() {
     return (
       <div>
       <Row className="justify-content-center update-label">
         <Col md="8">
           <h2>
-            Create or edit a Place
+            Update a Place
           </h2>
         </Col>
       </Row>

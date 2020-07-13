@@ -15,7 +15,7 @@ export class PlaceAdmin extends Component {
         <div className = "headerNavigation">
             <h3 className="text-capitalize ">Place </h3>
               <FontAwesomeIcon icon="plus" />
-              <Link to="/place-update" className="button btn btn-primary">Create new place</Link> 
+              <Link to="/place-create" className="button btn btn-primary">Create new place</Link> 
           </div>       
         </h2>
         <div className="table-responsive">

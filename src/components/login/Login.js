@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../login/loginStyle.css'
-import { register, login } from '../../redux/actions';
+import { register, login } from '../../redux/actions/users';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux';

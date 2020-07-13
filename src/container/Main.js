@@ -12,6 +12,7 @@ import GuestAdmin from '../components/webAdministration/guest/guest';
 import GuestUpdateAdmin from '../components/webAdministration/guest/guest-update'
 import HotelUpdateAdmin from '../components/webAdministration/hotel/hotel-update'
 import PlaceUpdateAdmin from '../components/webAdministration/place/place-update'
+import PlaceCreateAdmin from '../components/webAdministration/place/place-create'
 import FoodUpdateAdmin from '../components/webAdministration/food/food-update'
 
 
@@ -30,13 +31,14 @@ class Main extends Component {
                     <Route path="/trips" component={Trips} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/register" component={Register} />
-                    <Route path="/hotel-admin" component={HotelAdmin} />
-                    <Route path="/place-admin" component={PlaceAdmin} />
-                    <Route path="/food-admin" component={FoodAdmin} />
+                    <Route path="/hotel" component={HotelAdmin} />
+                    <Route path="/place" component={PlaceAdmin} />
+                    <Route path="/food" component={FoodAdmin} />
                     <Route path="/guest" component={GuestAdmin} />
                     <Route path="/guest-update" component={GuestUpdateAdmin} />
                     <Route path="/hotel-update" component={HotelUpdateAdmin} />
                     <Route path="/place-update" component={PlaceUpdateAdmin} />
+                    <Route path="/place-create" component={PlaceCreateAdmin} />
                     <Route path="/food-update" component={FoodUpdateAdmin} />
                     <Route path="/details" component={Details} />
                 </Switch>

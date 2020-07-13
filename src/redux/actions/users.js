@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { createActions } from 'redux-actions';
-import { connect } from 'mongoose';
 
-var user = 0;
 const {
   registerUserRequest,
   registerUserSuccess,
