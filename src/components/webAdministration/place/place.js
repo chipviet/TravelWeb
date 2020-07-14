@@ -41,8 +41,11 @@ export class PlaceAdmin extends Component {
                  <h4 className="text-capitalize ">Country</h4>
                </th>
                <th className="hand" >
+                 <h4 className="text-capitalize ">Description</h4>
+               </th>  
+               <th className="hand" >
                  <h4 className="text-capitalize ">Link Image</h4>
-               </th>         
+               </th>        
                <th />
              </tr>
            </thead>
@@ -50,10 +53,12 @@ export class PlaceAdmin extends Component {
            <tbody>
              {data.map((item, i) => (
                  <tr >
-                   <td>{item.PlaceId}</td>
+                   <td>{item.PlaceID}</td>
                    <td>{item.Name}</td>
                    <td>{item.Country}</td>
+                   <td>{item.description}</td>
                    <td>{item.URL_Image}</td>
+                   
                    <td className="text-right">
                      <div className="btn-group flex-btn-group-container">
                      <Button tag={Link} to={''} color="info" size="sm">
