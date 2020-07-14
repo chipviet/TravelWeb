@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Col, Row, Table } from 'reactstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {getAllPlace} from '../../../redux/actions/places';
+import {getAllPlaces} from '../../../selectors/place';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles.css';
 import { Link } from 'react-router-dom'
@@ -7,8 +11,12 @@ import { Link } from 'react-router-dom'
 
 export class PlaceAdmin extends Component {
   
-  render() {
+  componentDidMount(){
+    this.props.getAllPlace();
+  }
 
+  render() {
+    const {data} = this.props;
     return (
       <div>
         <h2 id="ccp-user-heading"  >
@@ -19,66 +27,74 @@ export class PlaceAdmin extends Component {
           </div>       
         </h2>
         <div className="table-responsive">
+        {data ? (
+           <Table responsive aria-describedby="ccp-user-heading">
+           <thead>
+             <tr>
+               <th className="hand">
+               <h4 className="text-capitalize">ID </h4>
+               </th>
+               <th className="hand" >
+                 <h4 className="text-capitalize ">Name</h4>
+               </th>
+               <th className="hand" >
+                 <h4 className="text-capitalize ">Country</h4>
+               </th>
+               <th className="hand" >
+                 <h4 className="text-capitalize ">Link Image</h4>
+               </th>         
+               <th />
+             </tr>
+           </thead>
 
-            <Table responsive aria-describedby="ccp-user-heading">
-              <thead>
-                <tr>
-                  <th className="hand">
-                  <h4 className="text-capitalize">ID </h4>
-                    
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Name</h4>
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Country</h4>
-                  </th>
-                  
-                  <th />
-                </tr>
-              </thead>
-              {/* <tbody>
-                {cCPUserList.map((cCPUser, i) => (
-                  <tr key={`entity-${i}`}>
-                    <td>
-                      <Button  to={`${match.url}/${cCPUser.id}`} color="link" size="sm">
-                        {cCPUser.id}
+           <tbody>
+             {data.map((item, i) => (
+                 <tr >
+                   <td>{item.PlaceId}</td>
+                   <td>{item.Name}</td>
+                   <td>{item.Country}</td>
+                   <td>{item.URL_Image}</td>
+                   <td className="text-right">
+                     <div className="btn-group flex-btn-group-container">
+                     <Button tag={Link} to={''} color="info" size="sm">
+                        <FontAwesomeIcon icon="eye" />{' '}
+                        <span className="d-none d-md-inline">
+                          View
+                        </span>
                       </Button>
-                    </td>
-                    <td>{cCPUser.walletId}</td>
-                    <td>{cCPUser.creationDate}</td>
-                    <td>{cCPUser.updateDate}</td>
-                    <td className="text-right">
-                      <div className="btn-group flex-btn-group-container">
-                        <Button  to={`${match.url}/${cCPUser.id}`} color="info" size="sm">
-                          <FontAwesomeIcon icon="eye" />{' '}
-                          <span className="d-none d-md-inline">
-                            <Translate contentKey="entity.action.view">View</Translate>
-                          </span>
-                        </Button>
-                        <Button to={`${match.url}/${cCPUser.id}/edit`} color="primary" size="sm">
-                          <FontAwesomeIcon icon="pencil-alt" />{' '}
-                          <span className="d-none d-md-inline">
-                            <Translate contentKey="entity.action.edit">Edit</Translate>
-                          </span>
-                        </Button>
-                        <Button to={`${match.url}/${cCPUser.id}/delete`} color="danger" size="sm">
-                          <FontAwesomeIcon icon="trash" />{' '}
-                          <span className="d-none d-md-inline">
-                            <Translate contentKey="entity.action.delete">Delete</Translate>
-                          </span>
-                        </Button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody> */}
-            </Table>
-         
+                      <Button tag={Link} to={'/edit'} color="primary" size="sm">
+                        <FontAwesomeIcon icon="pencil-alt" />{' '}
+                        <span className="d-none d-md-inline">
+                         Edit
+                        </span>
+                      </Button>
+                      <Button tag={Link} to={'/delete'} color="danger" size="sm">
+                        <FontAwesomeIcon icon="trash" />{' '}
+                        <span className="d-none d-md-inline">
+                          Delete
+                        </span>
+                      </Button>
+                     </div>
+                   </td>
+                 </tr>
+               ))}  
+           </tbody>
+         </Table>
+        ):(null)}
         </div>
       </div>
     );
   }
 }
 
-export default PlaceAdmin ;
+export default connect(
+  state => ({
+    data: getAllPlaces(state),
+  }),
+  dispatch => 
+    bindActionCreators(
+      {
+        getAllPlace
+      }, dispatch
+    )
+) (PlaceAdmin);

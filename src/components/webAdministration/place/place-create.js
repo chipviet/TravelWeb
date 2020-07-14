@@ -102,7 +102,9 @@ export class PlaceCreateAdmin extends Component {
 }
 
 export default connect(
-  state => { },
+  state => ({
+
+  }),
   dispatch =>
     bindActionCreators(
       {
