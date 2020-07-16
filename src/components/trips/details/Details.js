@@ -13,9 +13,9 @@ export default function Details() {
     return (
         <div>
             <div className="tab-change">
-                <button onClick={() => setIndex(0)} className="chosen-navigation">Attraction</button>
-                <button onClick={() => setIndex(1)} className="chosen-navigation">Hotel</button>
-                <button onClick={() => setIndex(2)} className="chosen-navigation">Food</button>
+                <div onClick={() => { setIndex(0) }} className={index === 0 ? 'chosen-navigation-isClicked' : 'chosen-navigation'}>Attraction</div>
+                <div onClick={() => { setIndex(1) }} className={index === 1 ? 'chosen-navigation-isClicked' : 'chosen-navigation'}>Hotel</div>
+                <div onClick={() => { setIndex(2) }} className={index === 2 ? 'chosen-navigation-isClicked' : 'chosen-navigation'}>Food</div>
             </div>
             <div className="list-container">
                 <GridList cellHeight={500} cols={5}>
@@ -23,6 +23,6 @@ export default function Details() {
                 </GridList>
             </div>
 
-        </div>
+        </div >
     )
 }
