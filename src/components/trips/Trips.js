@@ -112,7 +112,7 @@ class Trips extends Component {
                 <div className="list-item">
                     {items ? (<GridList cellHeight={500} cols={4}>
                         {listItem}
-                    </GridList>) : <div><p>Nothing...</p></div>}
+                    </GridList>) : (<div><p>Nothing...</p></div>)}
                 </div>
             </div>
         )
