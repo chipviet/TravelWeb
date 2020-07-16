@@ -4,10 +4,30 @@ import { AvFeedback, AvForm, AvGroup, AvInput, AvField ,AvCheckbox} from 'availi
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles.css';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { updatePlace } from '../../../redux/actions/places';
+import { getPlacebyId } from '../../../redux/actions/places';
+import { bindActionCreators } from 'redux';
 
 
 export class PlaceUpdateAdmin extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      _id: '',
+      name: '',
+      country: '',
+      urlImage: ''
+    }
+  }
 
+  componentDidMount(){
+    this.props.getPlacebyId(this.props.match.params._id)
+  }
+
+  saveEntity = () => {
+    this.props.updatePlace(this.state._id, this.state.name, this.state.country, this.state.urlImage);
+  }
 
   render() {
     return (
@@ -15,7 +35,7 @@ export class PlaceUpdateAdmin extends Component {
       <Row className="justify-content-center update-label">
         <Col md="8">
           <h2>
-            Update a Place
+            Update Place
           </h2>
         </Col>
       </Row>
@@ -62,4 +82,15 @@ export class PlaceUpdateAdmin extends Component {
   }
 }
 
-export default PlaceUpdateAdmin ;
+export default connect(
+  state => ({
+
+  }),
+  dispatch =>
+    bindActionCreators(
+      {
+        updatePlace,
+        getPlacebyId
+      }, dispatch
+    )
+)(PlaceUpdateAdmin);

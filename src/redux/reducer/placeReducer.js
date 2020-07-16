@@ -7,6 +7,12 @@ const initialState = {
         status: null,
         error: null,
     },
+    getPlacebyId: {
+        requesting: false,
+        result: null,
+        status: null,
+        error: null,
+    },
     createPlace: {
         requesting: false,
         result: null,
@@ -52,6 +58,35 @@ const placeReducer = handleActions(
             ...state,
             getAllPlace: {
                 ...state.getAllPlace,
+                requesting: false,
+                status: 'error',
+                error: payload.error,
+            },
+        }),
+   
+        GET_PLACE_BY_ID_REQUEST: state =>({
+            ...state,
+            getPlacebyId: {
+                ...state.getPlacebyId,
+                requesting: true,
+            },
+        }),
+   
+        GET_PLACE_BY_ID_SUCCESS: (state, {payload}) => 
+        ({
+            ...state,
+            getPlacebyId: {
+                ...state.getPlacebyId,
+                result: payload,
+                requesting: false,
+                status: 'success',
+            },
+        }),
+   
+        GET_PLACE_BY_ID_FAIL: (state, {payload}) => ({
+            ...state,
+            getPlacebyId: {
+                ...state.getPlacebyId,
                 requesting: false,
                 status: 'error',
                 error: payload.error,

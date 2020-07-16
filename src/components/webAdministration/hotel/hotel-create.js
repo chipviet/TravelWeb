@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createNewHotel } from '../../../redux/actions/hotel';
+import {getAllPlaces} from '../../../selectors/place';
+import {getAllPlace} from '../../../redux/actions/places';
 
 export class HotelCreateAdmin extends Component {
     constructor(props) {
@@ -22,20 +24,25 @@ export class HotelCreateAdmin extends Component {
         }
       }  
 
+      componentDidMount(){
+        this.props.getAllPlace();
+      }
+    
 
-  saveEntity = () => {
-    console.log("Vaoday", this.state)
-    this.props.createNewHotel(
-        this.state.name,
-        this.state.placeId, 
-        this.state.star, 
-        this.state.price,
-        this.state.rating,
-        this.state.description,
-        this.state.url_Image
-        );
-  }
+    saveEntity = () => {
+        console.log("Vaoday", this.state)
+        this.props.createNewHotel(
+            this.state.name,
+            this.state.placeId, 
+            this.state.star, 
+            this.state.price,
+            this.state.rating,
+            this.state.description,
+            this.state.url_Image
+            );
+    }
   render() {
+    const {data} = this.props;
     return (
       <div>
       <Row className="justify-content-center update-label">
@@ -64,11 +71,13 @@ export class HotelCreateAdmin extends Component {
                   })
                 }}  >
                 <option value='0'> </option>
-                <option value='1'>Đà Nẵng</option>
-                <option value='2'>Hà Nội</option>
-                <option value='3'>Sài Gòn</option>
-                <option value='4'>Huế</option>
-                <option value='5'>Thanh Hóa</option>
+                {data
+                      ? data.map(item => (
+                          <option value={item._id}>
+                            {item.Name}
+                          </option>
+                        ))
+                      : null}
               </AvField>
               <AvField type="select" name="select" label="Star" onChange={e => {
                   this.setState({
@@ -128,7 +137,6 @@ export class HotelCreateAdmin extends Component {
               </AvGroup>
 
               <Button tag={Link} id="cancel-save" to="/guest" replace color="info">
-           
                 &nbsp;
                 <span className="d-none d-md-inline">
                 Back
@@ -136,7 +144,6 @@ export class HotelCreateAdmin extends Component {
               </Button>
               &nbsp;
               <Button tag={Link} color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
-    
                 &nbsp;
                Save
               </Button>
@@ -150,12 +157,13 @@ export class HotelCreateAdmin extends Component {
 
 export default connect(
     state => ({
-  
-    }),
+        data: getAllPlaces(state),
+      }),
     dispatch =>
       bindActionCreators(
         {
-            createNewHotel
+            createNewHotel,
+            getAllPlace,
         }, dispatch
       )
   )(HotelCreateAdmin);

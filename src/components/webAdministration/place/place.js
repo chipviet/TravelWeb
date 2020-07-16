@@ -53,7 +53,6 @@ export class PlaceAdmin extends Component {
            <tbody>
              {data.map((item, i) => (
                  <tr >
-                   <td>{item.PlaceID}</td>
                    <td>{item.Name}</td>
                    <td>{item.Country}</td>
                    <td>{item.description}</td>
@@ -67,7 +66,7 @@ export class PlaceAdmin extends Component {
                           View
                         </span>
                       </Button>
-                      <Button tag={Link} to={'/edit'} color="primary" size="sm">
+                      <Button tag={Link} to={`/place-update/${item._id}`} color="primary" size="sm">
                         <FontAwesomeIcon icon="pencil-alt" />{' '}
                         <span className="d-none d-md-inline">
                          Edit

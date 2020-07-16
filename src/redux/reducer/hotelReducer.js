@@ -24,7 +24,7 @@ const initialState = {
         result: null,
         status: null,
         error: null,
-    }
+    },
 }
 
 const hotelReducer = handleActions(
@@ -141,6 +141,7 @@ const hotelReducer = handleActions(
                 error: payload.error,
             },
         }),
+
     },
     initialState
 );
