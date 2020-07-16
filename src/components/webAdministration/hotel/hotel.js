@@ -29,7 +29,7 @@ export class HotelAdmin extends Component {
         </h2>
         <div className="table-responsive">
         {data ? (
-            <Table responsive aria-describedby="ccp-user-heading">
+            <Table style={{tableLayout: 'fixed'}} responsive aria-describedby="ccp-user-heading">
               <thead>
                 <tr>
                   <th className="hand" >
@@ -65,7 +65,7 @@ export class HotelAdmin extends Component {
                    <td>{item.Price}</td>
                    <td>{item.Star_Rating}</td>
                    <td>{item.Description}</td>
-                   <td>{item.URL_Image}</td>
+                   <td className="linkUrl">{item.URL_Image}</td>
                    
                    <td className="text-right">
                      <div className="btn-group flex-btn-group-container">

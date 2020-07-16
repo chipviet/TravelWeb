@@ -39,3 +39,15 @@
     padding-top : 12px;
     padding-left: 24px;
 }
+
+.linkUrl {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table td {
+    padding: none;
+}
+td {
+    padding:12px 0 0 32px;
+}

@@ -28,12 +28,9 @@ export class PlaceAdmin extends Component {
         </h2>
         <div className="table-responsive">
         {data ? (
-           <Table responsive aria-describedby="ccp-user-heading">
+           <Table style={{tableLayout: 'fixed'}} responsive aria-describedby="ccp-user-heading">
            <thead>
              <tr>
-               <th className="hand">
-               <h4 className="text-capitalize">ID </h4>
-               </th>
                <th className="hand" >
                  <h4 className="text-capitalize ">Name</h4>
                </th>
@@ -56,24 +53,24 @@ export class PlaceAdmin extends Component {
                    <td>{item.Name}</td>
                    <td>{item.Country}</td>
                    <td>{item.description}</td>
-                   <td>{item.URL_Image}</td>
-                   
+                   <td className="linkUrl">{item.URL_Image}</td>
+              
                    <td className="text-right">
                      <div className="btn-group flex-btn-group-container">
                      <Button tag={Link} to={''} color="info" size="sm">
-                        <FontAwesomeIcon icon="eye" />{' '}
+              
                         <span className="d-none d-md-inline">
                           View
                         </span>
                       </Button>
                       <Button tag={Link} to={`/place-update/${item._id}`} color="primary" size="sm">
-                        <FontAwesomeIcon icon="pencil-alt" />{' '}
+             
                         <span className="d-none d-md-inline">
                          Edit
                         </span>
                       </Button>
                       <Button tag={Link} to={'/delete'} color="danger" size="sm">
-                        <FontAwesomeIcon icon="trash" />{' '}
+                  
                         <span className="d-none d-md-inline">
                           Delete
                         </span>

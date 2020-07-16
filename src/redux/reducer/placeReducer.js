@@ -7,7 +7,7 @@ const initialState = {
         status: null,
         error: null,
     },
-    getPlacebyId: {
+    getPlace: {
         requesting: false,
         result: null,
         status: null,
@@ -64,29 +64,29 @@ const placeReducer = handleActions(
             },
         }),
    
-        GET_PLACE_BY_ID_REQUEST: state =>({
+        GET_PLACE_REQUEST: state =>({
             ...state,
-            getPlacebyId: {
-                ...state.getPlacebyId,
+            getPlace: {
+                ...state.getPlace,
                 requesting: true,
             },
         }),
    
-        GET_PLACE_BY_ID_SUCCESS: (state, {payload}) => 
+        GET_PLACE_SUCCESS: (state, {payload}) => 
         ({
             ...state,
-            getPlacebyId: {
-                ...state.getPlacebyId,
+            getPlace: {
+                ...state.getPlace,
                 result: payload,
                 requesting: false,
                 status: 'success',
             },
         }),
    
-        GET_PLACE_BY_ID_FAIL: (state, {payload}) => ({
+        GET_PLACE_FAIL: (state, {payload}) => ({
             ...state,
-            getPlacebyId: {
-                ...state.getPlacebyId,
+            getPlace: {
+                ...state.getPlace,
                 requesting: false,
                 status: 'error',
                 error: payload.error,

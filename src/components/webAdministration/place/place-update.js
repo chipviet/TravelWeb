@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles.css';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { updatePlace } from '../../../redux/actions/places';
-import { getPlacebyId } from '../../../redux/actions/places';
+//import { updatePlace } from '../../../redux/actions/places';
+import { getPlaceById } from '../../../redux/actions/places';
+import {getPlacebyIdSelected} from '../../../selectors/place';
 import { bindActionCreators } from 'redux';
 
 
@@ -22,14 +23,17 @@ export class PlaceUpdateAdmin extends Component {
   }
 
   componentDidMount(){
-    this.props.getPlacebyId(this.props.match.params._id)
+    console.log("voaday")
+    this.props.getPlaceById(this.props.match.params._id)
   }
 
   saveEntity = () => {
-    this.props.updatePlace(this.state._id, this.state.name, this.state.country, this.state.urlImage);
+  //  this.props.updatePlace(this.state._id, this.state.name, this.state.country, this.state.urlImage);
   }
 
   render() {
+    const {data} = this.props
+    console.log(data);
     return (
       <div>
       <Row className="justify-content-center update-label">
@@ -62,7 +66,7 @@ export class PlaceUpdateAdmin extends Component {
               </AvGroup>  
 
               <Button tag={Link} id="cancel-save" to="/guest" replace color="info">
-                <FontAwesomeIcon icon="arrow-left" />
+
                 &nbsp;
                 <span className="d-none d-md-inline">
                 Back
@@ -70,7 +74,7 @@ export class PlaceUpdateAdmin extends Component {
               </Button>
               &nbsp;
               <Button tag={Link} color="primary" id="save-entity" type="submit">
-                <FontAwesomeIcon icon="save" />
+            
                 &nbsp;
                Save
               </Button>
@@ -84,13 +88,13 @@ export class PlaceUpdateAdmin extends Component {
 
 export default connect(
   state => ({
-
+    data: getPlacebyIdSelected(state),
   }),
   dispatch =>
     bindActionCreators(
       {
-        updatePlace,
-        getPlacebyId
+  //      updatePlace,
+  getPlaceById
       }, dispatch
     )
 )(PlaceUpdateAdmin);
