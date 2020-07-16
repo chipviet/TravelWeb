@@ -4,18 +4,42 @@ import { AvFeedback, AvForm, AvGroup, AvInput, AvField ,AvCheckbox} from 'availi
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles.css';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+//import { updatePlace } from '../../../redux/actions/places';
+import { getPlaceById } from '../../../redux/actions/places';
+import {getPlacebyIdSelected} from '../../../selectors/place';
+import { bindActionCreators } from 'redux';
 
 
 export class PlaceUpdateAdmin extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      _id: '',
+      name: '',
+      country: '',
+      urlImage: ''
+    }
+  }
 
+  componentDidMount(){
+    console.log("voaday")
+    this.props.getPlaceById(this.props.match.params._id)
+  }
+
+  saveEntity = () => {
+  //  this.props.updatePlace(this.state._id, this.state.name, this.state.country, this.state.urlImage);
+  }
 
   render() {
+    const {data} = this.props
+    console.log(data);
     return (
       <div>
       <Row className="justify-content-center update-label">
         <Col md="8">
           <h2>
-            Update a Place
+            Update Place
           </h2>
         </Col>
       </Row>
@@ -42,7 +66,7 @@ export class PlaceUpdateAdmin extends Component {
               </AvGroup>  
 
               <Button tag={Link} id="cancel-save" to="/guest" replace color="info">
-                <FontAwesomeIcon icon="arrow-left" />
+
                 &nbsp;
                 <span className="d-none d-md-inline">
                 Back
@@ -50,7 +74,7 @@ export class PlaceUpdateAdmin extends Component {
               </Button>
               &nbsp;
               <Button tag={Link} color="primary" id="save-entity" type="submit">
-                <FontAwesomeIcon icon="save" />
+            
                 &nbsp;
                Save
               </Button>
@@ -62,4 +86,15 @@ export class PlaceUpdateAdmin extends Component {
   }
 }
 
-export default PlaceUpdateAdmin ;
+export default connect(
+  state => ({
+    data: getPlacebyIdSelected(state),
+  }),
+  dispatch =>
+    bindActionCreators(
+      {
+  //      updatePlace,
+  getPlaceById
+      }, dispatch
+    )
+)(PlaceUpdateAdmin);

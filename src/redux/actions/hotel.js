@@ -15,7 +15,8 @@ export const getAllHotel = () => async dispatch => {
   dispatch(getAllHotelRequest());
   try {
     const data = await axios.get(`http://localhost:3500/hotels`)
-    dispatch(getAllhotelSuccess(data.data));
+    console.log("hotel:",data)
+    dispatch(getAllHotelSuccess(data.data));
   } catch (error) {
     dispatch(getAllHotelFail(error));
   }
@@ -27,14 +28,18 @@ const { createNewHotelRequest, createNewHotelSuccess, createNewHotelFail } = cre
     CREATE_NEW_HOTEL_FAIL: error => ({ error }),
 });
 
-export const createNewHotel = (hotelID, Name, Country, URL_Image) => async dispatch => {
+export const createNewHotel = (Name,id,Star,Price,Star_Rating,Description, URL_Image) => async dispatch => {
   dispatch(createNewHotelRequest());
   try {
+    const PlaceID = await axios.get(`http://localhost:3500/places/${id}`)
     const data = await axios.post(`http://localhost:3500/hotels`, {
-        hotelID,
-        Name,
-        Country,
-        URL_Image
+      Name, 
+      PlaceID,
+      Star,
+      Price,
+      Star_Rating,
+      Description,
+      URL_Image
     });
     dispatch(createNewHotelSuccess(data));
     alert(data.data.message);
@@ -42,4 +47,6 @@ export const createNewHotel = (hotelID, Name, Country, URL_Image) => async dispa
     dispatch(createNewHotelFail(error));
   }
 };
+
+
 

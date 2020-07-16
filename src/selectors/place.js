@@ -7,3 +7,13 @@ export const getAllPlaces = (state) => {
   }
   return null
 }
+
+export const getPlacebyIdSelected = (state) => {
+  const data = state.place.getPlacebyId
+  console.log("state", state.place);
+  if (data && data.result) {
+    console.log("alldata", data.result.data);
+    return data.result.data
+  }
+  return null
+}

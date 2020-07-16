@@ -11,6 +11,7 @@ import FoodAdmin from '../components/webAdministration/food/food';
 import GuestAdmin from '../components/webAdministration/guest/guest';
 import GuestUpdateAdmin from '../components/webAdministration/guest/guest-update'
 import HotelUpdateAdmin from '../components/webAdministration/hotel/hotel-update'
+import HotelCreateAdmin from '../components/webAdministration/hotel/hotel-create'
 import PlaceUpdateAdmin from '../components/webAdministration/place/place-update'
 import PlaceCreateAdmin from '../components/webAdministration/place/place-create'
 import FoodUpdateAdmin from '../components/webAdministration/food/food-update'
@@ -37,7 +38,8 @@ class Main extends Component {
                     <Route path="/guest" component={GuestAdmin} />
                     <Route path="/guest-update" component={GuestUpdateAdmin} />
                     <Route path="/hotel-update" component={HotelUpdateAdmin} />
-                    <Route path="/place-update" component={PlaceUpdateAdmin} />
+                    <Route path="/hotel-create" component={HotelCreateAdmin} />
+                    <Route path="/place-update/:id" component={PlaceUpdateAdmin} />
                     <Route path="/place-create" component={PlaceCreateAdmin} />
                     <Route path="/food-update" component={FoodUpdateAdmin} />
                     <Route path="/details" component={Details} />
