@@ -112,28 +112,11 @@ class Trips extends Component {
                 <div className="list-item">
                     {items ? (<GridList cellHeight={500} cols={4}>
                         {listItem}
-                    </GridList>) : (null)}
-                    {/* //             <GridList cellHeight={500} cols={5}>
-        //                 <Link style={{ textDecoration: 'none', color: 'black' }} to="/details">
-        //                     <div className="item">
-        //                         <div className="place-image" >
-        //                             <img src={image} alt='' width="200px" height="250px"></img>
-        //                         </div>
-        //                         <div className="place-name">
-        //                             <p><b>Thanh hoa</b></p>
-        //                         </div>
-        //                         <div className="place-description">
-        //                             <p>sadsadasdsa</p>
-        //                         </div>
-        //                     </div>
-        //                 </Link>
-        //             </GridList> */}
-
+                    </GridList>) : <div><p>Nothing...</p></div>}
                 </div>
-            </div >
+            </div>
         )
     }
-
 }
 
 export default connect(

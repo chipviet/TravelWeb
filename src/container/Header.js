@@ -46,27 +46,27 @@ class Header extends Component {
                         <li className="ele" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/contact">Contact</Link>
                         </li>
-                        <li className="ele login" onClick={this.loginOn}>
-                            Login
-                        </li>
+
                         <li className="ele">
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
                         </li>
-
+                        <li className="ele login" onClick={this.loginOn}>
+                            Login
+                        </li>
                         <div className="dropdown ele-man">
                             <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
                             <div className="dropdown-content">
-                                <div>
-                                    <Link to="/guest">Guest</Link>
+                                <div className="drop-item">
+                                    <Link style={{ textDecoration: 'none' }} to="/guest">Guest</Link>
                                 </div>
-                                <div>
-                                    <Link to="/place">Place</Link>
+                                <div className="drop-item">
+                                    <Link style={{ textDecoration: 'none' }} to="/place">Place</Link>
                                 </div>
-                                <div>
-                                    <Link to="/hotel">Hotel</Link>
+                                <div className="drop-item">
+                                    <Link style={{ textDecoration: 'none' }} to="/hotel">Hotel</Link>
                                 </div>
-                                <div>
-                                    <Link to="/food" >Food</Link>
+                                <div className="drop-item">
+                                    <Link style={{ textDecoration: 'none' }} to="/food" >Food</Link>
                                 </div>
                             </div>
                         </div>
