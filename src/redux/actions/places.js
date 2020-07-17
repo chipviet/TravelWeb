@@ -14,32 +14,13 @@ const {
 export const getAllPlace = () => async dispatch => {
   dispatch(getAllPlaceRequest());
   try {
-    const data = await axios.get(`http://localhost:3500/places`)
+    const data = await axios.get(`https://travel-love.herokuapp.com/places`)
+    console.log("data",data)
     dispatch(getAllPlaceSuccess(data.data));
   } catch (error) {
     dispatch(getAllPlaceFail(error));
   }
 };
-
-// const {
-//   getAllPlaceRequest1,
-//   getAllPlaceSuccess1,
-//   getAllPlaceFail1,
-// } = createActions({
-//     GET_PLACE_BY_ID_REQUEST: () => { },
-//     GET_PLACE_BY_ID_SUCCESS: data => ({ data }),
-//     GET_PLACE_BY_ID_AIL: error => ({ error }),
-// });
-
-// export const getAllPlace1 = () => async dispatch => {
-//   dispatch(getAllPlaceRequest1());
-//   try {
-//     const data = await axios.get(`http://localhost:3500/places`)
-//     dispatch(getAllPlaceSuccess1(data.data));
-//   } catch (error) {
-//     dispatch(getAllPlaceFail1(error));
-//   }
-// };
 
 const { createNewPlaceRequest, createNewPlaceSuccess, createNewPlaceFail } = createActions({
     CREATE_NEW_PLACE_REQUEST: () => { },
@@ -50,7 +31,7 @@ const { createNewPlaceRequest, createNewPlaceSuccess, createNewPlaceFail } = cre
 export const createNewPlace = (Name, Country, URL_Image) => async dispatch => {
   dispatch(createNewPlaceRequest());
   try {
-    const data = await axios.post(`http://localhost:3500/places`, {
+    const data = await axios.post(`https://travel-love.herokuapp.com/places`, {
         Name,
         Country,
         URL_Image
@@ -62,40 +43,44 @@ export const createNewPlace = (Name, Country, URL_Image) => async dispatch => {
   }
 };
 
-const { getPlaceByIdRequest, getPlaceByIdSuccess, getPlaceByIdFail } = createActions({
-  UPDATE_PLACE_REQUEST: () => { },
-  UPDATE_PLACE_SUCCESS: data => data,
-   UPDATE_PLACE_FAIL: error => ({ error }),
+
+const { getPlaceRequest, getPlaceSuccess, getPlaceFail } = createActions({
+  GET_PLACE_REQUEST: () => { },
+  GET_PLACE_SUCCESS: data => data,
+  GET_PLACE_FAIL: error => ({ error }),
 });
 
-export const getPlaceById = (_id) => async dispatch => {
-  dispatch(getPlaceByIdRequest());
+export const getPlace = (_id) => async dispatch => {
+  dispatch(getPlaceRequest());
 try {
-
-  const data = await axios.get(`http://localhost:3500/places/${_id}`)
-  dispatch(getPlaceByIdSuccess(data));
-  alert(data.data.message);
+  const data = await axios.get(`https://travel-love.herokuapp.com/places/${_id}`)
+  dispatch(getPlaceSuccess(data));
 } catch (error) {
-  dispatch(getPlaceByIdFail(error));
+  dispatch(getPlaceFail(error));
 }
 };
 
-// const { updatePlaceRequest, updatePlaceSuccess, updatePlaceFail } = createActions({
-//   UPDATE_PLACE_REQUEST: () => { },
-//   UPDATE_PLACE_SUCCESS: data => data,
-//   UPDATE_PLACE_FAIL: error => ({ error }),
-// });
 
-// export const updatePlace = (_id) => async dispatch => {
-// dispatch(updatePlaceRequest());
-// try {
-//   const data = await axios.get(`http://localhost:3500/places/${_id}`)
-//   dispatch(updatePlaceSuccess(data));
-//   alert(data.data.message);
-// } catch (error) {
-//   dispatch(updatePlaceFail(error));
-// }
-// };
+const { updatePlaceRequest, updatePlaceSuccess, updatePlaceFail } = createActions({
+  UPDATE_PLACE_REQUEST: () => { },
+  UPDATE_PLACE_SUCCESS: data => data,
+  UPDATE_PLACE_FAIL: error => ({ error }),
+});
+
+export const updatePlace = (_id,Name,Country,URL_Image) => async dispatch => {
+dispatch(updatePlaceRequest());
+try {
+  const data = await axios.patch(`https://travel-love.herokuapp.com/places/${_id}`, {
+        Name,
+        Country,
+        URL_Image
+    });
+  dispatch(updatePlaceSuccess(data));
+  alert(data.data.message);
+} catch (error) {
+  dispatch(updatePlaceFail(error));
+}
+};
 
 
 // const { getPlacebyIdRequest, getPlacebyIdSuccess, getPlacebyIdFail } = createActions({
@@ -137,20 +122,3 @@ try {
 // }
 // };
 
-
-// const { getPlacebyIdRequest, getPlacebyIdSuccess, getPlacebyIdFail } = createActions({
-//   GET_PLACE_REQUEST: () => { },
-//   GET_PLACE_SUCCESS: data => data,
-//   GET_PLACE_FAIL: error => ({ error }),
-// });
-
-// export const getPlacebyId = (_id) => async dispatch => {
-//   dispatch(getPlacebyIdRequest());
-// try {
-
-//   const data = await axios.get(`http://localhost:3500/places/${_id}`)
-//   dispatch(getPlacebyIdSuccess(data));
-// } catch (error) {
-//   dispatch(getPlacebyIdFail(error));
-// }
-// };

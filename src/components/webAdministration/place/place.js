@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom'
 export class PlaceAdmin extends Component {
   
   componentDidMount(){
+    console.log("voday")
     this.props.getAllPlace();
   }
 
