@@ -13,17 +13,17 @@ export class PlaceCreateAdmin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      placeId: '',
       name: '',
       country: '',
-      urlImage: ''
+      urlImage: '',
+      description: '',
     }
   }
 
   saveEntity = () => {
     // const { placeId, name, country, urlImage } = this.state;
-    console.log("Vaoday", this.state.placeId, this.state.name, this.state.country, this.state.urlImage)
-    this.props.createNewPlace(this.state.placeId, this.state.name, this.state.country, this.state.urlImage);
+    console.log("Vaoday", this.state.name, this.state.country, this.state.urlImage,this.state.description)
+    this.props.createNewPlace(this.state.name, this.state.country, this.state.urlImage,this.state.description);
   }
 
   render() {
@@ -39,16 +39,6 @@ export class PlaceCreateAdmin extends Component {
         <Row className="justify-content-center">
           <Col md="8">
             <AvForm  >
-              <AvGroup>
-                <Label id="id-guest" for="card-type-name">
-                  ID
-                </Label>
-                <AvInput id="card-type-name" type="string" name="placeId" onChange={e => {
-                  this.setState({
-                    placeId: e.target.value
-                  })
-                }} />
-              </AvGroup>
               <AvGroup>
                 <Label id="nameLabel">
                   Name
@@ -81,6 +71,16 @@ export class PlaceCreateAdmin extends Component {
                 }} />
               </AvGroup>
 
+              <AvGroup>
+                <Label id="id-guest" for="card-type-name">
+                  Description
+                </Label>
+                <AvInput id="card-type-name" type="string" name="placeId" onChange={e => {
+                  this.setState({
+                    description: e.target.value
+                  })
+                }} />
+              </AvGroup>
 
               <Button tag={Link} id="cancel-save" to="/guest" replace color="info">
                 &nbsp;
@@ -89,7 +89,7 @@ export class PlaceCreateAdmin extends Component {
                 </span>
               </Button>
               &nbsp;
-              <Button tag={Link} color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
+              <Button tag={Link} to= "/place" color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
                 &nbsp;
                 Save
               </Button>

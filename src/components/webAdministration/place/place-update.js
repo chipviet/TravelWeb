@@ -16,10 +16,10 @@ export class PlaceUpdateAdmin extends Component {
     super(props);
     this.state = {
       _id: '',
-      placeId:'',
       name: '',
       country: '',
-      urlImage: ''
+      urlImage: '',
+      description: ''
     }
   }
 
@@ -28,8 +28,8 @@ export class PlaceUpdateAdmin extends Component {
   }
 
   saveEntity = () => {
-    console.log("data update",this.state._id, this.state.name, this.state.country, this.state.urlImage)
-    //this.props.updatePlace(this.state._id, this.state.name, this.state.country, this.state.urlImage);
+    console.log("data update", this.state._id,this.state.name, this.state.country, this.state.urlImage,this.state.description)
+    this.props.updatePlace(this.state._id, this.state.name, this.state.country, this.state.urlImage,this.state.description);
   }
 
   render() {
@@ -47,23 +47,18 @@ export class PlaceUpdateAdmin extends Component {
       {data ? (
         <Col md="8">
             <AvForm >
-              <AvGroup>
-                <Label id="id-guest" for="card-type-name">
-                 ID
-                </Label>
-                <AvField id="card-type-name" type="string" name="name" value ={data.PlaceID} onChange={e => {
-                  this.setState({
-                    placeId: e.target.value
-                  })
-                }}  />
-              </AvGroup>
+              
               <AvGroup>
                 <Label id="nameLabel">
                  Name
                 </Label>
                 <AvField id="card-type-dailyMaxAmount" type="string" className="form-control" name="dailyMaxAmount" value ={data.Name} onChange={e => {
                   this.setState({
-                    name: e.target.value
+                    _id: data._id,
+                    description: data.Description,
+                    name: e.target.value,
+                    country: data.Country,
+                    urlImage: data.URL_Image
                   })
                 }}  />
               </AvGroup>  
@@ -73,7 +68,11 @@ export class PlaceUpdateAdmin extends Component {
                 </Label>
                 <AvField id="card-type-dailyMaxAmount" type="string" className="form-control" name="dailyMaxAmount"  value ={data.Country}  onChange={e => {
                   this.setState({
-                    country: e.target.value
+                    _id: data._id,
+                    description: data.Description,
+                    name: data.Name,
+                    country: e.target.value,
+                    urlImage: data.URL_Image
                   })
                 }}/>
               </AvGroup>  
@@ -84,10 +83,29 @@ export class PlaceUpdateAdmin extends Component {
                 </Label>
                 <AvInput id="card-type-dailyMaxAmount" type="string" className="form-control" name="image" value ={data.URL_Image} onChange={e => {
                   this.setState({
-                    urlImage: e.target.value
+                    _id: data._id,
+                    name: data.Name,
+                    country: data.Country,
+                    urlImage: e.target.value,
+                    description: data.Description
                   })
                 }} />
               </AvGroup> 
+
+              <AvGroup>
+                <Label id="id-guest" for="card-type-name">
+                 Description
+                </Label>
+                <AvField id="card-type-name" type="string" name="name" value ={data.Description} onChange={e => {
+                  this.setState({
+                    _id: data._id,
+                    name: data.Name,
+                    country: data.Country,
+                    urlImage: data.URL_Image,
+                    description: e.target.value
+                  })
+                }}  />
+              </AvGroup>
 
               <Button tag={Link} id="cancel-save" to="/guest" replace color="info">
                 &nbsp;
@@ -96,8 +114,7 @@ export class PlaceUpdateAdmin extends Component {
                 </span>
               </Button>
               &nbsp;
-              <Button tag={Link} color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
-            
+              <Button tag={Link} to="/place" color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
                 &nbsp;
                Save
               </Button>

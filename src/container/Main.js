@@ -14,6 +14,7 @@ import HotelUpdateAdmin from '../components/webAdministration/hotel/hotel-update
 import HotelCreateAdmin from '../components/webAdministration/hotel/hotel-create'
 import PlaceUpdateAdmin from '../components/webAdministration/place/place-update'
 import PlaceCreateAdmin from '../components/webAdministration/place/place-create'
+import PlaceDetailsAdmin from '../components/webAdministration/place/place-details'
 import FoodUpdateAdmin from '../components/webAdministration/food/food-update'
 
 
@@ -40,6 +41,7 @@ class Main extends Component {
                     <Route path="/hotel-update" component={HotelUpdateAdmin} />
                     <Route path="/hotel-create" component={HotelCreateAdmin} />
                     <Route path="/place-update/:id" component={PlaceUpdateAdmin} />
+                    <Route path="/place-details/:id" component={PlaceDetailsAdmin} />
                     <Route path="/place-create" component={PlaceCreateAdmin} />
                     <Route path="/food-update" component={FoodUpdateAdmin} />
                     <Route path="/details" component={Details} />

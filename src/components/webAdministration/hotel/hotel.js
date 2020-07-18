@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {getAllHotel} from '../../../redux/actions/hotel';
+import {deleteHotel} from '../../../redux/actions/hotel';
 import {getAllHotelSelector} from '../../../selectors/hotel';
 
 export class HotelAdmin extends Component {
@@ -13,9 +14,15 @@ export class HotelAdmin extends Component {
   componentDidMount(){
     this.props.getAllHotel();
   }
+
+  delete = (id) => {
+    console.log("id",id)
+    this.props.deleteHotel(id);
+  }
   
   render() {
     const {data} = this.props;
+    console.log("du lieu",data);
     return (
       <div>
         <h2 id="ccp-user-heading"  >
@@ -60,7 +67,7 @@ export class HotelAdmin extends Component {
              {data.map((item, i) => (
                  <tr >
                    <td>{item.Name}</td>
-                   <td>{item.PlaceID.data.Name}</td>
+                   <td>{item.Place.data.Name}</td> 
                    <td>{item.Star}</td>
                    <td>{item.Price}</td>
                    <td>{item.Star_Rating}</td>
@@ -70,19 +77,18 @@ export class HotelAdmin extends Component {
                    <td className="text-right">
                      <div className="btn-group flex-btn-group-container">
                      <Button tag={Link} to={''} color="info" size="sm">
-                        <FontAwesomeIcon icon="eye" />{' '}
                         <span className="d-none d-md-inline">
                           View
                         </span>
                       </Button>
                       <Button tag={Link} to={'/hotel-update'} color="primary" size="sm">
-                        <FontAwesomeIcon icon="pencil-alt" />{' '}
+ 
                         <span className="d-none d-md-inline">
                          Edit
                         </span>
                       </Button>
-                      <Button tag={Link} to={'/delete'} color="danger" size="sm">
-                        <FontAwesomeIcon icon="trash" />{' '}
+                      <Button tag={Link} to={'/hotel'} color="danger" size="sm" onClick = {() => this.delete(item._id)}>
+
                         <span className="d-none d-md-inline">
                           Delete
                         </span>
@@ -107,7 +113,8 @@ export default connect(
   dispatch => 
     bindActionCreators(
       {
-        getAllHotel
+        getAllHotel,
+        deleteHotel
       }, dispatch
     )
 ) (HotelAdmin);

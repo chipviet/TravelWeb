@@ -3,6 +3,7 @@ import { Button, Col, Row, Table } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {getAllPlace} from '../../../redux/actions/places';
+import {deletePlace} from '../../../redux/actions/places';
 import {getAllPlaces} from '../../../selectors/place';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles.css';
@@ -14,6 +15,12 @@ export class PlaceAdmin extends Component {
   componentDidMount(){
     console.log("voday")
     this.props.getAllPlace();
+  }
+
+  delete = (id) => {
+    console.log("id",id)
+    this.props.deletePlace(id);
+    window.location.reload();
   }
 
   render() {
@@ -53,13 +60,12 @@ export class PlaceAdmin extends Component {
                  <tr >
                    <td>{item.Name}</td>
                    <td>{item.Country}</td>
-                   <td>{item.description}</td>
+                   <td>{item.Description}</td>
                    <td className="linkUrl">{item.URL_Image}</td>
               
                    <td className="text-right">
                      <div className="btn-group flex-btn-group-container">
-                     <Button tag={Link} to={''} color="info" size="sm">
-              
+                     <Button tag={Link} to={`/place-details/${item._id}`} color="info" size="sm">
                         <span className="d-none d-md-inline">
                           View
                         </span>
@@ -70,8 +76,7 @@ export class PlaceAdmin extends Component {
                          Edit
                         </span>
                       </Button>
-                      <Button tag={Link} to={'/delete'} color="danger" size="sm">
-                  
+                      <Button tag={Link} to={'/place'} color="danger" size="sm" onClick = {() => this.delete(item._id)}>
                         <span className="d-none d-md-inline">
                           Delete
                         </span>
@@ -96,7 +101,8 @@ export default connect(
   dispatch => 
     bindActionCreators(
       {
-        getAllPlace
+        getAllPlace,
+        deletePlace
       }, dispatch
     )
 ) (PlaceAdmin);

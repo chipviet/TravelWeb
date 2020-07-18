@@ -28,16 +28,17 @@ const { createNewPlaceRequest, createNewPlaceSuccess, createNewPlaceFail } = cre
     CREATE_NEW_PLACE_FAIL: error => ({ error }),
 });
 
-export const createNewPlace = (Name, Country, URL_Image) => async dispatch => {
+export const createNewPlace = (Name, Country, URL_Image, Description) => async dispatch => {
   dispatch(createNewPlaceRequest());
   try {
     const data = await axios.post(`https://travel-love.herokuapp.com/places`, {
         Name,
         Country,
-        URL_Image
+        URL_Image,
+        Description
     });
     dispatch(createNewPlaceSuccess(data));
-    alert(data.data.message);
+    dispatch(getAllPlace);
   } catch (error) {
     dispatch(createNewPlaceFail(error));
   }
@@ -67,20 +68,42 @@ const { updatePlaceRequest, updatePlaceSuccess, updatePlaceFail } = createAction
   UPDATE_PLACE_FAIL: error => ({ error }),
 });
 
-export const updatePlace = (_id,Name,Country,URL_Image) => async dispatch => {
+export const updatePlace = (_id,Name,Country,URL_Image,Description) => async dispatch => {
 dispatch(updatePlaceRequest());
+console.log("data Input",_id,Name,Country,URL_Image,Description)
 try {
   const data = await axios.patch(`https://travel-love.herokuapp.com/places/${_id}`, {
         Name,
         Country,
-        URL_Image
+        URL_Image,
+        Description
     });
   dispatch(updatePlaceSuccess(data));
-  alert(data.data.message);
+  dispatch(getAllPlace);
 } catch (error) {
   dispatch(updatePlaceFail(error));
 }
 };
+
+const { deletePlaceRequest, deletePlaceSuccess, deletePlaceFail } = createActions({
+  DELETE_PLACE_REQUEST: () => { },
+  DELETE_PLACE_SUCCESS: data => data,
+  DELETE_PLACE_FAIL: error => ({ error }),
+});
+
+export const deletePlace = (_id) => async dispatch => {
+dispatch(deletePlaceRequest())
+try {
+  console.log(_id);
+  const data = await axios.delete(`https://travel-love.herokuapp.com/places/${_id}`);
+  dispatch(deletePlaceSuccess(data));
+  dispatch(getAllPlace);
+} catch (error) {
+  dispatch(deletePlaceFail(error));
+}
+};
+
+
 
 
 // const { getPlacebyIdRequest, getPlacebyIdSuccess, getPlacebyIdFail } = createActions({

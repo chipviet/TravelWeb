@@ -32,8 +32,8 @@ export class HotelCreateAdmin extends Component {
     saveEntity = () => {
         console.log("Vaoday", this.state)
         this.props.createNewHotel(
-            this.state.name,
             this.state.placeId, 
+            this.state.name,
             this.state.star, 
             this.state.price,
             this.state.rating,
