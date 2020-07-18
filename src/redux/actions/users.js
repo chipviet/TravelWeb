@@ -14,7 +14,7 @@ const {
 export const register = (username, email, password) => async dispatch => {
   dispatch(registerUserRequest());
   try {
-    const data = await axios.post(`http://192.168.1.3:3500/user/signup`, {
+    const data = await axios.post(`https://travel-love.herokuapp.com/users/login`, {
       username,
       email,
       password,
@@ -35,14 +35,16 @@ const { loginRequest, loginSuccess, loginFail } = createActions({
 export const login = (username, password) => async dispatch => {
   dispatch(loginRequest());
   try {
-    const data = await axios.post(`http://192.168.1.3:3500/user/login`, {
+    const data = await axios.post(`https://travel-love.herokuapp.com/users/login`, {
       username,
       password,
     });
+    console.log(data);
     dispatch(loginSuccess(data));
-    alert(data.data.message);
   } catch (error) {
     dispatch(loginFail(error));
   }
 };
+
+
 

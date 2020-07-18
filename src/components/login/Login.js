@@ -4,14 +4,22 @@ import { register, login } from '../../redux/actions/users';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
+import { getRoleUserSelector } from '../../selectors/user'
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: '',
+            user: [{
+                username: '',
+                password: '',
+            }]
+
         }
+    }
+    handleLogin = () => {
+        this.props.login(this.state.username, this.state.password);
+        localStorage.setItem('user', JSON.stringify(this.state.user));
     }
     render() {
         return (
@@ -58,7 +66,9 @@ class Login extends Component {
     }
 }
 export default connect(
-    state => ({ rWorks: state.works, }),
+    state => ({
+        role: getRoleUserSelector(state)
+    }),
     dispatch =>
         bindActionCreators(
             {
