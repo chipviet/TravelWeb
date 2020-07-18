@@ -4,6 +4,7 @@ import { register, login } from '../../redux/actions/users';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
+import { getRoleUserSelector } from '../../selectors/user'
 
 class Login extends Component {
     constructor(props) {
@@ -12,6 +13,9 @@ class Login extends Component {
             username: '',
             password: '',
         }
+    }
+    handleLogin = () => {
+        this.props.login(this.state.username, this.state.password);
     }
     render() {
         return (
@@ -39,7 +43,10 @@ class Login extends Component {
                                 }}
                                 />
 
-                                <button type="submit" onClick={this.handleLogin} >Sign In</button>
+                                <button type="submit" onClick={() => {
+                                    this.handleLogin();
+                                }
+                                }>Sign In</button>
                                 <div className="remember-area">
                                     <input className="remember" type="checkbox" name="remember" />
                                     <label className="remember" htmlFor="remember">Remember me</label>
@@ -58,7 +65,9 @@ class Login extends Component {
     }
 }
 export default connect(
-    state => ({ rWorks: state.works, }),
+    state => ({
+        role: getRoleUserSelector(state)
+    }),
     dispatch =>
         bindActionCreators(
             {
