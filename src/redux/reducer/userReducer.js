@@ -58,7 +58,7 @@ const userReducer = handleActions(
                 ...state.login,
                 result: payload,
                 requesting: false,
-                status: payload.data.message === 'Successfully' ? 'success' : 'error',
+                status: true,
             },
         }),
 
@@ -71,6 +71,15 @@ const userReducer = handleActions(
                 error: payload.error,
             },
         }),
+        LOG_OUT: (state) => ({
+            ...state,
+            login: {
+                requesting: false,
+                result: null,
+                status: null,
+                error: null,
+            }
+        })
 
     },
     initialState

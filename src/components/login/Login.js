@@ -10,12 +10,16 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: '',
+            user: [{
+                username: '',
+                password: '',
+            }]
+
         }
     }
     handleLogin = () => {
         this.props.login(this.state.username, this.state.password);
+        localStorage.setItem('user', JSON.stringify(this.state.user));
     }
     render() {
         return (
@@ -43,10 +47,7 @@ class Login extends Component {
                                 }}
                                 />
 
-                                <button type="submit" onClick={() => {
-                                    this.handleLogin();
-                                }
-                                }>Sign In</button>
+                                <button type="submit" onClick={this.handleLogin} >Sign In</button>
                                 <div className="remember-area">
                                     <input className="remember" type="checkbox" name="remember" />
                                     <label className="remember" htmlFor="remember">Remember me</label>

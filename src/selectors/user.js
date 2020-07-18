@@ -13,9 +13,9 @@ export const getNameUserSelector = (state) => {
     return null
 }
 export const getStatusUserSelector = (state) => {
-    const data = state.user.login
+    const data = state.user.login;
     if (data && data.result) {
-        return data.result.data.message;
+        return data.status;
     }
     return null
 }

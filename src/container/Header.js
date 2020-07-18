@@ -12,8 +12,12 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isClicked: false,
-            isLoggedIn: false,
+            login: [{
+                isClicked: false,
+                isLoggedIn: false,
+                status: false,
+            }]
+
         }
         this.loginOn = this.loginOn.bind(this);
     }
@@ -23,23 +27,13 @@ class Header extends Component {
             isClicked: !this.state.isClicked
         });
     };
-    componentWillMount() {
-        if (this.props.status == "Login success") {
-            this.setState({
-                ...this.state,
-                isLoggedIn: true
-            })
-            console.log('ok');
-        }
-        else {
-            console.log('not');
-        }
-
+    componentDidMount() {
+        this.setState({
+            status: this.props.status
+        })
     }
-
     render() {
-        const { role, status } = this.props;
-        console.log('role status,loggin: ', role, status, this.state.isLoggedIn);
+        var { role, status } = this.props;
         return (
             <div className="header">
                 <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">
@@ -87,15 +81,18 @@ class Header extends Component {
                             </div>
                         </div>)}
 
-                        {!this.state.isLoggedIn && (<li className="ele login" onClick={this.loginOn}>
+                        {!status && (<li className="ele login" onClick={this.loginOn}>
                             Login
                         </li>)}
-                        <li className="ele">
+                        {status && <li className="ele" onClick={() => {
+                            localStorage.setItem('status', JSON.stringify(this.state.login));
+                            console.log('unmount')
+                        }}>
                             Log out
-                        </li>
+                        </li>}
                     </ul>
                 </div>
-                {this.state.isClicked && <Login toggle={this.loginOn} />}
+                {this.state.isClicked && <Login toggle={this.loginOn} handle={this.handleLoggedIn} />}
             </div>
         );
     }
@@ -103,7 +100,7 @@ class Header extends Component {
 export default connect(
     state => ({
         role: getRoleUserSelector(state),
-        status: getStatusUserSelector(state)
+        status: getStatusUserSelector(state),
     }),
     dispatch =>
         bindActionCreators(
