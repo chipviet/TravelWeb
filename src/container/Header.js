@@ -39,7 +39,7 @@ class Header extends Component {
                 <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">
                     <div className="logo">
                         <span>
-                            <img src={Logo} width="90" height="70" />
+                            <img src={Logo} alt='N/A' width="90" height="70" />
                         </span>
                         <div className="logo-name">
                             <p>TravelLove</p>
@@ -85,7 +85,6 @@ class Header extends Component {
                             Login
                         </li>)}
                         {status && <li className="ele" onClick={() => {
-                            localStorage.setItem('status', JSON.stringify(this.state.login));
                             console.log('unmount')
                         }}>
                             Log out

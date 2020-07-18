@@ -7,6 +7,12 @@ const initialState = {
         status: null,
         error: null,
     },
+    getHotel: {
+        requesting: false,
+        result: null,
+        status: null,
+        error: null,
+    },
     createHotel: {
         requesting: false,
         result: null,
@@ -52,6 +58,35 @@ const hotelReducer = handleActions(
             ...state,
             getAllHotel: {
                 ...state.getAllHotel,
+                requesting: false,
+                status: 'error',
+                error: payload.error,
+            },
+        }),
+
+        GET_HOTEL_REQUEST: state => ({
+            ...state,
+            getHotel: {
+                ...state.getHotel,
+                requesting: true,
+            },
+        }),
+
+        GET_HOTEL_SUCCESS: (state, { payload }) =>
+            ({
+                ...state,
+                getHotel: {
+                    ...state.getHotel,
+                    result: payload,
+                    requesting: false,
+                    status: 'success',
+                },
+            }),
+
+        GET_HOTEL_FAIL: (state, { payload }) => ({
+            ...state,
+            getHotel: {
+                ...state.getHotel,
                 requesting: false,
                 status: 'error',
                 error: payload.error,

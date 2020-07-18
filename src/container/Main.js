@@ -44,7 +44,7 @@ class Main extends Component {
                     <Route path="/place-details/:id" component={PlaceDetailsAdmin} />
                     <Route path="/place-create" component={PlaceCreateAdmin} />
                     <Route path="/food-update" component={FoodUpdateAdmin} />
-                    <Route path="/details" component={Details} />
+                    <Route path="/details/:id" component={Details} />
                 </Switch>
             </div>
         );
