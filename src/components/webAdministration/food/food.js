@@ -6,22 +6,22 @@ import '../styles.css';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {getAllFood,deleteFood} from '../../../redux/actions/food';
-import {getAllFoodSelector} from '../../../selectors/food';
+import { getAllFood, deleteFood } from '../../../redux/actions/food';
+import { getAllFoodSelector } from '../../../selectors/food';
 
 export class FoodAdmin extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.getAllFood();
   }
 
   delete = (id) => {
-    console.log("id",id)
+    console.log("id", id)
     this.props.deleteFood(id);
   }
 
   render() {
-    const {data}= this.props;
+    const { data } = this.props;
     console.log(data)
     return (
       <div>
@@ -35,7 +35,7 @@ export class FoodAdmin extends Component {
         </h2>
         <div className="table-responsive">
           {data ? (
-            <Table style={{tableLayout: 'fixed'}} responsive aria-describedby="ccp-user-heading">
+            <Table style={{ tableLayout: 'fixed' }} responsive aria-describedby="ccp-user-heading">
               <thead>
                 <tr>
                   <th className="hand" >
@@ -60,40 +60,40 @@ export class FoodAdmin extends Component {
                 </tr>
               </thead>
               <tbody>
-             {data.map((item, i) => (
-                 <tr >
-                   <td>{item.Name}</td>
-                   <td>{item.Place.data.Name}</td> 
-                   <td>{item.Price}</td>
-                   <td>{item.Star_Rating}</td>
-                   <td>{item.Description}</td>
-                   <td className="linkUrl">{item.URL_Image}</td>
-                   
-                   <td className="text-right">
-                     <div className="btn-group flex-btn-group-container">
-                     <Button tag={Link} to={''} color="info" size="sm">
-                        <span className="d-none d-md-inline">
-                          View
+                {data.map((item, i) => (
+                  <tr key={i}>
+                    <td>{item.Name}</td>
+                    <td>{item.Place.data.Name}</td>
+                    <td>{item.Price}</td>
+                    <td>{item.Star_Rating}</td>
+                    <td className="linkUrl">{item.Description}</td>
+                    <td className="linkUrl">{item.URL_Image}</td>
+
+                    <td className="text-right">
+                      <div className="btn-group flex-btn-group-container">
+                        <Button tag={Link} to={''} color="info" size="sm">
+                          <span className="d-none d-md-inline">
+                            View
                         </span>
-                      </Button>
-                      <Button tag={Link} to={`/food-update/${item._id}`} color="primary" size="sm">
-                        <span className="d-none d-md-inline">
-                         Edit
+                        </Button>
+                        <Button tag={Link} to={`/food-update/${item._id}`} color="primary" size="sm">
+                          <span className="d-none d-md-inline">
+                            Edit
                         </span>
-                      </Button>
-                      <Button tag={Link} to={'/food'} color="danger" size="sm" onClick = {() => this.delete(item._id)}>
-                        <span className="d-none d-md-inline">
-                          Delete
+                        </Button>
+                        <Button tag={Link} to={'/food'} color="danger" size="sm" onClick={() => this.delete(item._id)}>
+                          <span className="d-none d-md-inline">
+                            Delete
                         </span>
-                      </Button>
-                     </div>
-                   </td>
-                 </tr>
-               ))}  
-           </tbody>
+                        </Button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
             </Table>
-         ):(null)}
-       
+          ) : (null)}
+
         </div>
       </div>
     );
@@ -104,11 +104,11 @@ export default connect(
   state => ({
     data: getAllFoodSelector(state)
   }),
-  dispatch => 
+  dispatch =>
     bindActionCreators(
       {
         getAllFood,
         deleteFood,
       }, dispatch
     )
-) (FoodAdmin);
+)(FoodAdmin);
