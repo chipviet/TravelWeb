@@ -81,14 +81,12 @@ export class HotelAdmin extends Component {
                           View
                         </span>
                       </Button>
-                      <Button tag={Link} to={'/hotel-update'} color="primary" size="sm">
- 
+                      <Button tag={Link} to={`/hotel-update/${item._id}`} color="primary" size="sm">
                         <span className="d-none d-md-inline">
                          Edit
                         </span>
                       </Button>
                       <Button tag={Link} to={'/hotel'} color="danger" size="sm" onClick = {() => this.delete(item._id)}>
-
                         <span className="d-none d-md-inline">
                           Delete
                         </span>

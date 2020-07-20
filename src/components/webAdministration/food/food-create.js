@@ -6,7 +6,7 @@ import '../styles.css';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { createNewHotel } from '../../../redux/actions/hotel';
+import { createNewFood } from '../../../redux/actions/food';
 import {getAllPlaces} from '../../../selectors/place';
 import {getAllPlace} from '../../../redux/actions/places';
 
@@ -27,13 +27,10 @@ export class FoodCreateAdmin extends Component {
         this.props.getAllPlace();
       }
     
-
     saveEntity = () => {
-        console.log("Vaoday", this.state)
-        this.props.createNewHotel(
-            this.state.name,
+        this.props.createNewFood(
             this.state.placeId, 
-            this.state.star, 
+            this.state.name,
             this.state.price,
             this.state.rating,
             this.state.description,
@@ -47,7 +44,7 @@ export class FoodCreateAdmin extends Component {
       <Row className="justify-content-center update-label">
         <Col md="8">
           <h2>
-            Create new Hotel
+            Create new Food
           </h2>
         </Col>
       </Row>
@@ -78,7 +75,6 @@ export class FoodCreateAdmin extends Component {
                         ))
                       : null}
               </AvField>
-              
               <AvGroup>
                 <Label id="nameLabel">
                  Price
@@ -150,8 +146,8 @@ export default connect(
     dispatch =>
       bindActionCreators(
         {
-            createNewHotel,
-            getAllPlace,
+          createNewFood,
+          getAllPlace,
         }, dispatch
       )
   )(FoodCreateAdmin);

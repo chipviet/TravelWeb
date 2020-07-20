@@ -8,6 +8,9 @@ import Register from '../components/register/Register';
 import HotelAdmin from '../components/webAdministration/hotel/hotel';
 import PlaceAdmin from '../components/webAdministration/place/place';
 import FoodAdmin from '../components/webAdministration/food/food';
+import FoodCreateAdmin from '../components/webAdministration/food/food-create';
+import FoodUpdateAdmin from '../components/webAdministration/food/food-update';
+import FoodDetailsAdmin from '../components/webAdministration/food/food-details';
 import GuestAdmin from '../components/webAdministration/guest/guest';
 import GuestUpdateAdmin from '../components/webAdministration/guest/guest-update'
 import HotelUpdateAdmin from '../components/webAdministration/hotel/hotel-update'
@@ -15,7 +18,6 @@ import HotelCreateAdmin from '../components/webAdministration/hotel/hotel-create
 import PlaceUpdateAdmin from '../components/webAdministration/place/place-update'
 import PlaceCreateAdmin from '../components/webAdministration/place/place-create'
 import PlaceDetailsAdmin from '../components/webAdministration/place/place-details'
-import FoodUpdateAdmin from '../components/webAdministration/food/food-update'
 
 
 import {
@@ -36,9 +38,11 @@ class Main extends Component {
                     <Route path="/hotel" component={HotelAdmin} />
                     <Route path="/place" component={PlaceAdmin} />
                     <Route path="/food" component={FoodAdmin} />
+                    <Route path="/food-create" component={FoodCreateAdmin} />
+                    <Route path="/food-update" component={FoodUpdateAdmin} />
                     <Route path="/guest" component={GuestAdmin} />
                     <Route path="/guest-update" component={GuestUpdateAdmin} />
-                    <Route path="/hotel-update" component={HotelUpdateAdmin} />
+                    <Route path="/hotel-update/:id" component={HotelUpdateAdmin} />
                     <Route path="/hotel-create" component={HotelCreateAdmin} />
                     <Route path="/place-update/:id" component={PlaceUpdateAdmin} />
                     <Route path="/place-details/:id" component={PlaceDetailsAdmin} />

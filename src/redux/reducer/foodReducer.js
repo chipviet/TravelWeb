@@ -7,6 +7,12 @@ const initialState = {
         status: null,
         error: null,
     },
+    getFood: {
+        requesting: false,
+        result: null,
+        status: null,
+        error: null,
+    },
     createFood: {
         requesting: false,
         result: null,
@@ -52,6 +58,35 @@ const FoodReducer = handleActions(
             ...state,
             getAllFood: {
                 ...state.getAllFood,
+                requesting: false,
+                status: 'error',
+                error: payload.error,
+            },
+        }),
+
+        GET_FOOD_REQUEST: state => ({
+            ...state,
+            getFood: {
+                ...state.getFood,
+                requesting: true,
+            },
+        }),
+
+        GET_FOOD_SUCCESS: (state, { payload }) =>
+            ({
+                ...state,
+                getFood: {
+                    ...state.getFood,
+                    result: payload,
+                    requesting: false,
+                    status: 'success',
+                },
+            }),
+
+        GET_FOOD_FAIL: (state, { payload }) => ({
+            ...state,
+            getFood: {
+                ...state.getFood,
                 requesting: false,
                 status: 'error',
                 error: payload.error,

@@ -14,7 +14,8 @@ const {
 export const getAllFood = () => async dispatch => {
   dispatch(getAllFoodRequest());
   try {
-    const data = await axios.get(`http://localhost:3500/Foods`)
+    const data = await axios.get(`https://travel-love.herokuapp.com/foods`)
+    console.log('food',data)
     dispatch(getAllFoodSuccess(data.data));
   } catch (error) {
     dispatch(getAllFoodFail(error));
@@ -27,14 +28,19 @@ const { createNewFoodRequest, createNewFoodSuccess, createNewFoodFail } = create
     CREATE_NEW_Food_FAIL: error => ({ error }),
 });
 
-export const createNewFood = (FoodID, Name, Country, URL_Image) => async dispatch => {
+export const createNewFood = (id, Name, Price, Star_Rating, Description, URL_Image) => async dispatch => {
   dispatch(createNewFoodRequest());
   try {
-    const data = await axios.post(`http://localhost:3500/Foods`, {
-        FoodID,
-        Name,
-        Country,
-        URL_Image
+    const Place = await axios.get(`https://travel-love.herokuapp.com/places/${id}`)
+    const PlaceID = id;
+    const data = await axios.post(`https://travel-love.herokuapp.com/foods`, {
+      Name,
+      PlaceID,
+      Place,
+      Price,
+      Star_Rating,
+      Description,
+      URL_Image
     });
     dispatch(createNewFoodSuccess(data));
     alert(data.data.message);
@@ -43,3 +49,19 @@ export const createNewFood = (FoodID, Name, Country, URL_Image) => async dispatc
   }
 };
 
+const { deleteFoodRequest, deleteFoodSuccess, deleteFoodFail } = createActions({
+  DELETE_FOOD_REQUEST: () => { },
+  DELETE_FOOD_SUCCESS: data => data,
+  DELETE_FOOD_FAIL: error => ({ error }),
+});
+
+export const deleteFood = (_id) => async dispatch => {
+  dispatch(deleteFoodRequest())
+  try {
+    console.log(_id);
+    const data = await axios.delete(`https://travel-love.herokuapp.com/foods/${_id}`);
+    dispatch(deleteFoodSuccess(data));
+  } catch (error) {
+    dispatch(deleteFoodFail(error));
+  }
+};

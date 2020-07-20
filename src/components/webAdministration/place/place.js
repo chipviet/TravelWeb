@@ -20,7 +20,6 @@ export class PlaceAdmin extends Component {
   delete = (id) => {
     console.log("id",id)
     this.props.deletePlace(id);
-    window.location.reload();
   }
 
   render() {
