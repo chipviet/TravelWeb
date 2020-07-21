@@ -1,0 +1,84 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #a9a9a5;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-name {
+    padding: 25px 0 0 0;
+    color: #F0BC71;
+    font-size: 15px;
+}
+
+.tab-page {
+    flex: 1;
+    display: flex;
+    color: #7C7C7C;
+    font-size: 20px;
+    justify-content: flex-end;
+}
+
+.tab-ele {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.ele {
+    padding: 5px 10px;
+    margin: 15px 30px;
+    opacity: 0.8;
+}
+
+.ele-man {
+    padding: 5px 10px;
+    margin: 15px 30px;
+}
+
+.login {
+    background-color: #F0BC71;
+    color: white;
+    border-radius: 3px;
+}
+
+.login:hover {
+    opacity: 0.7;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.drop-item:hover {
+    background-color: #e0e0e0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

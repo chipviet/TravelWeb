@@ -1,0 +1,36 @@
+.item {
+    width: 200px;
+}
+
+.checked {
+    color: orange;
+}
+
+
+.place-name {
+    text-align: center;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.place-name p {
+    margin: 0;
+}
+
+.place-rating-price {
+    display: flex;
+    flex-direction: row;
+}
+
+.plate-rating {
+    flex: 1
+}
+
+.place-price {
+    color: blue;
+    margin-left: 70px;
+}
+
+.place-description {
+    text-align: left;
+}
