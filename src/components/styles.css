@@ -1,6 +1,6 @@
 /* HomeCss */
 .body {
-  font-family: "Work Sans";
+  font-family: "OpenSans";
   display: flex;
   flex-direction: column;
 }
@@ -132,8 +132,11 @@
   position: absolute;
   width: 50%;
   color: white;
-  top: 1%;
-  left: 5%;
+  top: 20%;
+  left: 15%;
+  animation-name: display;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
 }
 
 .info {

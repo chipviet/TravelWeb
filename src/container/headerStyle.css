@@ -36,13 +36,13 @@ li {
 
 .ele {
     padding: 5px 10px;
-    margin: 15px 30px;
+    margin: 15px 15px;
     opacity: 0.8;
 }
 
 .ele-man {
     padding: 5px 10px;
-    margin: 15px 30px;
+    margin: 15px 15px;
 }
 
 .login {
@@ -83,6 +83,5 @@ li {
 }
 
 .active:hover {
-    color: #F0BC71;
     background-color: #e0e0e0
 }

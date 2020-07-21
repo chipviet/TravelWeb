@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { getNameUserSelector } from '../../selectors/user'
 import LazyLoad from 'react-lazyload'
 import GridList from '@material-ui/core/GridList';
-import tv from '../../assets/tv.jpg'
 import abo from '../../assets/abo.jpg'
 import thanhhuy from '../../assets/thanhhuy.jpg'
 import chipviet from '../../assets/chipviet.jpg'
@@ -52,7 +51,7 @@ class Home extends Component {
                         <div className="title-staff">
                             <p style={{ fontSize: 40, fontWeight: 'bold' }}> Meet our great staffs</p>
                         </div>
-                        <GridList style={{ padding: "30px" }} cellHeight={500} cols={3}>
+                        <GridList cellHeight={500} cols={3}>
                             <div className="staff-list">
                                 <img src={abo} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
