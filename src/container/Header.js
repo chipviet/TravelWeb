@@ -15,11 +15,11 @@ class Header extends Component {
             login: [{
                 isLoggedIn: localStorage.getItem('loggedIn1'),
             }]
-
         }
     }
     render() {
         var { role, isLoggedIn } = this.props;
+        console.log("role: ", role)
         return (
             <div className="header">
                 <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">
@@ -37,19 +37,19 @@ class Header extends Component {
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">Home</Link>
                         </li>
-                        {!role && (<li className="ele active" >
+                        {(<li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/about">About</Link>
                         </li>)}
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/trips">Trips</Link>
                         </li>
-                        {!role && (<li className="ele active" >
+                        {(<li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/contact">Contact</Link>
                         </li>)}
-                        {!role && <li className="ele active">
+                        {<li className="ele active">
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
                         </li>}
-                        {role && (<div className="dropdown ele-man active">
+                        {(<div className="dropdown ele-man active">
                             <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
                             <div className="dropdown-content">
                                 <div className="drop-item">
@@ -87,7 +87,6 @@ class Header extends Component {
 export default connect(
     state => ({
         role: getRoleUserSelector(state),
-        status: getStatusUserSelector(state),
     }),
     dispatch =>
         bindActionCreators(
