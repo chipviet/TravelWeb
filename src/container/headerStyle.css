@@ -82,3 +82,8 @@ li {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.active:hover {
+    color: #F0BC71;
+    background-color: #e0e0e0
+}

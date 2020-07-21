@@ -52,7 +52,6 @@ class Trips extends Component {
                                     </div>
                                     <div className="place-description">
                                         <p>{item.Description}</p>
-
                                     </div>
                                 </div>
                             </Link>
@@ -68,7 +67,6 @@ class Trips extends Component {
                                     </div>
                                     <div className="place-description">
                                         <p>{item.Description}</p>
-                                        <p>{item._id}</p>
                                     </div>
                                 </div>
                             </Link>
