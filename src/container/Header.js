@@ -37,9 +37,6 @@ class Header extends Component {
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">Home</Link>
                         </li>
-                        {(<li className="ele active" >
-                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/about">About</Link>
-                        </li>)}
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/trips">Trips</Link>
                         </li>

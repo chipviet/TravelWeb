@@ -1,107 +1,195 @@
 /* HomeCss */
+.body {
+  font-family: "Work Sans";
+  display: flex;
+  flex-direction: column;
+}
+
 .slide-container {
-    height: 600px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-position: center;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-position: center;
+  flex: 1;
+  letter-spacing: none;
 }
-
 .description {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 50%;
-    font-size: 20px;
-    color: white;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 50%;
+  font-size: 20px;
+  color: white;
+}
+.aboutDescription {
+  position: absolute;
+  width: 30%;
+  font-size: 20px;
+  color: white;
+  top: 15%;
+  left: 15%;
+  animation-name: display;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  text-align: left;
+}
+.button-view {
+  position: absolute;
+  width: 10%;
+  font-size: 20px;
+  color: white;
+  bottom: 35%;
+  left: 15%;
+  animation-name: display;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  text-align: left;
+}
+.view-button {
+  border-radius: 10px;
 }
 
-/* AboutCss */
-.aboutDescription {
-    position: absolute;
-    width: 50%;
-    font-size: 20px;
-    color: white;
-    top: 25%;
-    left: 25%;
+@keyframes display {
+  0% {
+    left: -25%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 15%;
+    opacity: 1;
+  }
 }
 
 .about {
-    text-align: center;
+  text-align: center;
+}
+
+.about-staff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin: 80px;
+  left: -5%;
+  animation-name: display1;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframe display1 {
+  0% {
+    left: -5%;
+    opacity: 0.1;
+  }
+
+  100% {
+    left: 0%;
+    opacity: 1;
+  }
+}
+
+.title-staff {
+  text-align: center;
+}
+
+.staff-list {
+  text-align: center;
+  padding: 30px !important;
+}
+
+.staff-description {
+  text-align: left;
+}
+
+.image {
+  width: 250px;
+  height: 250px;
+  border-radius: 200px;
+}
+
+.staff-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
 /* ContactCss */
 
 .contactDescription {
-    position: absolute;
-    width: 50%;
-    color: white;
-    top: 1%;
-    left: 5%;
+  position: absolute;
+  width: 50%;
+  color: white;
+  top: 1%;
+  left: 5%;
 }
 
 .info {
-    margin: 0px 35px;
-    font-family: Times New Roman;
-    white-space: 2px;
-    font-size: 20px;
+  margin: 0px 35px;
+  font-family: Times New Roman;
+  white-space: 2px;
+  font-size: 20px;
 }
 
 .name {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
 }
 
 .contact-form {
-    font-family: Sitka Heading;
-    font-size: 24px;
+  font-family: Sitka Heading;
+  font-size: 24px;
 }
 
 .inputName {
-    flex: 1;
-    margin: 20px;
+  flex: 1;
+  margin: 20px;
 }
 
 ::placeholder {
-    color: #c9c9c8;
+  color: #c9c9c8;
 }
 
 input {
-    background-color: transparent;
-    border: 1px solid #b5b5b4;
-    height: 50px;
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #c9c9c8;
-    outline: none;
-    font-family: Sitka Heading;
+  background-color: transparent;
+  border: 1px solid #b5b5b4;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #c9c9c8;
+  outline: none;
+  font-family: Sitka Heading;
 }
 
 .email {
-    margin: 0 20px;
-    width: 94%;
+  margin: 0 20px;
+  width: 94%;
 }
 
 .message {
-    background-color: transparent;
-    border: 1px solid #b5b5b4;
-    height: 150px;
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #c9c9c8;
-    outline: none;
-    margin: 20px;
-    width: 94%;
-    font-family: Sitka Heading;
+  background-color: transparent;
+  border: 1px solid #b5b5b4;
+  height: 150px;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #c9c9c8;
+  outline: none;
+  margin: 20px;
+  width: 94%;
+  font-family: Sitka Heading;
 }
 
 .submit {
-    background-color: #F0BC71;
-    margin: 0 20px;
-    padding: 15px 35px;
-    font-family: Sitka Heading;
-    color: white;
-    font-size: 20px;
-    border: none;
-    width: 30%;
+  background-color: #f0bc71;
+  margin: 0 20px;
+  padding: 15px 35px;
+  font-family: Sitka Heading;
+  color: white;
+  font-size: 20px;
+  border: none;
+  width: 30%;
 }

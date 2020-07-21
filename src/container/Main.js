@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Home from "../components/home/Home"
-import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
 import Trips from '../components/trips/Trips';
 import Details from '../components/trips/details/Details'
@@ -32,7 +31,6 @@ class Main extends Component {
             <div style={{ position: 'relative' }}>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/about" component={About} />
                     <Route path="/trips" component={Trips} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/login" component={Login} />

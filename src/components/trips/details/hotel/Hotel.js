@@ -9,7 +9,7 @@ export default function Hotel(props) {
                 data ? (data.map((item, index) =>
                     <div className="item" key={index}>
                         <div className="place-image">
-                            <img src={item.URL_Image} alt='' width="200px" height="250px"></img>
+                            <img src={item.URL_Image} alt='' width="250px" height="250px"></img>
                         </div>
                         <div className="place-name">
                             <p><b>{item.Name}</b></p>
