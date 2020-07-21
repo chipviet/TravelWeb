@@ -6,7 +6,6 @@
 }
 
 .slide-container {
-  height: 300px;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -14,6 +13,7 @@
   flex: 1;
   letter-spacing: none;
 }
+
 .description {
   position: absolute;
   top: 10%;
@@ -22,6 +22,7 @@
   font-size: 20px;
   color: white;
 }
+
 .aboutDescription {
   position: absolute;
   width: 30%;
@@ -34,6 +35,7 @@
   animation-timing-function: ease-out;
   text-align: left;
 }
+
 .button-view {
   position: absolute;
   width: 10%;
@@ -45,7 +47,10 @@
   animation-duration: 1s;
   animation-timing-function: ease-out;
   text-align: left;
+  border-radius: 10px;
+  outline: none;
 }
+
 .view-button {
   border-radius: 10px;
 }
@@ -72,20 +77,20 @@
   align-items: center;
   flex: 1;
   margin: 80px;
-  left: -5%;
   animation-name: display1;
   animation-duration: 3s;
   animation-timing-function: ease-out;
 }
 
-@keyframe display1 {
+
+@keyframes display1 {
   0% {
-    left: -5%;
+    margin-left: -200px;
     opacity: 0.1;
   }
 
   100% {
-    left: 0%;
+    margin-left: 80px;
     opacity: 1;
   }
 }

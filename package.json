@@ -36,12 +36,7 @@
     "react-redux": "^7.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-<<<<<<< HEAD
-    "react-scripts": "3.4.1",
-    "react-slideshow-image": "^2.0.2",
-=======
     "react-scripts": "^3.4.1",
->>>>>>> 7382ac8a2db51faea2a6c4d633b29925c8bc934c
     "reactstrap": "^8.4.1",
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",

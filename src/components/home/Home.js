@@ -35,7 +35,11 @@ class Home extends Component {
                             <p style={{ textShadow: '2px 2px black' }}>Way To California is no doubt a thriving online travel supplier, dedicated to providing the finest online purchasing experience for all your travel needs.</p>
                         </div>
                     </div>
-                    <div className="button-view" onClick={() => this.myRef.current.scrollTo(0, this.myRef.offsetTop)}>
+                    <div className="button-view" onClick={() =>
+                        this.myRef.current.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start',
+                        })} >
                         <button className="view-button">View more</button>
                     </div>
                 </div>
