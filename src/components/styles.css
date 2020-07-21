@@ -48,11 +48,15 @@
   animation-timing-function: ease-out;
   text-align: left;
   border-radius: 10px;
-  outline: none;
 }
 
 .view-button {
   border-radius: 10px;
+}
+
+.view-button:focus {
+  outline: none;
+  border: none
 }
 
 @keyframes display {
