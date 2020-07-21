@@ -14,6 +14,7 @@ import FoodDetailsAdmin from '../components/webAdministration/food/food-details'
 import GuestAdmin from '../components/webAdministration/guest/guest';
 import GuestUpdateAdmin from '../components/webAdministration/guest/guest-update'
 import HotelUpdateAdmin from '../components/webAdministration/hotel/hotel-update'
+import HotelDetailsAdmin from '../components/webAdministration/hotel/hotel-details'
 import HotelCreateAdmin from '../components/webAdministration/hotel/hotel-create'
 import PlaceUpdateAdmin from '../components/webAdministration/place/place-update'
 import PlaceCreateAdmin from '../components/webAdministration/place/place-create'
@@ -39,15 +40,16 @@ class Main extends Component {
                     <Route path="/place" component={PlaceAdmin} />
                     <Route path="/food" component={FoodAdmin} />
                     <Route path="/food-create" component={FoodCreateAdmin} />
-                    <Route path="/food-update" component={FoodUpdateAdmin} />
+                    <Route path="/food-update/:id" component={FoodUpdateAdmin} />
+                    <Route path="/food-details/:id" component={FoodDetailsAdmin} />
                     <Route path="/guest" component={GuestAdmin} />
                     <Route path="/guest-update" component={GuestUpdateAdmin} />
                     <Route path="/hotel-update/:id" component={HotelUpdateAdmin} />
+                    <Route path="/hotel-details/:id" component={HotelDetailsAdmin} />
                     <Route path="/hotel-create" component={HotelCreateAdmin} />
                     <Route path="/place-update/:id" component={PlaceUpdateAdmin} />
                     <Route path="/place-details/:id" component={PlaceDetailsAdmin} />
                     <Route path="/place-create" component={PlaceCreateAdmin} />
-                    <Route path="/food-update" component={FoodUpdateAdmin} />
                     <Route path="/details/:id" component={Details} />
                 </Switch>
             </div>

@@ -107,7 +107,7 @@ export class PlaceUpdateAdmin extends Component {
                 }}  />
               </AvGroup>
 
-              <Button tag={Link} id="cancel-save" to="/guest" replace color="info">
+              <Button tag={Link} id="cancel-save" to="/place" replace color="info">
                 &nbsp;
                 <span className="d-none d-md-inline">
                 Back

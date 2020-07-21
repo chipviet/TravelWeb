@@ -15,6 +15,11 @@ export class HotelAdmin extends Component {
     this.props.getAllHotel();
   }
 
+  // UNSAFE_componentWillReceiveProps(nextProps) {
+  //   if(this.props.getAllHotel() !== nextProps.getAllHotel)
+  //   this.setState(nextProps)
+  // }
+
   delete = (id) => {
     console.log("id", id)
     this.props.deleteHotel(id);
@@ -28,7 +33,6 @@ export class HotelAdmin extends Component {
         <h2 id="ccp-user-heading"  >
           <div className="headerNavigation">
             <h3 className="text-capitalize ">Hotel </h3>
-            <FontAwesomeIcon icon="plus" />
             <Link to="/hotel-create" className="btn btn-primary button">Create new hotel</Link>
           </div>
 
@@ -67,7 +71,7 @@ export class HotelAdmin extends Component {
                 {data.map((item, i) => (
                   <tr >
                     <td>{item.Name}</td>
-                    <td>{item.Place.data.Name}</td>
+                    {item.Place ? ( <td>{item.Place.data.Name}</td>) : (null)}
                     <td>{item.Star}</td>
                     <td>{item.Price}</td>
                     <td>{item.Star_Rating}</td>
@@ -76,7 +80,7 @@ export class HotelAdmin extends Component {
 
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
-                        <Button tag={Link} to={''} color="info" size="sm">
+                        <Button tag={Link} to={`/hotel-details/${item._id}`} color="info" size="sm">
                           <span className="d-none d-md-inline">
                             View
                         </span>

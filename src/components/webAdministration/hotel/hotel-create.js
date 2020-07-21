@@ -135,14 +135,14 @@ export class HotelCreateAdmin extends Component {
                 }} />
               </AvGroup>
 
-              <Button tag={Link} id="cancel-save" to="/guest" replace color="info">
+              <Button tag={Link} id="cancel-save" to="/hotel" replace color="info">
                 &nbsp;
                 <span className="d-none d-md-inline">
                 Back
                 </span>
               </Button>
               &nbsp;
-              <Button tag={Link} color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
+              <Button tag={Link} to = "/hotel" color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
                 &nbsp;
                Save
               </Button>

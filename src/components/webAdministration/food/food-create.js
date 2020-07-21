@@ -62,10 +62,10 @@ export class FoodCreateAdmin extends Component {
                 }}  />
               </AvGroup>
               <AvField type="select" name="select" label="Place" onChange={e => {
-                  this.setState({
-                    placeId: e.target.value
-                  })
-                }}  >
+                this.setState({
+                  placeId: e.target.value
+                })
+                }}>
                 <option value='0'> </option>
                 {data
                       ? data.map(item => (
@@ -127,7 +127,7 @@ export class FoodCreateAdmin extends Component {
                 </span>
               </Button>
               &nbsp;
-              <Button tag={Link} color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
+              <Button tag={Link} to="/food" color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
                 &nbsp;
                Save
               </Button>
