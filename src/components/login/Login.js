@@ -18,13 +18,15 @@ class Login extends Component {
         }
     }
     handleLogin = () => {
-        if (this.props.login(this.state.username, this.state.password)) {
+        this.props.login(this.state.username, this.state.password)
+        if (this.props.data) {
             this.setState({ loggedIn: true });
-            localStorage.setItem('loggedIn1', this.state.loggedIn);
+            localStorage.setItem('loggedIn', this.state.loggedIn);
             console.log("state: ", this.state.loggedIn)
         }
         else {
-            console.log("sai");
+            this.setState({ loggedIn: false });
+            localStorage.setItem('loggedIn', this.state.loggedIn);
         }
 
     }

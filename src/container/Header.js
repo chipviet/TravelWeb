@@ -37,19 +37,19 @@ class Header extends Component {
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">Home</Link>
                         </li>
-                        {isLoggedIn && !role && (<li className="ele active" >
+                        {!role && (<li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/about">About</Link>
                         </li>)}
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/trips">Trips</Link>
                         </li>
-                        {isLoggedIn && !role && (<li className="ele active" >
+                        {!role && (<li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/contact">Contact</Link>
                         </li>)}
-                        {isLoggedIn && !role && <li className="ele active">
+                        {!role && <li className="ele active">
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
                         </li>}
-                        {isLoggedIn && role && (<div className="dropdown ele-man active">
+                        {role && (<div className="dropdown ele-man active">
                             <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
                             <div className="dropdown-content">
                                 <div className="drop-item">
@@ -72,11 +72,11 @@ class Header extends Component {
                             : (<li className="ele login">
                                 <Link style={{ textDecoration: 'none', color: 'white' }} to="/login">Login</Link>
                             </li>)}
-                        <li className="ele active" onClick={() => {
+                        {isLoggedIn && <li className="ele active" onClick={() => {
                             console.log('unmount')
                         }}>
                             Log out
-                        </li>
+                        </li>}
                     </ul>
                 </div>
                 {this.state.isClicked && <Login toggle={this.loginOn} handle={this.handleLoggedIn} />}
