@@ -15,12 +15,8 @@ class Header extends Component {
             login: [{
                 isLoggedIn: localStorage.getItem('loggedIn1'),
             }]
-        }
-        this.logOut = this.logOut.bind(this);
-    }
 
-    logOut = () => {
-        this.setState({ isLoggedIn: false })
+        }
     }
     render() {
         var { role, isLoggedIn } = this.props;
@@ -41,19 +37,19 @@ class Header extends Component {
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">Home</Link>
                         </li>
-                        {isLoggedIn && (<li className="ele active" >
+                        {isLoggedIn && !role && (<li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/about">About</Link>
                         </li>)}
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/trips">Trips</Link>
                         </li>
-                        {isLoggedIn && (<li className="ele active" >
+                        {isLoggedIn && !role && (<li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/contact">Contact</Link>
                         </li>)}
-                        {isLoggedIn && <li className="ele active">
+                        {isLoggedIn && !role && <li className="ele active">
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
                         </li>}
-                        {isLoggedIn && (<div className="dropdown ele-man active">
+                        {isLoggedIn && role && (<div className="dropdown ele-man active">
                             <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
                             <div className="dropdown-content">
                                 <div className="drop-item">
@@ -76,7 +72,9 @@ class Header extends Component {
                             : (<li className="ele login">
                                 <Link style={{ textDecoration: 'none', color: 'white' }} to="/login">Login</Link>
                             </li>)}
-                        <li className="ele active" onClick={this.logOut}>
+                        <li className="ele active" onClick={() => {
+                            console.log('unmount')
+                        }}>
                             Log out
                         </li>
                     </ul>
