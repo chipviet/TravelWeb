@@ -4,11 +4,10 @@
 }
 
 .loginForm {
-  margin: 0 35%;
+  margin: 0 30%;
   background-color: white;
   border-radius: 5px;
   padding: 20px;
-  border: 1px solid black;
 }
 
 .overlay {

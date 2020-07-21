@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import './headerStyle.css';
 import Login from '../components/login/Login'
 import Logo from '../assets/logo.png'
@@ -13,27 +13,17 @@ class Header extends Component {
         super(props);
         this.state = {
             login: [{
-                isClicked: false,
-                isLoggedIn: false,
-                status: false,
+                isLoggedIn: localStorage.getItem('loggedIn1'),
             }]
-
         }
-        this.loginOn = this.loginOn.bind(this);
+        this.logOut = this.logOut.bind(this);
     }
-    loginOn = () => {
-        this.setState({
-            ...this.state,
-            isClicked: !this.state.isClicked
-        });
-    };
-    componentDidMount() {
-        this.setState({
-            status: this.props.status
-        })
+
+    logOut = () => {
+        this.setState({ isLoggedIn: false })
     }
     render() {
-        var { role, status } = this.props;
+        var { role, isLoggedIn } = this.props;
         return (
             <div className="header">
                 <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">
@@ -48,22 +38,22 @@ class Header extends Component {
                 </Link>
                 <div className="tab-page">
                     <ul className="tab-ele">
-                        <li className="ele" >
+                        <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">Home</Link>
                         </li>
-                        {!role && (<li className="ele" >
+                        {isLoggedIn && (<li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/about">About</Link>
                         </li>)}
-                        <li className="ele" >
+                        <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/trips">Trips</Link>
                         </li>
-                        {!role && (<li className="ele" >
+                        {isLoggedIn && (<li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/contact">Contact</Link>
                         </li>)}
-                        <li className="ele">
+                        {isLoggedIn && <li className="ele active">
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
-                        </li>
-                        {role && (<div className="dropdown ele-man">
+                        </li>}
+                        {isLoggedIn && (<div className="dropdown ele-man active">
                             <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
                             <div className="dropdown-content">
                                 <div className="drop-item">
@@ -81,14 +71,14 @@ class Header extends Component {
                             </div>
                         </div>)}
 
-                        {!status && (<li className="ele login" onClick={this.loginOn}>
-                            Login
-                        </li>)}
-                        {status && <li className="ele" onClick={() => {
-                            console.log('unmount')
-                        }}>
+                        {isLoggedIn
+                            ? <Redirect to='/' />
+                            : (<li className="ele login">
+                                <Link style={{ textDecoration: 'none', color: 'white' }} to="/login">Login</Link>
+                            </li>)}
+                        <li className="ele active" onClick={this.logOut}>
                             Log out
-                        </li>}
+                        </li>
                     </ul>
                 </div>
                 {this.state.isClicked && <Login toggle={this.loginOn} handle={this.handleLoggedIn} />}

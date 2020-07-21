@@ -4,6 +4,7 @@ import About from '../components/about/About';
 import Contact from '../components/contact/Contact';
 import Trips from '../components/trips/Trips';
 import Details from '../components/trips/details/Details'
+import Login from '../components/login/Login'
 import Register from '../components/register/Register';
 import HotelAdmin from '../components/webAdministration/hotel/hotel';
 import PlaceAdmin from '../components/webAdministration/place/place';
@@ -34,6 +35,7 @@ class Main extends Component {
                     <Route path="/about" component={About} />
                     <Route path="/trips" component={Trips} />
                     <Route path="/contact" component={Contact} />
+                    <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
                     <Route path="/hotel" component={HotelAdmin} />
                     <Route path="/place" component={PlaceAdmin} />
