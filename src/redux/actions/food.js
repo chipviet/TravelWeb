@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { createActions } from 'redux-actions';
 
+
+
 const {
   getAllFoodRequest,
   getAllFoodSuccess,
@@ -34,13 +36,13 @@ const {
 export const getFood = (_id) => async dispatch => {
   dispatch(getFoodRequest());
   try {
-    const data = await axios.get(`https://travel-love.herokuapp.com/foods/${_id}`)
-    console.log('get food', data);
+    const data = await axios.get(`https://travel-love.herokuapp.com/foods/id/${_id}`)
     dispatch(getFoodSuccess(data.data));
   } catch (error) {
     dispatch(getFoodFail(error));
   }
 };
+
 
 const { createNewFoodRequest, createNewFoodSuccess, createNewFoodFail } = createActions({
     CREATE_NEW_Food_REQUEST: () => { },

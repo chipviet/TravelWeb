@@ -27,7 +27,6 @@ export class FoodAdmin extends Component {
 
   render() {
     const { data } = this.props;
-    console.log(data)
     return (
       <div>
         <h2 id="ccp-user-heading"  >
@@ -75,7 +74,7 @@ export class FoodAdmin extends Component {
 
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
-                        <Button tag={Link} to={''} color="info" size="sm">
+                        <Button tag={Link} to={`/food-details/${item._id}`} color="info" size="sm">
                           <span className="d-none d-md-inline">
                               View
                           </span>

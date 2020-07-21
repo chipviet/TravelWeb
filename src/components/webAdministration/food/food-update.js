@@ -26,8 +26,8 @@ export class FoodUpdateAdmin extends Component {
       }  
 
   componentDidMount(){
-    this.props.getAllPlace()
     this.props.getFood(this.props.match.params.id)
+    this.props.getAllPlace()
   }
   
   saveEntity = () => {
@@ -75,7 +75,6 @@ export class FoodUpdateAdmin extends Component {
                     name: e.target.value,
                     placeId: food.PlaceID,
                     price: food.Price,
-                    star: food.Star,
                     rating: food.Star_Rating,
                     description: food.Description,
                     url_Image: food.URL_Image
@@ -88,13 +87,12 @@ export class FoodUpdateAdmin extends Component {
                   name: food.Name,
                   placeId: e.target.value,
                   price: food.Price,
-                  star: food.Star,
                   rating: food.Star_Rating,
                   description: food.Description,
                   url_Image: food.URL_Image
                   })
                 }}  >
-                {/* <option value= {food.PlaceID}> {food.Place.data.Name} </option> */}
+                {food.Place ? (<option value= {food.PlaceID}> {food.Place.data.Name} </option>): (null)}
                 {data
                   ? data.map(item => (
                       <option value={item._id}>
@@ -113,7 +111,6 @@ export class FoodUpdateAdmin extends Component {
                     name: food.Name,
                     placeId: food.PlaceID,
                     price: e.target.value,
-                    star: food.Star,
                     rating: food.Star_Rating,
                     description: food.Description,
                     url_Image: food.URL_Image
@@ -126,7 +123,6 @@ export class FoodUpdateAdmin extends Component {
                     name: food.Name,
                     placeId: food.PlaceID,
                     price: food.Price,
-                    star: food.Star,
                     rating: e.target.value,
                     description: food.Description,
                     url_Image: food.URL_Image
@@ -150,7 +146,6 @@ export class FoodUpdateAdmin extends Component {
                     name: food.Name,
                     placeId: food.PlaceID,
                     price: food.Price,
-                    star: food.Star,
                     rating: food.Star_Rating,
                     description: e.target.value,
                     url_Image: food.URL_Image
@@ -168,7 +163,6 @@ export class FoodUpdateAdmin extends Component {
                     name: food.Name,
                     placeId: food.PlaceID,
                     price: food.Price,
-                    star: food.Star,
                     rating: food.Star_Rating,
                     description: food.Description,
                     url_Image: e.target.value
@@ -176,7 +170,7 @@ export class FoodUpdateAdmin extends Component {
                 }} />
               </AvGroup>
 
-              <Button tag={Link} id="cancel-save" to="/guest" replace color="info">
+              <Button tag={Link} id="cancel-save" to="/food" replace color="info">
            
                 &nbsp;
                 <span className="d-none d-md-inline">
@@ -184,7 +178,7 @@ export class FoodUpdateAdmin extends Component {
                 </span>
               </Button>
               &nbsp;
-              <Button tag={Link} color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
+              <Button tag={Link} to='/food' color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
                 &nbsp;
                Save
               </Button>
