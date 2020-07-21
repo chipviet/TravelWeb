@@ -15,6 +15,11 @@ export class FoodAdmin extends Component {
     this.props.getAllFood();
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if(this.props.getAllFood() !== nextProps.getAllFood)
+    this.setState(nextProps)
+  }
+
   delete = (id) => {
     console.log("id", id)
     this.props.deleteFood(id);
@@ -28,7 +33,6 @@ export class FoodAdmin extends Component {
         <h2 id="ccp-user-heading"  >
           <div className="headerNavigation">
             <h3 className="text-capitalize ">Food </h3>
-            <FontAwesomeIcon icon="plus" />
             <Link to="/food-create" className="btn btn-primary button">Create new food</Link>
           </div>
 
@@ -73,18 +77,18 @@ export class FoodAdmin extends Component {
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={''} color="info" size="sm">
                           <span className="d-none d-md-inline">
-                            View
-                        </span>
+                              View
+                          </span>
                         </Button>
                         <Button tag={Link} to={`/food-update/${item._id}`} color="primary" size="sm">
                           <span className="d-none d-md-inline">
                             Edit
-                        </span>
+                          </span>
                         </Button>
                         <Button tag={Link} to={'/food'} color="danger" size="sm" onClick={() => this.delete(item._id)}>
                           <span className="d-none d-md-inline">
                             Delete
-                        </span>
+                          </span>
                         </Button>
                       </div>
                     </td>
@@ -93,7 +97,6 @@ export class FoodAdmin extends Component {
               </tbody>
             </Table>
           ) : (null)}
-
         </div>
       </div>
     );

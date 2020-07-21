@@ -12,6 +12,7 @@ export const getHotelSelector = (state) => {
   const data = state.hotel.getHotel
   console.log('state Hotel',data)
   if (data && data.result) {
+    console.log('data',data.result.data)
     return data.result.data
   }
   return null

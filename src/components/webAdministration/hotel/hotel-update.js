@@ -15,6 +15,7 @@ export class HotelUpdateAdmin extends Component {
     constructor(props) {
         super(props);
         this.state = {
+          _id: '',
           name: '',
           placeId: '',
           star: 0,
@@ -26,11 +27,21 @@ export class HotelUpdateAdmin extends Component {
       }  
 
   componentDidMount(){
+    this.props.getAllPlace()
     this.props.getHotel(this.props.match.params.id)
   }
   
   saveEntity = () => {
+    console.log("data Update", this.state.name,
+    this.state.placeId, 
+    this.state.star, 
+    this.state.price,
+    this.state.rating,
+    this.state.description,
+    this.state.url_Image)
+
     this.props.updateHotel(
+        this.state._id,
         this.state.name,
         this.state.placeId, 
         this.state.star, 
@@ -42,6 +53,8 @@ export class HotelUpdateAdmin extends Component {
   }
   render() {
     const {data, hotel} = this.props;
+    console.log('place',data);
+    console.log(hotel)
     return (
       <div>
       <Row className="justify-content-center update-label">
@@ -52,24 +65,39 @@ export class HotelUpdateAdmin extends Component {
         </Col>
       </Row>
       <Row className="justify-content-center">
+      {hotel ? (
         <Col md="8">
             <AvForm >
               <AvGroup>
                 <Label id="nameLabel">
                  Name
                 </Label>
-                <AvInput id="card-type-name" type="string" name="placeId" onChange={e => {
+                <AvInput id="card-type-name" type="string" name="placeId"  value = {hotel.Name} onChange={e => {
                   this.setState({
-                    name: e.target.value
+                    _id: hotel._id,
+                    name: e.target.value,
+                    placeId: hotel.PlaceID,
+                    price: hotel.Price,
+                    star: hotel.Star,
+                    rating: hotel.Star_Rating,
+                    description: hotel.Description,
+                    url_Image: hotel.URL_Image
                   })
                 }}  />
               </AvGroup>
               <AvField type="select" name="select" label="Place" onChange={e => {
                 this.setState({
-                    placeId: e.target.value
+                  _id: hotel._id,
+                  name: hotel.Name,
+                  placeId: e.target.value,
+                  price: hotel.Price,
+                  star: hotel.Star,
+                  rating: hotel.Star_Rating,
+                  description: hotel.Description,
+                  url_Image: hotel.URL_Image
                   })
                 }}  >
-                <option value='0'> </option>
+                <option value= {hotel.PlaceID}> {hotel.Place.data.Name} </option>
                 {data
                   ? data.map(item => (
                       <option value={item._id}>
@@ -80,10 +108,17 @@ export class HotelUpdateAdmin extends Component {
               </AvField>
               <AvField type="select" name="select" label="Star" onChange={e => {
                   this.setState({
-                    star: e.target.value
+                    _id: hotel._id,
+                    name: hotel.Name,
+                    placeId: hotel.PlaceID,
+                    price: hotel.Price,
+                    star: e.target.value,
+                    rating: hotel.Star_Rating,
+                    description: hotel.Description,
+                    url_Image: hotel.URL_Image
                   })
                 }} >
-                <option value='0'> </option>
+                <option value={hotel.Star}>{hotel.Star}</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
@@ -94,18 +129,32 @@ export class HotelUpdateAdmin extends Component {
                 <Label id="nameLabel">
                  Price
                 </Label>
-                <AvInput id="card-type-name" type="string" name="placeId" onChange={e => {
+                <AvInput id="card-type-name" type="string" name="placeId" value ={hotel.Price} onChange={e => {
                   this.setState({
-                    price: e.target.value
+                    _id: hotel._id,
+                    name: hotel.Name,
+                    placeId: hotel.PlaceID,
+                    price: e.target.value,
+                    star: hotel.Star,
+                    rating: hotel.Star_Rating,
+                    description: hotel.Description,
+                    url_Image: hotel.URL_Image
                   })
                 }}  />
               </AvGroup>
               <AvField type="select" name="select" label="Star Rating"  onChange={e => {
                   this.setState({
-                    rating: e.target.value
+                    _id: hotel._id,
+                    name: hotel.Name,
+                    placeId: hotel.PlaceID,
+                    price: hotel.Price,
+                    star: hotel.Star,
+                    rating: e.target.value,
+                    description: hotel.Description,
+                    url_Image: hotel.URL_Image
                   })
                 }}>
-                <option value='0'> </option>    
+                <option value={hotel.Star_Rating}> {hotel.Star_Rating} </option>    
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
@@ -117,9 +166,16 @@ export class HotelUpdateAdmin extends Component {
                 <Label id="nameLabel">
                  Description
                 </Label>
-                <AvInput id="card-type-name" type="string" name="placeId" onChange={e => {
+                <AvInput id="card-type-name" type="string" name="placeId" value = {hotel.Description} onChange={e => {
                   this.setState({
-                    description: e.target.value
+                    _id: hotel._id,
+                    name: hotel.Name,
+                    placeId: hotel.PlaceID,
+                    price: hotel.Price,
+                    star: hotel.Star,
+                    rating: hotel.Star_Rating,
+                    description: e.target.value,
+                    url_Image: hotel.URL_Image
                   })
                 }} />
               </AvGroup>
@@ -128,8 +184,15 @@ export class HotelUpdateAdmin extends Component {
                 <Label id="nameLabel">
                  Image
                 </Label>
-                <AvInput id="card-type-name" type="string" name="placeId" onChange={e => {
+                <AvInput id="card-type-name" type="string" name="placeId" value ={hotel.URL_Image} onChange={e => {
                   this.setState({
+                    _id: hotel._id,
+                    name: hotel.Name,
+                    placeId: hotel.PlaceID,
+                    price: hotel.Price,
+                    star: hotel.Star,
+                    rating: hotel.Star_Rating,
+                    description: hotel.Description,
                     url_Image: e.target.value
                   })
                 }} />
@@ -149,6 +212,7 @@ export class HotelUpdateAdmin extends Component {
               </Button>
             </AvForm>
         </Col>
+        ):(null)}
       </Row>
     </div>
     );

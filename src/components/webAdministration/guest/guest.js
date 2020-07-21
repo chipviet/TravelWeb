@@ -11,9 +11,7 @@ export class GuestAdmin extends Component {
       <div>
         <h2 id="ccp-user-heading"  >
         <div className = "headerNavigation">
-            <h3 className="text-capitalize ">Guest </h3>
-              <FontAwesomeIcon icon="plus" />
-          
+            <h3 className="text-capitalize ">Guest </h3>    
             <Link to="/guest-update" className="button btn btn-primary">Create new guest</Link>
           </div>
             
