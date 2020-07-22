@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createActions } from 'redux-actions';
+import http from '../../services/http'
 
 const {
   getHotelSuggestionRequest,
@@ -14,7 +15,7 @@ const {
 export const getHotelSuggestion = (_id) => async dispatch => {
     dispatch(getHotelSuggestionRequest());
     try {
-      const data = await axios.get(`https://travel-love.herokuapp.com/hotels/${_id}`)
+      const data = await http.get(`https://travel-love.herokuapp.com/hotels/${_id}`)
       dispatch(getHotelSuggestionSuccess(data.data));
     } catch (error) {
       dispatch(getHotelSuggestionFail(error));
@@ -34,7 +35,7 @@ const {
   export const getFoodSuggestion = (_id) => async dispatch => {
     dispatch(getFoodSuggestionRequest());
     try {
-      const data = await axios.get(`https://travel-love.herokuapp.com/foods/${_id}`)
+      const data = await http.get(`https://travel-love.herokuapp.com/foods/${_id}`)
       dispatch(getFoodSuggestionSuccess(data.data));
     } catch (error) {
       dispatch(getFoodSuggestionFail(error));

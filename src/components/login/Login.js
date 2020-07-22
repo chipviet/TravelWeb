@@ -4,7 +4,7 @@ import { register, login } from '../../redux/actions/users';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
-import { getRoleUserSelector } from '../../selectors/user'
+import { getRoleUserSelector,getToken } from '../../selectors/user'
 
 class Login extends Component {
     constructor(props) {
@@ -30,6 +30,7 @@ class Login extends Component {
         // }
     }
     render() {
+        const token = localStorage.getItem('AUTH_TOKEN_KEY');
         return (
             <div className="root">
                 <div className="loginForm">
@@ -73,7 +74,8 @@ class Login extends Component {
 }
 export default connect(
     state => ({
-        role: getRoleUserSelector(state)
+        role: getRoleUserSelector(state),
+        token: getToken(state),
     }),
     dispatch =>
         bindActionCreators(

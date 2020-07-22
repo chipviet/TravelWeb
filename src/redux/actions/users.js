@@ -14,7 +14,7 @@ const {
 export const register = (username, email, password) => async dispatch => {
   dispatch(registerUserRequest());
   try {
-    const data = await axios.post(`https://travel-love.herokuapp.com/users/login`, {
+    const data = await axios.post(`https://travel-love.herokuapp.com/admins/login`, {
       username,
       email,
       password,
@@ -35,7 +35,7 @@ const { loginRequest, loginSuccess, loginFail } = createActions({
 export const login = (username, password) => async dispatch => {
   dispatch(loginRequest());
   try {
-    const data = await axios.post(`https://travel-love.herokuapp.com/users/login`, {
+    const data = await axios.post(`https://travel-love.herokuapp.com/admins/login`, {
       username,
       password,
     });
@@ -43,6 +43,20 @@ export const login = (username, password) => async dispatch => {
     dispatch(loginSuccess(data));
   } catch (error) {
     dispatch(loginFail(error));
+  }
+};
+
+const {logoutRequest} = createActions({
+  LOG_OUT: () => { }
+})
+export const logout = () => async dispatch => {
+  clearAuthToken();
+  dispatch(logoutRequest());
+}
+
+export const clearAuthToken = () => {
+  if (localStorage.getItem("AUTH_TOKEN_KEY")) {
+    localStorage.removeItem("AUTH_TOKEN_KEY");
   }
 };
 
