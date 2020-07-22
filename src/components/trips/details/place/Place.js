@@ -5,7 +5,7 @@ import '../combineStyle.css'
 export default function Place(props) {
     const { data } = props;
     return (
-        <GridList cellHeight={500} cols={4}>
+        <GridList cellHeight={500} cols={4} style={{ overflowY: 'hidden' }}>
             {
                 data ? (data.map((item, index) =>
                     <div className="item" key={index}>
@@ -21,7 +21,7 @@ export default function Place(props) {
                                 {[...Array(5 - item.Star_Rating)].map(n => <span class="fa fa-star"></span>)}
                             </div>
                             <div className="place-price">
-                                <p>${item.Price} </p>
+                                <p>Prices:{item.Price}VND </p>
                             </div>
                         </div>
                         <div className="place-description">
