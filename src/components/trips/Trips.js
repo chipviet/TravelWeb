@@ -1,5 +1,6 @@
 import './tripStyle.css'
 import image from '../../assets/thanhhoafood.jpg'
+import Loading from '../loading/Loading'
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 import GridList from '@material-ui/core/GridList';
@@ -12,10 +13,12 @@ class Trips extends Component {
         super(props);
         this.state = {
             searchTerm: '',
+            loading: true
         }
     }
     componentDidMount() {
-        this.props.getAllPlace()
+        this.props.getAllPlace();
+        this.setState({ loading: false })
     };
     render() {
         const { searchTerm } = this.state;
@@ -52,7 +55,6 @@ class Trips extends Component {
                                     </div>
                                     <div className="place-description">
                                         <p>{item.Description}</p>
-
                                     </div>
                                 </div>
                             </Link>
@@ -68,12 +70,11 @@ class Trips extends Component {
                                     </div>
                                     <div className="place-description">
                                         <p>{item.Description}</p>
-                                        <p>{item._id}</p>
                                     </div>
                                 </div>
                             </Link>
                         )}
-                    </GridList>) : (<div><p>Nothing...</p></div>)}
+                    </GridList>) : (<Loading />)}
                 </div>
             </div>
         )

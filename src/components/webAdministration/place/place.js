@@ -17,6 +17,11 @@ export class PlaceAdmin extends Component {
     this.props.getAllPlace();
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if(this.props.getAllPlace() !== nextProps.getAllPlace)
+    this.setState(nextProps)
+  }
+
   delete = (id) => {
     console.log("id",id)
     this.props.deletePlace(id);
@@ -29,7 +34,6 @@ export class PlaceAdmin extends Component {
         <h2 id="ccp-user-heading"  >
         <div className = "headerNavigation">
             <h3 className="text-capitalize ">Place </h3>
-              <FontAwesomeIcon icon="plus" />
               <Link to="/place-create" className="button btn btn-primary">Create new place</Link> 
           </div>       
         </h2>

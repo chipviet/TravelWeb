@@ -32,7 +32,7 @@ export const getHotel = (_id) => async dispatch => {
   console.log("id hotel",_id);
   dispatch(getHotelRequest());
   try {
-    const data = await axios.get(`https://travel-love.herokuapp.com/hotels/${_id}`)
+    const data = await axios.get(`https://travel-love.herokuapp.com/hotels/id/${_id}`)
     console.log('data hotel', data);
     dispatch(getHotelSuccess(data));
   } catch (error) {
@@ -47,10 +47,14 @@ const { createNewHotelRequest, createNewHotelSuccess, createNewHotelFail } = cre
 });
 
 export const createNewHotel = (id, Name, Star, Price, Star_Rating, Description, URL_Image) => async dispatch => {
+  console.log("Voday");
   dispatch(createNewHotelRequest());
   try {
+    console.log("Voday1");
     const Place = await axios.get(`https://travel-love.herokuapp.com/places/${id}`)
+    console.log("Voday2");
     const PlaceID = id;
+    console.log("Voday3");
     const data = await axios.post(`https://travel-love.herokuapp.com/hotels`, {
       Name,
       PlaceID,
@@ -61,9 +65,11 @@ export const createNewHotel = (id, Name, Star, Price, Star_Rating, Description, 
       Description,
       URL_Image
     });
+    console.log('data',data)
     dispatch(createNewHotelSuccess(data));
     alert(data.data.message);
   } catch (error) {
+    console.log("error")
     dispatch(createNewHotelFail(error));
   }
 };
@@ -77,26 +83,30 @@ const { deleteHotelRequest, deleteHotelSuccess, deleteHotelFail } = createAction
 export const deleteHotel = (_id) => async dispatch => {
   dispatch(deleteHotelRequest())
   try {
-    console.log(_id);
+    console.log('ideleted',_id);
     const data = await axios.delete(`https://travel-love.herokuapp.com/hotels/${_id}`);
     dispatch(deleteHotelSuccess(data));
+    console.log('success')
   } catch (error) {
     dispatch(deleteHotelFail(error));
   }
 };
 
 const { updateHotelRequest, updateHotelSuccess, updateHotelFail } = createActions({
-  UPDATE_PLACE_REQUEST: () => { },
-  UPDATE_PLACE_SUCCESS: data => data,
-  UPDATE_PLACE_FAIL: error => ({ error }),
+  UPDATE_HOTEL_REQUEST: () => { },
+  UPDATE_HOTEL_SUCCESS: data => data,
+  UPDATE_HOTEL_FAIL: error => ({ error }),
 });
 
-export const updateHotel = (id, Name, Star, Price, Star_Rating, Description, URL_Image) => async dispatch => {
+export const updateHotel = (id,Name,placeId, Star, Price, Star_Rating, Description, URL_Image) => async dispatch => {
 dispatch(updateHotelRequest());
 try {
-  const Place = await axios.get(`https://travel-love.herokuapp.com/places/${id}`)
-  const PlaceID = id;
-  const data = await axios.patch(`https://travel-love.herokuapp.com/hotels`, {
+  console.log("id hotel",id)
+  console.log('pacleid',placeId)
+  const Place = await axios.get(`https://travel-love.herokuapp.com/places/${placeId}`)
+  console.log('Place Object',Place);
+  const PlaceID = placeId;
+  const data = await axios.patch(`https://travel-love.herokuapp.com/hotels/${id}`, {
     Name,
     PlaceID,
     Place,
@@ -106,7 +116,9 @@ try {
     Description,
     URL_Image
   });
+  console.log('Dataaa', data)
   dispatch(updateHotelSuccess(data));
+  console.log('success');
 } catch (error) {
   dispatch(updateHotelFail(error));
 }
