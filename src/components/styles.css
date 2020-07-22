@@ -1,6 +1,6 @@
 /* HomeCss */
 .body {
-  font-family: "OpenSans";
+  font-family: "Open Sans";
   display: flex;
   flex-direction: column;
 }
@@ -38,10 +38,10 @@
 
 .button-view {
   position: absolute;
-  width: 10%;
+  width: 25%;
   font-size: 20px;
   color: white;
-  bottom: 35%;
+  bottom: 25%;
   left: 15%;
   animation-name: display;
   animation-duration: 1s;
@@ -71,6 +71,40 @@
   }
 }
 
+.blog-container {
+  flex: 1;
+  padding: 150px 100px;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  animation-name: display2;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+}
+
+.blog-title {
+  text-align: center;
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: 'row';
+  padding: 50px 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-text {
+  flex: 1;
+  margin-right: 50px;
+}
+
+.blog-img {
+  flex: 1;
+  margin-left: 50px;
+}
+
 .about {
   text-align: center;
 }
@@ -82,10 +116,21 @@
   flex: 1;
   margin: 80px;
   animation-name: display1;
-  animation-duration: 3s;
+  animation-duration: 4s;
   animation-timing-function: ease-out;
 }
 
+@keyframes display2 {
+  0% {
+    margin-left: -200px;
+    opacity: 0.1;
+  }
+
+  100% {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
 
 @keyframes display1 {
   0% {
@@ -118,6 +163,12 @@
   border-radius: 200px;
 }
 
+.image1 {
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+}
+
 .staff-name {
   display: flex;
   flex-direction: column;
@@ -135,7 +186,7 @@
   top: 20%;
   left: 15%;
   animation-name: display;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: ease-out;
 }
 

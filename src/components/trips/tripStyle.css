@@ -7,13 +7,14 @@
 }
 
 .search-icon {
-  padding: 13px;
+  padding: 20px;
 }
 
 .search-input {
   margin: 12px 0;
   padding: 0;
-  color: red
+  color: red;
+  flex: 2
 }
 
 .search-box {

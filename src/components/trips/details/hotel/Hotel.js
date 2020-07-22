@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import GridList from '@material-ui/core/GridList';
 import '../combineStyle.css'
+import Loading from '../../../loading/Loading'
 export default function Hotel(props) {
     const { data } = props;
     return (
@@ -9,7 +10,7 @@ export default function Hotel(props) {
                 data ? (data.map((item, index) =>
                     <div className="item" key={index}>
                         <div className="place-image">
-                            <img src={item.URL_Image} alt='' width="250px" height="250px"></img>
+                            <img src={item.URL_Image} alt='' width="100%" height="250px"></img>
                         </div>
                         <div className="place-name">
                             <p><b>{item.Name}</b></p>
@@ -27,7 +28,7 @@ export default function Hotel(props) {
                             <p>{item.Description}</p>
                         </div>
                     </div>
-                )) : 'N/A'
+                )) : (<Loading />)
             }
         </GridList>
     )

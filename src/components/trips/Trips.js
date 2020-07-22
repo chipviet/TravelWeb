@@ -25,7 +25,7 @@ class Trips extends Component {
         const { data } = this.props;
         console.log('data all place', data)
         return (
-            <div className="main-content">
+            <div>
                 <div className="header-content">
                     <div className="search-box">
                         <span className="search-icon">
@@ -42,7 +42,7 @@ class Trips extends Component {
                     </div>
                 </div>
                 <div className="list-item">
-                    {data ? (<GridList cellHeight={500} cols={4}>
+                    {data ? (<GridList cellHeight={500} cols={4} style={{ overflowY: 'hidden' }}>
                         {searchTerm ? data.filter(item => item.Name.toLowerCase().includes(searchTerm.toLowerCase())).map((item, index) =>
                             <Link style={{ textDecoration: 'none', color: 'black' }}
                                 to={`/details/${item._id}`} key={index}>
