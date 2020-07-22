@@ -29,7 +29,7 @@ class Trips extends Component {
                 <div className="header-content">
                     <div className="search-box">
                         <span className="search-icon">
-                            <i class="fas fa-search"></i>
+                            <i className="fas fa-search"></i>
                         </span>
                         <input
                             style={{ border: 'none' }}

@@ -3,35 +3,13 @@ import React, { Component } from 'react'
 import Place from './place/Place'
 import Hotel from './hotel/Hotel'
 import Food from './food/Food'
-import GridList from '@material-ui/core/GridList';
 import { getFoodSuggestion, getHotelSuggestion, getPlaceSuggestion } from '../../../redux/actions/suggestion';
 
 import { getFoodSuggestionSelector, getHotelSuggestionSelector, getPlaceSuggestionSelector } from '../../../selectors/suggestion'
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// export default function Details({ props }) {
-//     const [index, setIndex] = React.useState(0);
-//     React.useEffect(() => {
-//         setIndex(0);
-//         console.log(props.match.params._id);
-//     }, []);
 
-//     return (
-//         <div>
-//             <div className="tab-change">
-//                 <div onClick={() => { setIndex(0) }} className={index === 0 ? 'chosen-navigation-isClicked' : 'chosen-navigation'}>Attraction</div>
-//                 <div onClick={() => { setIndex(1) }} className={index === 1 ? 'chosen-navigation-isClicked' : 'chosen-navigation'}>Hotel</div>
-//                 <div onClick={() => { setIndex(2) }} className={index === 2 ? 'chosen-navigation-isClicked' : 'chosen-navigation'}>Food</div>
-//             </div>
-//             <div className="list-container">
-//                 <GridList cellHeight={500} cols={5}>
-//                     {index === 0 ? <Place /> : index === 1 ? <Hotel /> : <Food />}
-//                 </GridList>
-//             </div>
-//         </div>
-//     )
-// }
 
 class Details extends Component {
     constructor(props) {

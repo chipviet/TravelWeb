@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { register, login } from '../redux/actions/users'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getRoleUserSelector, getStatusUserSelector } from '../selectors/user'
+import { getRoleUserSelector } from '../selectors/user'
 class Header extends Component {
     constructor(props) {
         super(props);

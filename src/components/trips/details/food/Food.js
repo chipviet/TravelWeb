@@ -1,6 +1,5 @@
 import React from 'react'
 import GridList from '@material-ui/core/GridList';
-import image from '../../../../assets/thanhhoafood.jpg'
 
 export default function Food(props) {
     const { data } = props;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import GridList from '@material-ui/core/GridList';
 import '../combineStyle.css'
 import Loading from '../../../loading/Loading'

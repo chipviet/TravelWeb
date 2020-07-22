@@ -1,0 +1,70 @@
+.footer {
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    background-color: #e0e0e0;
+    text-shadow: 2px 2px white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.list-href {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: 'center';
+    align-items: 'center';
+    padding: 25px 100px;
+    margin: 20px 150px;
+}
+
+.item-href {
+    flex: 1;
+    margin: 0 40px;
+    text-align: center;
+}
+
+.copyRight {
+    flex: 1;
+    text-align: center;
+}
+
+.social-contact {
+    flex: 1;
+    text-align: center;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 200px;
+
+}
+
+.fa:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
