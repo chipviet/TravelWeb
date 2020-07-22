@@ -25,9 +25,9 @@ class Footer extends Component {
                         <p>Powered by Hieu US/UK</p>
                     </div>
                     <div className="social-contact">
-                        <a href="https://www.facebook.com/cauvangdinhbacho" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-google"></a>
+                        <a href="https://www.facebook.com/cauvangdinhbacho" class="fa1 fa-facebook"></a>
+                        <a href="#" class="fa1 fa-twitter"></a>
+                        <a href="#" class="fa1 fa-google"></a>
                     </div>
                 </div>
             </div >

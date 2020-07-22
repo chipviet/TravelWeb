@@ -21,7 +21,7 @@ export default function Hotel(props) {
                                 {[...Array(5 - item.Star_Rating)].map(n => <span class="fa fa-star"></span>)}
                             </div>
                             <div className="place-price">
-                                <p>${item.Price} </p>
+                                <p>{item.Price}$ </p>
                             </div>
                         </div>
                         <div className="place-description">
