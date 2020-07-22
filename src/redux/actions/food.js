@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { createActions } from 'redux-actions';
 
+
+
 const {
   getAllFoodRequest,
   getAllFoodSuccess,
@@ -15,12 +17,32 @@ export const getAllFood = () => async dispatch => {
   dispatch(getAllFoodRequest());
   try {
     const data = await axios.get(`https://travel-love.herokuapp.com/foods`)
-    console.log('food',data)
     dispatch(getAllFoodSuccess(data.data));
   } catch (error) {
     dispatch(getAllFoodFail(error));
   }
 };
+
+const {
+  getFoodRequest,
+  getFoodSuccess,
+  getFoodFail,
+} = createActions({
+    GET_FOOD_REQUEST: () => { },
+    GET_FOOD_SUCCESS: data => ({ data }),
+    GET_FOOD_FAIL: error => ({ error }),
+});
+
+export const getFood = (_id) => async dispatch => {
+  dispatch(getFoodRequest());
+  try {
+    const data = await axios.get(`https://travel-love.herokuapp.com/foods/id/${_id}`)
+    dispatch(getFoodSuccess(data.data));
+  } catch (error) {
+    dispatch(getFoodFail(error));
+  }
+};
+
 
 const { createNewFoodRequest, createNewFoodSuccess, createNewFoodFail } = createActions({
     CREATE_NEW_Food_REQUEST: () => { },
@@ -43,7 +65,6 @@ export const createNewFood = (id, Name, Price, Star_Rating, Description, URL_Ima
       URL_Image
     });
     dispatch(createNewFoodSuccess(data));
-    alert(data.data.message);
   } catch (error) {
     dispatch(createNewFoodFail(error));
   }
@@ -65,3 +86,34 @@ export const deleteFood = (_id) => async dispatch => {
     dispatch(deleteFoodFail(error));
   }
 };
+
+
+const { updateFoodRequest, updateFoodSuccess, updateFoodFail } = createActions({
+  UPDATE_FOOD_REQUEST: () => { },
+  UPDATE_FOOD_SUCCESS: data => data,
+  UPDATE_FOOD_FAIL: error => ({ error }),
+});
+export const updateFood = (id,Name,placeId, Price, Star_Rating, Description, URL_Image) => async dispatch => {
+  dispatch(updateFoodRequest());
+  try {
+    console.log("id hotel",id)
+    console.log('pacleid',placeId)
+    const Place = await axios.get(`https://travel-love.herokuapp.com/places/${placeId}`)
+    console.log('Place Object',Place);
+    const PlaceID = placeId;
+    const data = await axios.patch(`https://travel-love.herokuapp.com/hotels/${id}`, {
+      Name,
+      PlaceID,
+      Place,
+      Price,
+      Star_Rating,
+      Description,
+      URL_Image
+    });
+    console.log('Dataaa', data)
+    dispatch(updateFoodSuccess(data));
+    console.log('success');
+  } catch (error) {
+    dispatch(updateFoodFail(error));
+  }
+  };

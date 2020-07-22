@@ -1,7 +1,6 @@
 .header {
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid #a9a9a5;
 }
 
 .logo {
@@ -37,13 +36,13 @@ li {
 
 .ele {
     padding: 5px 10px;
-    margin: 15px 30px;
+    margin: 15px 15px;
     opacity: 0.8;
 }
 
 .ele-man {
     padding: 5px 10px;
-    margin: 15px 30px;
+    margin: 15px 15px;
 }
 
 .login {
@@ -81,4 +80,8 @@ li {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.active:hover {
+    background-color: #e0e0e0
 }
