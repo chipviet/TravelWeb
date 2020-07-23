@@ -35,34 +35,37 @@ class Header extends Component {
                 <div className="tab-page">
                     <ul className="tab-ele">
                         <li className="ele active" >
-                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/">Home</Link>
+                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/">Home</Link>
                         </li>
                         <li className="ele active" >
-                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/trips">Trips</Link>
+                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/trips">Trips</Link>
+                        </li>
+                        <li className="ele active" >
+                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/blog">Blog</Link>
                         </li>
                         {(<li className="ele active" >
-                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/contact">Contact</Link>
+                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/contact">Contact</Link>
                         </li>)}
                         {<li className="ele active">
-                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} to="/register">Register</Link>
+                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/register">Register</Link>
                         </li>}
                         {(<div className="dropdown ele-man active">
-                            <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
+                            <span style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" >Management</span>
                             <div className="dropdown-content">
                                 <div className="drop-item">
-                                    <Link style={{ textDecoration: 'none' }} to="/attraction">Attraction</Link>
+                                    <Link style={{ textDecoration: 'none' }} target="_top" to="/attraction">Attraction</Link>
                                 </div>
                                 <div className="drop-item">
-                                    <Link style={{ textDecoration: 'none' }} to="/guest">Guest</Link>
+                                    <Link style={{ textDecoration: 'none' }} target="_top" to="/guest">Guest</Link>
                                 </div>
                                 <div className="drop-item">
-                                    <Link style={{ textDecoration: 'none' }} to="/place">Place</Link>
+                                    <Link style={{ textDecoration: 'none' }} target="_top" to="/place">Place</Link>
                                 </div>
                                 <div className="drop-item">
-                                    <Link style={{ textDecoration: 'none' }} to="/hotel">Hotel</Link>
+                                    <Link style={{ textDecoration: 'none' }} target="_top" to="/hotel">Hotel</Link>
                                 </div>
                                 <div className="drop-item">
-                                    <Link style={{ textDecoration: 'none' }} to="/food" >Food</Link>
+                                    <Link style={{ textDecoration: 'none' }} target="_top" to="/food" >Food</Link>
                                 </div>
                             </div>
                         </div>)}

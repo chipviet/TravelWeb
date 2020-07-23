@@ -8,29 +8,30 @@ class Footer extends Component {
                 <div className="footer">
                     <div className="list-href">
                         <div className="item-href">
-                            <Link style={{ textDecoration: 'none', color: '#F0BC71' }} to='/contact'>Contact us</Link>
+                            <Link style={{ textDecoration: 'none', color: 'white' }} target="_top" to='/contact'>Contact us</Link>
                         </div>
                         <div className="item-href">
-                            <Link style={{ textDecoration: 'none', color: '#F0BC71' }} to='/trips'>Trips</Link>
+                            <Link style={{ textDecoration: 'none', color: 'white' }} target="_top" to='/trips'>Trips</Link>
                         </div>
                         <div className="item-href">
-                            <Link style={{ textDecoration: 'none', color: '#F0BC71' }} to='/register'>Register</Link>
+                            <Link style={{ textDecoration: 'none', color: 'white' }} target="_top" to='/blog'>Blog</Link>
                         </div>
                         <div className="item-href">
-                            <Link style={{ textDecoration: 'none', color: '#F0BC71' }} to='/login'>Login</Link>
+                            <Link style={{ textDecoration: 'none', color: 'white' }} target="_top" to='/register'>Register</Link>
                         </div>
-                    </div>
-                    <div className="copyRight">
-                        <p>Copy right &copy; 2020</p>
-                        <p>Powered by Hieu US/UK</p>
                     </div>
                     <div className="social-contact">
-                        <a href="https://www.facebook.com/cauvangdinhbacho" class="fa1 fa-facebook"></a>
-                        <a href="#" class="fa1 fa-twitter"></a>
-                        <a href="#" class="fa1 fa-google"></a>
+                        <a href="https://www.facebook.com/cauvangdinhbacho" target="_blank" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-google"></a>
+                        <p>Powered by Hieu US/UK</p>
+                    </div>
+                    <div className="bottom-line"></div>
+                    <div className="copyRight">
+                        <p>Copy right &copy; 2020. All rights reserved</p>
                     </div>
                 </div>
-            </div >
+            </div>
 
         );
     }
