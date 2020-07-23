@@ -7,6 +7,10 @@ import Login from '../components/login/Login'
 import Register from '../components/register/Register';
 import HotelAdmin from '../components/webAdministration/hotel/hotel';
 import PlaceAdmin from '../components/webAdministration/place/place';
+import AttractionAdmin from '../components/webAdministration/attraction/attraction';
+import AttractionCreateAdmin from '../components/webAdministration/attraction/attraction-create';
+import AttractionUpdateAdmin from '../components/webAdministration/attraction/attraction-update';
+import AttractionDetailsAdmin from '../components/webAdministration/attraction/attraction-details';
 import FoodAdmin from '../components/webAdministration/food/food';
 import FoodCreateAdmin from '../components/webAdministration/food/food-create';
 import FoodUpdateAdmin from '../components/webAdministration/food/food-update';
@@ -38,6 +42,10 @@ class Main extends Component {
                     <Route path="/register" component={Register} />
                     <Route path="/hotel" component={HotelAdmin} />
                     <Route path="/place" component={PlaceAdmin} />
+                    <Route path="/attraction" component={AttractionAdmin} />
+                    <Route path="/attraction-create" component={AttractionCreateAdmin} />
+                    <Route path="/attraction-update/:id" component={AttractionUpdateAdmin} />
+                    <Route path="/attraction-details/:id" component={AttractionDetailsAdmin} />
                     <Route path="/food" component={FoodAdmin} />
                     <Route path="/food-create" component={FoodCreateAdmin} />
                     <Route path="/food-update/:id" component={FoodUpdateAdmin} />

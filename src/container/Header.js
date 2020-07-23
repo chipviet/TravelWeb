@@ -50,6 +50,9 @@ class Header extends Component {
                             <span style={{ textDecoration: 'none', color: '#7C7C7C' }}>Management</span>
                             <div className="dropdown-content">
                                 <div className="drop-item">
+                                    <Link style={{ textDecoration: 'none' }} to="/attraction">Attraction</Link>
+                                </div>
+                                <div className="drop-item">
                                     <Link style={{ textDecoration: 'none' }} to="/guest">Guest</Link>
                                 </div>
                                 <div className="drop-item">
