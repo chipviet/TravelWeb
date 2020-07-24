@@ -25,6 +25,7 @@ import PlaceUpdateAdmin from '../components/webAdministration/place/place-update
 import PlaceCreateAdmin from '../components/webAdministration/place/place-create'
 import PlaceDetailsAdmin from '../components/webAdministration/place/place-details'
 
+import http, { setAuthorizationHeader } from '../services/http';
 
 import {
     Switch,
@@ -32,6 +33,14 @@ import {
 } from 'react-router-dom'
 
 class Main extends Component {
+
+    UNSAFE_componentWillMount() {
+        const accessToken = localStorage.getItem('AUTH_TOKEN_KEY');
+        if(accessToken) {
+            setAuthorizationHeader(accessToken);
+        }
+    }
+
     render() {
         return (
             <div style={{ position: 'relative' }}>

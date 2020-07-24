@@ -15,10 +15,10 @@ export class HotelAdmin extends Component {
     this.props.getAllHotel();
   }
 
-  // UNSAFE_componentWillReceiveProps(nextProps) {
-  //   if(this.props.getAllHotel() !== nextProps.getAllHotel)
-  //   this.setState(nextProps)
-  // }
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if(this.props.getAllHotel() !== nextProps.getAllHotel)
+    this.setState(nextProps)
+  }
 
   delete = (id) => {
     console.log("id", id)
