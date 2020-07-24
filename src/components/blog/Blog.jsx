@@ -1,26 +1,87 @@
 import React, { Component } from 'react';
 import "../styles.css"
-import Loading from '../loading/Loading'
+import Loading from '../loading/Loading';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import travel1 from '../../assets/travel1.jpg'
-import travel2 from '../../assets/travel2.jpg'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import MagicSliderDots from 'react-magic-slider-dots';
+import 'react-magic-slider-dots/dist/magic-dots.css';
 import LazyLoad from 'react-lazyload'
 import GridList from '@material-ui/core/GridList'
 import abo from '../../assets/abo.jpg'
 import thanhhuy from '../../assets/thanhhuy.jpg'
 import chipviet from '../../assets/chipviet.jpg'
 import hieu from '../../assets/hieu.jpg'
+import hieu2 from '../../assets/hieu2.jpg'
 import hung from '../../assets/hung2.jpg'
 import blogimg from '../../assets/blogimg.jpg'
 
 
 class Blog extends Component {
     constructor(props) {
-        super(props)
-        this.myRef = React.createRef()   // Create a ref object 
+        super(props);
+        this.state = {
+            items: [
+                {
+                    "name": 'Thanh Hoa',
+                    "url": "https://dulich.petrotimes.vn/stores/news_dataimages/thuyan/032019/23/16/1128_flc-sam-son-resort2a-min.jpg",
+                    "thumbnailUrl": "https://via.placeholder.com/150/92c952",
+                    "descriptions": "Dat nuoc rau ma"
+                },
+                {
+                    "name": 'Da Nang',
+                    "url": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/17/b0/a8.jpg",
+                    "thumbnailUrl": "https://via.placeholder.com/150/771796",
+                    "descriptions": "Dat nuoc cua may loz dan ba"
+                },
+                {
+                    "name": 'Da Lat',
+                    "url": "https://nhatrangtransferservices.com/wp-content/uploads/2017/08/Transfer-From-Mui-Ne-To-Da-Lat-By-Private-Car.jpg",
+                    "thumbnailUrl": "https://via.placeholder.com/150/24f355",
+                    "descriptions": "Noi chan rau tot nhat"
+                },
+                {
+                    "name": 'Ha Noi',
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/VNU_lethanhtong_900x600.jpg/220px-VNU_lethanhtong_900x600.jpg",
+                    "thumbnailUrl": "https://via.placeholder.com/150/d32776",
+                    "descriptions": "Ha noi khong voi duoc dau"
+                },
+                {
+                    "name": 'Sai Gon',
+                    "url": "https://vietjet.net/includes/uploads/2018/01/ve-may-bay-dong-hoi-sai-gon-600x376.png",
+                    "thumbnailUrl": "https://via.placeholder.com/150/f66b97",
+                    "descriptions": "meo meo meo meo meo"
+                },
+            ],
+            staffs: [
+                {
+                    name: 'Hiếu 2 Mái',
+                    comments: 'Xa hoi lay`, chi co lam thi moi co an',
+                    url: hieu2
+                },
+                {
+                    name: 'Bổ',
+                    comments: 'Đụ mẹ lồn tanle',
+                    url: abo
+                },
+            ]
+        }
+        this.myRef = React.createRef();
     }
     render() {
+        const settings = {
+            dots: true,
+            arrows: true,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            appendDots: dots => {
+                return <MagicSliderDots dots={dots} numDotsToShow={4} dotWidth={30} />;
+            }
+        };
         return (
             <div className="body">
                 <div className="slide-container about">
@@ -61,74 +122,46 @@ class Blog extends Component {
                             </div>
                         </div>
                     </LazyLoad>
-
                 </div>
-
-                <div className="about-staff">
+                <div className="blog-place-img">
                     <LazyLoad
-                        once={true}
+                        once={false}
                         height={200}
                         offset={[-100, 100]}
                         placeholder={<Loading />}>
-                        <div className="title-staff">
-                            <p style={{ fontSize: 40, fontWeight: 900, fontFamily: 'Work Sans' }}> Meet our great staffs</p>
+                        <div className="blog-title">
+                            <p style={{ fontSize: 48, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>Some destinations we arrived</p>
                         </div>
-                        <GridList cellHeight={500} cols={3}>
-                            <div className="staff-list">
-                                <img src={abo} className="image" alt='' width="250px" height="250px" />
-                                <div className="staff-name">
-                                    <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Lê Thái Bảo</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Java Developer</p>
+                        <GridList cellHeight={400} cols={3} style={{ overflow: 'hidden' }}>
+                            {this.state.items.map(item => (
+                                <div className="img-item">
+                                    <div className="place-name">
+                                        <p style={{ fontSize: 30 }}>{item.name}</p>
+                                        <p>{item.descriptions}</p>
+                                    </div>
+                                    <img src={item.url} width="100%" height="400px" />
                                 </div>
-                                <div className="staff-description">
-                                    <p>Staff or Dev of JAVa backend and nodeJs copy paste.</p>
-                                </div>
-                            </div>
-                            <div className="staff-list">
-                                <img src={thanhhuy} className="image" alt='' width="250px" height="250px" />
-                                <div className="staff-name">
-                                    <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Phan Thanh Huy</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Full-Stackoverflow Developer</p>
-                                </div>
-                                <div className="staff-description">
-                                    <p style={{ fontSize: 18 }}>Ctrl+C, Ctrl+V master</p>
-                                </div>
-                            </div>
-                            <div className="staff-list">
-                                <img src={chipviet} className="image" alt='' width="250px" height="250px" />
-                                <div className="staff-name">
-                                    <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Phạm Xuân Sang</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Leader</p>
-                                </div>
-                                <div className="staff-description">
-                                    <p>Nhieu nam kinh nghiem xao loz, co kinh nghiem xao loz quoc te, DIT CON ME ONG TRUM XAO LOZ</p>
-                                </div>
-                            </div>
-                            <div className="staff-list">
-                                <img src={hieu} className="image" alt='' width="250px" height="250px" />
-                                <div className="staff-name">
-                                    <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Hiếu Hoa Hồng</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>.NET,AI developer</p>
-                                </div>
-                                <div className="staff-description">
-                                    <p>Có kinh nghiệm trong việc dạy đời và thích chửi người khác.</p>
-                                </div>
-                            </div>
-                            <div className="staff-list">
-                                <img src={hung} className="image" alt='' width="250px" height="250px" />
-                                <div className="staff-name">
-                                    <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Nguyễn Lê Phước Hưng</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Lady of team</p>
-                                </div>
-                                <div className="staff-description">
-                                    <p>1 tháng 30 ngày tới tháng 31 ngày.</p>
-                                </div>
-                            </div>
-
+                            ))}
                         </GridList>
                     </LazyLoad>
                 </div>
-            </div >
+                <div className="staff-post">
+                    <div className="blog-title">
+                        <p style={{ fontSize: 48, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>EXPERIENCES OF US</p>
+                    </div>
+                    <Slider {...settings}>
+                        {this.state.staffs.map(staff => (
+                            <div className="comment-item">
+                                <img src={staff.url} className="image-comment" alt='' width="250px" height="250px" />
+                                <div className="comment-content">
+                                    <p style={{ fontSize: 24, fontWeight: 700 }}>{staff.name}</p>
+                                    <p>{staff.comments}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            </div>
         );
     }
 }

@@ -5,7 +5,9 @@
   flex-direction: column;
 }
 
-
+.blog-content:hover {
+  background-color: white;
+}
 
 .slide-container {
   justify-content: center;
@@ -58,7 +60,7 @@
 
 .view-button:focus {
   outline: none;
-  border: none
+  border: none;
 }
 
 @keyframes display {
@@ -108,9 +110,41 @@
   margin: 50px;
 }
 
+.img-item {
+  position: relative;
+}
+
+.img-item:hover {
+  opacity: 0.7;
+}
+
+.img-item:hover .place-name {
+  visibility: visible;
+  opacity: 1;
+}
+
+.place-name {
+  margin: 0 !important;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  height: 100px;
+  color: white;
+  text-shadow: 2px 2px black;
+  visibility: hidden;
+  opacity: 0;
+  background-color: transparent;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
 .blog-content {
   display: flex;
-  flex-direction: 'row';
+  flex-direction: row;
   padding: 50px 100px;
   justify-content: center;
   align-items: center;
@@ -124,6 +158,11 @@
 .blog-img {
   flex: 1;
   margin-left: 50px;
+}
+
+.blog-place-img {
+  flex: 1;
+  margin: 50px;
 }
 
 .about {
@@ -177,7 +216,25 @@
 .staff-description {
   text-align: left;
 }
-
+.staff-post {
+  margin: 30px 200px;
+}
+.comment-item {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.comment-content {
+  flex: 4;
+  padding: 0 50px;
+}
+.image-comment {
+  width: 250px;
+  height: 250px;
+  border-radius: 200px;
+  flex: 1;
+}
 .image {
   width: 250px;
   height: 250px;

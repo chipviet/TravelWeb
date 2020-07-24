@@ -8,6 +8,9 @@ class Footer extends Component {
                 <div className="footer">
                     <div className="list-href">
                         <div className="item-href">
+                            <Link style={{ textDecoration: 'none', color: 'white' }} target="_top" to='/'>Home</Link>
+                        </div>
+                        <div className="item-href">
                             <Link style={{ textDecoration: 'none', color: 'white' }} target="_top" to='/contact'>Contact us</Link>
                         </div>
                         <div className="item-href">
@@ -25,6 +28,7 @@ class Footer extends Component {
                         <a href="#" class="fa fa-twitter"></a>
                         <a href="#" class="fa fa-google"></a>
                         <p>Powered by Hieu US/UK</p>
+                        <p>Telephone: (+84)123456789 / Hotline: 113</p>
                     </div>
                     <div className="bottom-line"></div>
                     <div className="copyRight">
