@@ -148,6 +148,7 @@ export class HotelUpdateAdmin extends Component {
                     name: hotel.Name,
                     placeId: hotel.PlaceID,
                     price: hotel.Price,
+                    
                     star: hotel.Star,
                     rating: hotel.Star_Rating,
                     description: hotel.Description,
