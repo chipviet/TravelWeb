@@ -19,3 +19,12 @@ export const getStatusUserSelector = (state) => {
     }
     return null
 }
+
+export const getToken = (state) => {
+    const data = state.user.login;
+    if (data && data.result) {
+        localStorage.setItem("AUTH_TOKEN_KEY",data.result.data.token)
+        return data.result.data.token;
+    }
+    return null
+}

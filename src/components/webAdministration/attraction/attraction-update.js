@@ -74,7 +74,6 @@ export class AttractionUpdateAdmin extends Component {
                     _id: attraction._id,
                     name: e.target.value,
                     placeId: attraction.PlaceID,
-                    price: attraction.Price,
                     rating: attraction.Star_Rating,
                     description: attraction.Description,
                     url_Image: attraction.URL_Image
@@ -86,7 +85,6 @@ export class AttractionUpdateAdmin extends Component {
                   _id: attraction._id,
                   name: attraction.Name,
                   placeId: e.target.value,
-                  price: attraction.Price,
                   rating: attraction.Star_Rating,
                   description: attraction.Description,
                   url_Image: attraction.URL_Image
@@ -101,39 +99,19 @@ export class AttractionUpdateAdmin extends Component {
                     ))
                 : null}
               </AvField>
-              <AvGroup>
-                <Label id="nameLabel">
-                 Price
-                </Label>
-                <AvInput id="card-type-name" type="string" name="placeId" value ={attraction.Price} onChange={e => {
-                  this.setState({
-                    _id: attraction._id,
-                    name: attraction.Name,
-                    placeId: attraction.PlaceID,
-                    price: e.target.value,
-                    rating: attraction.Star_Rating,
-                    description: attraction.Description,
-                    url_Image: attraction.URL_Image
-                  })
-                }}  />
-              </AvGroup>
+             
+            
               <AvField type="select" name="select" label="Star Rating"  onChange={e => {
                   this.setState({
                     _id: attraction._id,
                     name: attraction.Name,
                     placeId: attraction.PlaceID,
-                    price: attraction.Price,
-                    rating: e.target.value,
+                    rating: attraction.Star_Rating,
                     description: attraction.Description,
                     url_Image: attraction.URL_Image
                   })
                 }}>
                 <option value={attraction.Star_Rating}> {attraction.Star_Rating} </option>    
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
               </AvField>
 
               <AvGroup>

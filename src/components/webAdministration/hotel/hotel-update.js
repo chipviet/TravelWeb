@@ -149,17 +149,12 @@ export class HotelUpdateAdmin extends Component {
                     placeId: hotel.PlaceID,
                     price: hotel.Price,
                     star: hotel.Star,
-                    rating: e.target.value,
+                    rating: hotel.Star_Rating,
                     description: hotel.Description,
                     url_Image: hotel.URL_Image
                   })
                 }}>
                 <option value={hotel.Star_Rating}> {hotel.Star_Rating} </option>    
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
               </AvField>
 
               <AvGroup>

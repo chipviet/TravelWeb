@@ -21,7 +21,6 @@ export class AttractionAdmin extends Component {
   }
 
   delete = (id) => {
-    console.log("id", id)
     this.props.deleteAttraction(id);
   }
 
@@ -48,9 +47,6 @@ export class AttractionAdmin extends Component {
                     <h4 className="text-capitalize ">Place</h4>
                   </th>
                   <th className="hand" >
-                    <h4 className="text-capitalize ">Price</h4>
-                  </th>
-                  <th className="hand" >
                     <h4 className="text-capitalize ">Star Rating</h4>
                   </th>
                   <th className="hand" >
@@ -67,7 +63,6 @@ export class AttractionAdmin extends Component {
                   <tr key={i}>
                     <td>{item.Name}</td>
                     <td>{item.Place.data.Name}</td>
-                    <td>{item.Price}</td>
                     <td>{item.Star_Rating}</td>
                     <td className="linkUrl">{item.Description}</td>
                     <td className="linkUrl">{item.URL_Image}</td>

@@ -1,6 +1,5 @@
-import axios from 'axios';
 import { createActions } from 'redux-actions';
-
+import http from '../../services/http'
 
 
 const {
@@ -16,7 +15,7 @@ const {
 export const getAllFood = () => async dispatch => {
   dispatch(getAllFoodRequest());
   try {
-    const data = await axios.get(`https://travel-love.herokuapp.com/foods`)
+    const data = await http.get(`https://travel-love.herokuapp.com/foods`)
     dispatch(getAllFoodSuccess(data.data));
   } catch (error) {
     dispatch(getAllFoodFail(error));
@@ -36,7 +35,7 @@ const {
 export const getFood = (_id) => async dispatch => {
   dispatch(getFoodRequest());
   try {
-    const data = await axios.get(`https://travel-love.herokuapp.com/foods/id/${_id}`)
+    const data = await http.get(`https://travel-love.herokuapp.com/foods/id/${_id}`)
     dispatch(getFoodSuccess(data.data));
   } catch (error) {
     dispatch(getFoodFail(error));
@@ -53,9 +52,9 @@ const { createNewFoodRequest, createNewFoodSuccess, createNewFoodFail } = create
 export const createNewFood = (id, Name, Price, Star_Rating, Description, URL_Image) => async dispatch => {
   dispatch(createNewFoodRequest());
   try {
-    const Place = await axios.get(`https://travel-love.herokuapp.com/places/${id}`)
+    const Place = await http.get(`https://travel-love.herokuapp.com/places/${id}`)
     const PlaceID = id;
-    const data = await axios.post(`https://travel-love.herokuapp.com/foods`, {
+    const data = await http.post(`https://travel-love.herokuapp.com/foods`, {
       Name,
       PlaceID,
       Place,
@@ -80,7 +79,7 @@ export const deleteFood = (_id) => async dispatch => {
   dispatch(deleteFoodRequest())
   try {
     console.log(_id);
-    const data = await axios.delete(`https://travel-love.herokuapp.com/foods/${_id}`);
+    const data = await http.delete(`https://travel-love.herokuapp.com/foods/${_id}`);
     dispatch(deleteFoodSuccess(data));
   } catch (error) {
     dispatch(deleteFoodFail(error));
@@ -98,10 +97,10 @@ export const updateFood = (id,Name,placeId, Price, Star_Rating, Description, URL
   try {
     console.log("id hotel",id)
     console.log('pacleid',placeId)
-    const Place = await axios.get(`https://travel-love.herokuapp.com/places/${placeId}`)
+    const Place = await http.get(`https://travel-love.herokuapp.com/places/${placeId}`)
     console.log('Place Object',Place);
     const PlaceID = placeId;
-    const data = await axios.patch(`https://travel-love.herokuapp.com/hotels/${id}`, {
+    const data = await http.patch(`https://travel-love.herokuapp.com/hotels/${id}`, {
       Name,
       PlaceID,
       Place,

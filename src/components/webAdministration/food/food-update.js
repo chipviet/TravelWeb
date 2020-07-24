@@ -123,17 +123,12 @@ export class FoodUpdateAdmin extends Component {
                     name: food.Name,
                     placeId: food.PlaceID,
                     price: food.Price,
-                    rating: e.target.value,
+                    rating: food.Star_Rating,
                     description: food.Description,
                     url_Image: food.URL_Image
                   })
                 }}>
                 <option value={food.Star_Rating}> {food.Star_Rating} </option>    
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
-                <option value='4'>4</option>
-                <option value='5'>5</option>
               </AvField>
 
               <AvGroup>

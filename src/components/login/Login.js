@@ -4,7 +4,7 @@ import { register, login } from '../../redux/actions/users';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
-import { getRoleUserSelector } from '../../selectors/user'
+import { getRoleUserSelector ,getToken } from '../../selectors/user'
 import travel1 from '../../assets/travel1.jpg'
 
 class Login extends Component {
@@ -14,11 +14,17 @@ class Login extends Component {
             user: [{
                 username: '',
                 password: '',
-                loggedIn: false
             }]
         }
     }
+
+    handleLogin = () => {
+        this.props.login(this.state.username, this.state.password)
+    }
+
     render() {
+        const token = localStorage.getItem('AUTH_TOKEN_KEY');
+        console.log('token',token)
         return (
             <div className="root">
                 <img
@@ -59,7 +65,8 @@ class Login extends Component {
 }
 export default connect(
     state => ({
-        role: getRoleUserSelector(state)
+        role: getRoleUserSelector(state),
+        token: getToken(state),
     }),
     dispatch =>
         bindActionCreators(

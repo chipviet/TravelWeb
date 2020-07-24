@@ -75,16 +75,6 @@ export class AttractionCreateAdmin extends Component {
                         ))
                       : null}
               </AvField>
-              <AvGroup>
-                <Label id="nameLabel">
-                 Price
-                </Label>
-                <AvInput id="card-type-name" type="string" name="placeId" onChange={e => {
-                  this.setState({
-                    price: e.target.value
-                  })
-                }}  />
-              </AvGroup>
               <AvField type="select" name="select" label="Star Rating"  onChange={e => {
                   this.setState({
                     rating: e.target.value
