@@ -75,7 +75,7 @@ class Blog extends Component {
             dots: true,
             arrows: true,
             infinite: false,
-            speed: 500,
+            speed: 1500,
             slidesToShow: 1,
             slidesToScroll: 1,
             appendDots: dots => {
@@ -86,8 +86,8 @@ class Blog extends Component {
             <div className="body">
                 <div className="slide-container about">
                     <Slide arrows={false} duration={2000} transitionDuration={1000}>
-                        <img src='https://toquoc.mediacdn.vn/2020/2/28/hoi-an-ve-dem-1-1582879781297957162122.gif' alt="" width="100%" />
-                        <img src='https://btnmt.onecmscdn.com/2018/04/26/anh-1_68.jpg' alt="" width="100%" />
+                        <img src='https://toquoc.mediacdn.vn/2020/2/28/hoi-an-ve-dem-1-1582879781297957162122.gif' alt="" width="100%" height="100%" />
+                        <img src='https://btnmt.onecmscdn.com/2018/04/26/anh-1_68.jpg' alt="" width="100%" height="100%" />
                         <img src="https://cungphuot.info/wp-content/uploads/2019/02/cac-dia-diem-du-lich-o-quang-nam.jpg" alt="" width="100%" height="100%" />
                     </Slide>
                     <div className="aboutDescription">
