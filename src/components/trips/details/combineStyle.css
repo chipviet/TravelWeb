@@ -25,10 +25,12 @@
 .place-rating-price {
     display: flex;
     flex-direction: column;
+    padding:0 90px;
 }
 
 .plate-rating {
     flex: 1;
+    
 }
 
 .place-price {
