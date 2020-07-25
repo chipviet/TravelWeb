@@ -59,13 +59,13 @@ class Trips extends Component {
                     </div>
                 </div>
                 <div className="list-item">
-                    {data ? (<GridList cols={4} style={{ overflowY: 'hidden' }}>
+                    {data ? (<GridList cellHeight={650} cols={4} style={{ overflowY: 'hidden' }}>
                         {searchTerm ? data.filter(item => item.Name.toLowerCase().includes(searchTerm.toLowerCase())).map((item, index) =>
                             <Link target="_top" style={{ textDecoration: 'none', color: 'black' }}
                                 to={`/details/${item._id}`} key={index}>
                                 <div className="item" >
                                     <div className="place-image" >
-                                        <img src={item.URL_Image} alt='not available' width="200px" height="250px"></img>
+                                        <img className="img-container1" src={item.URL_Image} alt='not available' width="350px" height="350px"></img>
                                     </div>
                                     <div className="place-name">
                                         <p><b>{item.Name}</b></p>
@@ -80,7 +80,7 @@ class Trips extends Component {
                                 to={`/details/${item._id}`} key={index}>
                                 <div className="item" >
                                     <div className="place-image">
-                                        <img src={item.URL_Image} alt='loading...' width="200px" height="250px"></img>
+                                        <img className="img-container1" src={item.URL_Image} alt='loading...' width="350px" height="250px"></img>
                                     </div>
                                     <div className="place-name">
                                         <p><b>{item.Name}</b></p>
