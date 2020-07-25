@@ -107,7 +107,7 @@ class Home extends Component {
                                     <p>Refers to several forms of beverage found in many cultures, containing some combination of tea and milk. Beverages vary based on the amount of each of these key ingredients, the method of preparation, and the inclusion of other ingredients (varying from sugar or honey to salt or cardamom).Instant milk tea powder is a mass-produced product.</p>
                                 </div>
                                 <div className="blog-img">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Bubble_Tea.png/200px-Bubble_Tea.png" alt="" className="image1" />
+                                    <img src="https://dayphache.edu.vn/wp-content/uploads/2020/02/mon-tra-sua-tran-chau.jpg" alt="" className="image1" />
                                 </div>
                             </div>
                             <div className='blog-content'>
@@ -176,8 +176,8 @@ class Home extends Component {
                                 <div className="staff-description">
                                     <p>An executive leader with strong business acumen, communication skills and a
 
-genuine intellectual curiosity for new technologies
-Motivated by teamwork, innovative strategic vision, structuring complex problems
+                                    genuine intellectual curiosity for new technologies
+                                    Motivated by teamwork, innovative strategic vision, structuring complex problems
 and creating useful solutions</p>
                                 </div>
                             </div>
