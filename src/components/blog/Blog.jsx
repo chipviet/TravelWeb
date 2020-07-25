@@ -62,8 +62,8 @@ class Blog extends Component {
                     url: hieu2
                 },
                 {
-                    name: 'Hưng Nguyễn Đập ',
-                    comments: 'Đụ mẹ lồn tanle',
+                    name: 'Hưng Nguyễn ',
+                    comments: 'Chủ tịch FPT hay đi du lịch',
                     url: abo
                 },
                 {
