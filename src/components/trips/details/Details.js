@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import Place from './place/Place'
 import Hotel from './hotel/Hotel'
 import Food from './food/Food'
-import { getFoodSuggestion, getHotelSuggestion, getPlaceSuggestion } from '../../../redux/actions/suggestion';
+import { getFoodSuggestion, getHotelSuggestion, getAttractionSuggestion } from '../../../redux/actions/suggestion';
 
-import { getFoodSuggestionSelector, getHotelSuggestionSelector, getPlaceSuggestionSelector } from '../../../selectors/suggestion'
+import { getFoodSuggestionSelector, getHotelSuggestionSelector, getAttractionSuggestionSelector } from '../../../selectors/suggestion'
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -19,7 +19,7 @@ class Details extends Component {
         }
     }
     componentDidMount() {
-        this.props.getPlaceSuggestion(this.props.match.params.id)
+        this.props.getAttractionSuggestion(this.props.match.params.id)
         this.props.getFoodSuggestion(this.props.match.params.id);
         this.props.getHotelSuggestion(this.props.match.params.id);
     };
@@ -46,14 +46,14 @@ class Details extends Component {
 }
 export default connect(
     state => ({
-        place: getPlaceSuggestionSelector(state),
+        place: getAttractionSuggestionSelector(state),
         hotel: getHotelSuggestionSelector(state),
         food: getFoodSuggestionSelector(state),
     }),
     dispatch =>
         bindActionCreators(
             {
-                getPlaceSuggestion,
+                getAttractionSuggestion,
                 getFoodSuggestion,
                 getHotelSuggestion,
             }, dispatch

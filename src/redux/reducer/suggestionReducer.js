@@ -14,6 +14,12 @@ const initialState = {
         status: null,
         error: null,
     },
+    getAttractionSuggestion: {
+        requesting: false,
+        result: null,
+        status: null,
+        error: null,
+    },
 
 }
 
@@ -76,6 +82,36 @@ const SuggestionReducer = handleActions(
                 error: payload.error,
             },
         }),
+
+        GET_ATTRACTION_SUGGESTION_REQUEST: state => ({
+            ...state,
+            getAttractionSuggestion: {
+                ...state.getAttractionSuggestion,
+                requesting: true,
+            },
+        }),
+
+        GET_ATTRACTION_SUGGESTION_SUCCESS: (state, { payload }) =>
+            ({
+                ...state,
+                getAttractionSuggestion: {
+                    ...state.getAttractionSuggestion,
+                    result: payload,
+                    requesting: false,
+                    status: 'success',
+                },
+            }),
+
+        GET_ATTRACTION_SUGGESTION_FAIL: (state, { payload }) => ({
+            ...state,
+            getAttractionSuggestion: {
+                ...state.getAttractionSuggestion,
+                requesting: false,
+                status: 'error',
+                error: payload.error,
+            },
+        }),
+
 
     },
     initialState

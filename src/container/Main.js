@@ -62,7 +62,6 @@ class Main extends Component {
                     <Route path="/food-update/:id" component={FoodUpdateAdmin} />
                     <Route path="/food-details/:id" component={FoodDetailsAdmin} />
                     <Route path="/guest" component={GuestAdmin} />
-                    <Route path="/guest-update" component={GuestUpdateAdmin} />
                     <Route path="/hotel-update/:id" component={HotelUpdateAdmin} />
                     <Route path="/hotel-details/:id" component={HotelDetailsAdmin} />
                     <Route path="/hotel-create" component={HotelCreateAdmin} />

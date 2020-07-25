@@ -28,3 +28,12 @@ export const getToken = (state) => {
     }
     return null
 }
+
+export const getAllUserSelector = (state) => {
+    const data = state.user.getAllUser;
+    if (data && data.result) {
+        console.log('user',data.result.data.data.user);
+        return data.result.data.data.user;
+    }
+    return null
+}

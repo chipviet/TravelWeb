@@ -174,7 +174,11 @@ class Home extends Component {
                                     <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Leader</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p>Nhieu nam kinh nghiem xao loz, co kinh nghiem xao loz quoc te, DIT CON ME ONG TRUM XAO LOZ</p>
+                                    <p>An executive leader with strong business acumen, communication skills and a
+
+genuine intellectual curiosity for new technologies
+Motivated by teamwork, innovative strategic vision, structuring complex problems
+and creating useful solutions</p>
                                 </div>
                             </div>
                             <div className="staff-list">

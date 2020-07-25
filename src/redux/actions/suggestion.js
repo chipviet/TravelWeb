@@ -41,22 +41,22 @@ export const getFoodSuggestion = (_id) => async dispatch => {
   }
 };
 const {
-  getPlaceSuggestionRequest,
-  getPlaceSuggestionSuccess,
-  getPlaceSuggestionFail,
+  getAttractionSuggestionRequest,
+  getAttractionSuggestionSuccess,
+  getAttractionSuggestionFail,
 } = createActions({
-  GET_PLACE_SUGGESTION_REQUEST: () => { },
-  GET_PLACE_SUGGESTION_SUCCESS: data => ({ data }),
-  GET_PLACE_SUGGESTION_FAIL: error => ({ error }),
+  GET_ATTRACTION_SUGGESTION_REQUEST: () => { },
+  GET_ATTRACTION_SUGGESTION_SUCCESS: data => ({ data }),
+  GET_ATTRACTION_SUGGESTION_FAIL: error => ({ error }),
 });
 
-export const getPlaceSuggestion = (_id) => async dispatch => {
-  dispatch(getPlaceSuggestionRequest());
+export const getAttractionSuggestion = (_id) => async dispatch => {
+  dispatch(getAttractionSuggestionRequest());
   try {
-    const data = await axios.get(`https://travel-love.herokuapp.com/places/${_id}`)
-    dispatch(getPlaceSuggestionSuccess(data.data));
+    const data = await axios.get(`https://travel-love.herokuapp.com/hotplace/${_id}`)
+    dispatch(getAttractionSuggestionSuccess(data.data));
   } catch (error) {
-    dispatch(getPlaceSuggestionFail(error));
+    dispatch(getAttractionSuggestionFail(error));
   }
 };
 

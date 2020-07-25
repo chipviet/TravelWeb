@@ -7,12 +7,34 @@ const initialState = {
         status: null,
         error: null,
     },
+
     register: {
         requesting: false,
         result: null,
         status: null,
         error: null,
     },
+
+    getAllUser: {
+        requesting: false,
+        result: null,
+        status: null,
+        error: null,
+    },
+
+    getUser: {
+        requesting: false,
+        result: null,
+        status: null,
+        error: null,
+    },
+
+    deleteUser: {
+        requesting: false,
+        result: null,
+        status: null,
+        error: null,
+    }
 }
 
 const userReducer = handleActions(
@@ -79,8 +101,66 @@ const userReducer = handleActions(
                 status: null,
                 error: null,
             }
-        })
+        }),
 
+        GET_ALL_USER_REQUEST: state =>({
+            ...state,
+            getAllUser: {
+                ...state.getAllUser,
+                requesting: true,
+            },
+        }),
+   
+        GET_ALL_USER_SUCCESS: (state, {payload}) => 
+        ({
+            ...state,
+            getAllUser: {
+                ...state.getAllUser,
+                result: payload,
+                requesting: false,
+                status: 'success',
+            },
+        }),
+   
+        GET_ALL_USER_FAIL: (state, {payload}) => ({
+            ...state,
+            getAllUser: {
+                ...state.getAllUser,
+                requesting: false,
+                status: 'error',
+                error: payload.error,
+            },
+        }),
+
+        DELETE_USER_REQUEST: state =>({
+            ...state,
+            deleteUser: {
+                ...state.deleteUser,
+                requesting: true,
+            },
+        }),
+   
+        DELETE_USER_SUCCESS: (state, {payload}) => 
+        ({
+            ...state,
+            deleteUser: {
+                ...state.deleteUser,
+                result: payload,
+                requesting: false,
+                status: 'success',
+            },
+        }),
+   
+        DELETE_USER_FAIL: (state, {payload}) => ({
+            ...state,
+            deleteUser: {
+                ...state.deleteUser,
+                requesting: false,
+                status: 'error',
+                error: payload.error,
+            },
+        }),
+   
     },
     initialState
 );
