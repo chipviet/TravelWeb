@@ -137,7 +137,7 @@ class Blog extends Component {
                         <GridList cellHeight={400} cols={3} style={{ overflow: 'hidden' }}>
                             {this.state.items.map(item => (
                                 <div className="img-item">
-                                    <div className="place-name">
+                                    <div className="place-name1">
                                         <p style={{ fontSize: 30 }}>{item.name}</p>
                                         <p>{item.descriptions}</p>
                                     </div>
