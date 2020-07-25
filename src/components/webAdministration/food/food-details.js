@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Row, Col, Label } from 'reactstrap';
-import { AvFeedback, AvForm, AvGroup, AvInput, AvField ,AvCheckbox} from 'availity-reactstrap-validation';
+import { AvForm, AvGroup, AvField } from 'availity-reactstrap-validation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles.css';
@@ -10,25 +10,25 @@ export class FoodDetailsAdmin extends Component {
   render() {
     return (
       <div>
-      <Row className="justify-content-center update-label">
-        <Col md="8">
-          <h2>
-            Food Details
+        <Row className="justify-content-center update-label">
+          <Col md="8">
+            <h2>
+              Food Details
           </h2>
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
-        <Col md="8">
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col md="8">
             <AvForm >
               <AvGroup>
                 <Label id="id-guest" for="card-type-name">
-                 ID
+                  ID
                 </Label>
                 <AvField id="card-type-name" type="string" name="name" />
               </AvGroup>
               <AvGroup>
                 <Label id="nameLabel">
-                 Name
+                  Name
                 </Label>
                 <AvField id="card-type-dailyMaxAmount" type="string" className="form-control" name="dailyMaxAmount" />
               </AvGroup>
@@ -41,7 +41,7 @@ export class FoodDetailsAdmin extends Component {
               </AvField>
               <AvGroup>
                 <Label id="nameLabel">
-                 Price
+                  Price
                 </Label>
                 <AvField id="card-type-dailyMaxAmount" type="number" className="form-control" name="dailyMaxAmount" />
               </AvGroup>
@@ -55,7 +55,7 @@ export class FoodDetailsAdmin extends Component {
 
               <AvGroup>
                 <Label id="nameLabel">
-                 Description
+                  Description
                 </Label>
                 <AvField id="card-type-dailyMaxAmount" type="string" className="form-control" name="dailyMaxAmount" />
               </AvGroup>
@@ -64,7 +64,7 @@ export class FoodDetailsAdmin extends Component {
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
                 <span className="d-none d-md-inline">
-                Back
+                  Back
                 </span>
               </Button>
               &nbsp;
@@ -74,11 +74,11 @@ export class FoodDetailsAdmin extends Component {
                Save
               </Button> */}
             </AvForm>
-        </Col>
-      </Row>
-    </div>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }
 
-export default FoodDetailsAdmin ;
+export default FoodDetailsAdmin;

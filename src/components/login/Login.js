@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import '../login/loginStyle.css'
 import { register, login } from '../../redux/actions/users';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
-import { getRoleUserSelector ,getToken } from '../../selectors/user'
+import { getRoleUserSelector, getToken, getStatusUserSelector } from '../../selectors/user'
 import travel1 from '../../assets/travel1.jpg'
+// import { Modal, Button } from 'antd';
 
 class Login extends Component {
     constructor(props) {
@@ -14,22 +15,34 @@ class Login extends Component {
             user: [{
                 username: '',
                 password: '',
-            }]
+            }],
+            isAuthenticated: localStorage.getItem('AUTH_TOKEN_KEY'),
+        }
+    }
+    handleLogin = () => {
+        this.props.login(this.state.username, this.state.password);
+        if (this.props.status === 'error') {
+            console.log("ngu")
+        }
+        else {
+            const token = localStorage.getItem('AUTH_TOKEN_KEY');
+            if (token) {
+                window.location.reload();
+            }
         }
     }
 
-    handleLogin = () => {
-        this.props.login(this.state.username, this.state.password)
-    }
-
     render() {
-        const token = localStorage.getItem('AUTH_TOKEN_KEY');
-        console.log('token',token)
+        if (this.state.isAuthenticated) {
+            return (
+                <Redirect to="/" push />
+            );
+        }
         return (
             <div className="root">
                 <img
                     style={{ opacity: 0.7 }}
-                    src={travel1} alt="" width="100%" height="650%" />
+                    src={travel1} alt="" width="100%" height="650px" />
                 <div className="loginForm">
                     <div className="form">
                         <div className="img-container">
@@ -67,6 +80,7 @@ export default connect(
     state => ({
         role: getRoleUserSelector(state),
         token: getToken(state),
+        status: getStatusUserSelector(state)
     }),
     dispatch =>
         bindActionCreators(

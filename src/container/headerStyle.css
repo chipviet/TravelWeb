@@ -55,6 +55,16 @@ li {
     opacity: 0.7;
 }
 
+.logout {
+    background-color: #cfd8dc;
+    color: white;
+    border-radius: 3px;
+}
+
+.logout:hover {
+    opacity: 0.7;
+}
+
 .dropdown {
     position: relative;
     display: inline-block;

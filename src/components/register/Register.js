@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import './registerStyle.css';
 import travel2 from '../../assets/travel2.jpg'
-export default class Register extends Component {
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux';
+import { register, login } from '../../redux/actions/users';
+class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,6 +13,10 @@ export default class Register extends Component {
             password: '',
             reEnterPassword: ''
         }
+    }
+
+    handleRegister = () => {
+        this.props.register(this.state.username, this.state.password,"Hoài Ân","Trần Thị");
     }
 
     render() {
@@ -48,7 +56,7 @@ export default class Register extends Component {
                                 }}
                                 />
                             </div>
-                            <button type="submit" className="submit-button" >REGISTER</button>
+                            <button type="submit" className="submit-button" onClick={this.handleRegister} >REGISTER</button>
                         </div>
                     </div>
                 </div>
@@ -56,3 +64,18 @@ export default class Register extends Component {
         )
     }
 }
+
+export default connect(
+    state => ({
+        // role: getRoleUserSelector(state),
+        // token: getToken(state),
+    }),
+    dispatch =>
+        bindActionCreators(
+            {
+                register,
+                login,
+            },
+            dispatch
+        )
+)(Register);

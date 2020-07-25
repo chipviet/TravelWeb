@@ -6,12 +6,12 @@ export default function Food(props) {
     const { data } = props;
     console.log('food:', data);
     return (
-        <GridList cellHeight={500} cols={4} style={{ overflowY: 'hidden' }}>
+        <GridList cellHeight={600} cols={4} style={{ overflowY: 'hidden' }}>
             {
                 data ? (data.map((item, index) =>
                     <div className="item" key={index}>
                         <div className="place-image">
-                            <img src={item.URL_Image} alt='' width="100%" height="250px"></img>
+                            <img  className="img-container1" src={item.URL_Image} alt='' width="100%" height="350px"></img>
                         </div>
                         <div className="place-name">
                             <p><b>{item.Name}</b></p>

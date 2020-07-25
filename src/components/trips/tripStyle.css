@@ -54,13 +54,16 @@ img {
 }
 
 
-
+.img-container1 {
+  border-top-left-radius: 20px ;
+  border-top-right-radius: 20px ;
+}
 .list-item {
   padding: 50px 150px;
 }
 
 .item {
-  width: 200px;
+  width: 350px;
   background-color: #eeeeee;
 }
 

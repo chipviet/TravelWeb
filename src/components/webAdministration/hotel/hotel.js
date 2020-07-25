@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Table } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button, Table } from 'reactstrap';
 import '../styles.css';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
@@ -16,8 +15,8 @@ export class HotelAdmin extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if(this.props.getAllHotel() !== nextProps.getAllHotel)
-    this.setState(nextProps)
+    if (this.props.getAllHotel() !== nextProps.getAllHotel)
+      this.setState(nextProps)
   }
 
   delete = (id) => {
@@ -71,7 +70,7 @@ export class HotelAdmin extends Component {
                 {data.map((item, i) => (
                   <tr >
                     <td>{item.Name}</td>
-                    {item.Place ? ( <td>{item.Place.data.Name}</td>) : (null)}
+                    {item.Place ? (<td>{item.Place.data.Name}</td>) : (null)}
                     <td>{item.Star}</td>
                     <td>{item.Price}</td>
                     <td>{item.Star_Rating}</td>

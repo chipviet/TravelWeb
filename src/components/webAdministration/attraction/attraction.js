@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Table } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button, Table } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles.css';
 import { Link } from 'react-router-dom'

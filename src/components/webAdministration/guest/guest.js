@@ -1,31 +1,46 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Table } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Table,Button } from 'reactstrap';
 import '../styles.css';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getAllUser,deleteUser } from '../../../redux/actions/users';
+import { getAllUserSelector } from '../../../selectors/user';
 
-export class GuestAdmin extends Component {
+class GuestAdmin extends Component {
+
+  componentDidMount() {
+    this.props.getAllUser();
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if(this.props.getAllUser() !== nextProps.getAllUser)
+    this.setState(nextProps)
+  }
+
+  delete = (id) => {
+    console.log("id",id)
+    this.props.deleteUser(id);
+  }
   
   render() {
+    const {data} = this.props
+    console.log('data',data);
     return (
       <div>
         <h2 id="ccp-user-heading"  >
-        <div className = "headerNavigation">
-            <h3 className="text-capitalize ">Guest </h3>    
+          <div className="headerNavigation">
+            <h3 className="text-capitalize ">Guest </h3>
             <Link to="/guest-update" className="button btn btn-primary">Create new guest</Link>
           </div>
-            
-            
+               
         </h2>
         <div className="table-responsive">
-
-            <Table responsive aria-describedby="ccp-user-heading">
-              <thead>
+          {data ? (
+            <Table style={{ tableLayout: 'fixed' }} responsive aria-describedby="ccp-user-heading">
+           <thead>
                 <tr>
-                  <th className="hand">
-                  <h4 className="text-capitalize">ID </h4>
-                    
-                  </th>
+                 
                   <th className="hand" >
                     <h4 className="text-capitalize ">Name</h4>
                   </th>
@@ -33,59 +48,55 @@ export class GuestAdmin extends Component {
                     <h4 className="text-capitalize ">username</h4>
                   </th>
                   <th className="hand" >
+                    <h4 className="text-capitalize ">Is Admin</h4>
+                  </th>
+                  <th className="hand" >
                     <h4 className="text-capitalize ">Creation Day</h4>
                   </th>
                   <th className="hand" >
-                    <h4 className="text-capitalize ">Type</h4>
-                  </th>
-                  <th className="hand" >
-                    <h4 className="text-capitalize ">Status</h4>
+                    <h4 className="text-capitalize ">Update Day</h4>
                   </th>
                   <th />
                 </tr>
               </thead>
-              {/* <tbody>
-                {cCPUserList.map((cCPUser, i) => (
-                  <tr key={`entity-${i}`}>
-                    <td>
-                      <Button  to={`${match.url}/${cCPUser.id}`} color="link" size="sm">
-                        {cCPUser.id}
-                      </Button>
-                    </td>
-                    <td>{cCPUser.walletId}</td>
-                    <td>{cCPUser.creationDate}</td>
-                    <td>{cCPUser.updateDate}</td>
+              <tbody>
+                {data.map((item, i) => (
+                  <tr key={i}>
+                    <td>{item.lastname}</td>
+                    <td>{item.username}</td>
+                    {item.isAdmin ? (<td>Admin</td>): (<td></td>)}
+                    <td>{item.createdAt}</td>
+                    <td>{item.updatedAt}</td>
+
                     <td className="text-right">
-                      <div className="btn-group flex-btn-group-container">
-                        <Button  to={`${match.url}/${cCPUser.id}`} color="info" size="sm">
-                          <FontAwesomeIcon icon="eye" />{' '}
+                      <div className="btn-group flex-btn-group-container">  
+                        <Button tag={Link} to={'/guest'} color="danger" size="sm" onClick={() => this.delete(item._id)}>
                           <span className="d-none d-md-inline">
-                            <Translate contentKey="entity.action.view">View</Translate>
-                          </span>
-                        </Button>
-                        <Button to={`${match.url}/${cCPUser.id}/edit`} color="primary" size="sm">
-                          <FontAwesomeIcon icon="pencil-alt" />{' '}
-                          <span className="d-none d-md-inline">
-                            <Translate contentKey="entity.action.edit">Edit</Translate>
-                          </span>
-                        </Button>
-                        <Button to={`${match.url}/${cCPUser.id}/delete`} color="danger" size="sm">
-                          <FontAwesomeIcon icon="trash" />{' '}
-                          <span className="d-none d-md-inline">
-                            <Translate contentKey="entity.action.delete">Delete</Translate>
+                            Delete
                           </span>
                         </Button>
                       </div>
                     </td>
                   </tr>
                 ))}
-              </tbody> */}
+              </tbody>
             </Table>
-         
+          ) : (null)}
         </div>
       </div>
     );
   }
 }
 
-export default GuestAdmin ;
+export default connect(
+  state => ({
+     data: getAllUserSelector(state)
+  }),
+  dispatch =>
+    bindActionCreators(
+      {
+        getAllUser,
+        deleteUser,
+      }, dispatch
+    )
+)(GuestAdmin);

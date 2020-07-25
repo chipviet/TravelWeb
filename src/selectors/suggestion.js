@@ -14,9 +14,9 @@ export const getHotelSuggestionSelector = (state) => {
   return null
 }
 
-export const getPlaceSuggestionSelector = (state) => {
-  const data = state.suggestion.getPlaceSuggestion
-  console.log('1', data)
+export const getAttractionSuggestionSelector = (state) => {
+  const data = state.suggestion.getAttractionSuggestion
+  // console.log('1', data)
   if (data && data.result) {
     return data.result.data
   }

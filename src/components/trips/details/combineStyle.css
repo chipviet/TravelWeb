@@ -1,11 +1,16 @@
 .item {
-    margin: 0 50px;
+    margin: 50px;
+    border-radius: 20px;
 }
 
 .checked {
     color: orange;
 }
 
+.img-container1 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
 
 .place-name {
     text-align: center;
@@ -20,20 +25,24 @@
 .place-rating-price {
     display: flex;
     flex-direction: column;
+    padding:0 90px;
 }
 
 .plate-rating {
     flex: 1;
+    
 }
 
 .place-price {
     flex: 1;
     display: flex;
     flex-direction: row;
+    font-weight: 700;
     color: blue;
     justify-content: center;
 }
 
 .place-description {
     text-align: left;
+    padding: 20px;
 }
