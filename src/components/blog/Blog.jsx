@@ -62,7 +62,7 @@ class Blog extends Component {
                     url: hieu2
                 },
                 {
-                    name: 'Bổ',
+                    name: 'Hưng Nguyễn Đập ',
                     comments: 'Đụ mẹ lồn tanle',
                     url: abo
                 },
