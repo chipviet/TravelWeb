@@ -5,7 +5,7 @@ import '../combineStyle.css'
 export default function Place(props) {
     const { data } = props;
     return (
-        <GridList cellHeight={700} cols={4} style={{ overflowY: 'hidden' }}>
+        <GridList cellHeight={650} cols={4} style={{ overflowY: 'hidden' }}>
             {
                 data ? (data.map((item, index) =>
                     <div className="item" key={index}>
