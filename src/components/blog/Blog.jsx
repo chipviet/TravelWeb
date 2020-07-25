@@ -18,6 +18,7 @@ import hieu2 from '../../assets/hieu2.jpg'
 import hung from '../../assets/hung2.jpg'
 import blogimg from '../../assets/blogimg.jpg'
 import gif from '../../assets/beachgif.gif'
+import halong from '../../assets/halong-gif.gif'
 
 class Blog extends Component {
     constructor(props) {
@@ -90,11 +91,7 @@ class Blog extends Component {
         return (
             <div className="body">
                 <div className="slide-container about">
-                    <Slide arrows={false} duration={2000} transitionDuration={1000}>
-                        <img src='https://toquoc.mediacdn.vn/2020/2/28/hoi-an-ve-dem-1-1582879781297957162122.gif' alt="" width="100%" height="100%" />
-                        <img src='https://btnmt.onecmscdn.com/2018/04/26/anh-1_68.jpg' alt="" width="100%" height="100%" />
-                        <img src="https://cungphuot.info/wp-content/uploads/2019/02/cac-dia-diem-du-lich-o-quang-nam.jpg" alt="" width="100%" height="100%" />
-                    </Slide>
+                    <img src={halong} alt="" width="100%" height="100%" />
                     <div className="aboutDescription">
                         <h1 style={{ fontSize: 50, fontWeight: 900, textShadow: '2px 2px black', fontFamily: 'Work Sans' }}>BLOG</h1>
                         <div className="content">
