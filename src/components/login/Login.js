@@ -6,7 +6,7 @@ import { Link, Redirect } from 'react-router-dom'
 import { bindActionCreators } from 'redux';
 import { getRoleUserSelector, getToken, getStatusUserSelector } from '../../selectors/user'
 import travel1 from '../../assets/travel1.jpg'
-import { Modal, Button } from 'antd';
+// import { Modal, Button } from 'antd';
 
 class Login extends Component {
     constructor(props) {

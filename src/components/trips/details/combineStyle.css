@@ -1,12 +1,16 @@
 .item {
-    margin: 0 50px;
+    margin: 50px;
+    border-radius: 20px;
 }
 
 .checked {
     color: orange;
 }
 
-
+.img-container1 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
 .place-name {
     text-align: center;
     margin: 5px;
@@ -37,4 +41,5 @@
 
 .place-description {
     text-align: left;
+    padding:20px;
 }
