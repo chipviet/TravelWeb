@@ -34,31 +34,31 @@ class Blog extends Component {
                     "name": 'Da Nang',
                     "url": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/17/b0/a8.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/771796",
-                    "descriptions": "Dat nuoc cua may loz dan ba"
+                    "descriptions": "Worth living city"
                 },
                 {
                     "name": 'Da Lat',
                     "url": "https://nhatrangtransferservices.com/wp-content/uploads/2017/08/Transfer-From-Mui-Ne-To-Da-Lat-By-Private-Car.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/24f355",
-                    "descriptions": "Noi chan rau tot nhat"
+                    "descriptions": "Popular city with many famous sights"
                 },
                 {
                     "name": 'Ha Noi',
                     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/VNU_lethanhtong_900x600.jpg/220px-VNU_lethanhtong_900x600.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/d32776",
-                    "descriptions": "Ha noi khong voi duoc dau"
+                    "descriptions": "Capital of Vietnam"
                 },
                 {
                     "name": 'Sai Gon',
                     "url": "https://vietjet.net/includes/uploads/2018/01/ve-may-bay-dong-hoi-sai-gon-600x376.png",
                     "thumbnailUrl": "https://via.placeholder.com/150/f66b97",
-                    "descriptions": "meo meo meo meo meo"
+                    "descriptions": "The biggest city of Vietnam"
                 },
             ],
             staffs: [
                 {
                     name: 'Hiếu 2 Mái',
-                    comments: 'Xa hoi lay`, chi co lam thi moi co an',
+                    comments: 'For me, travelling is one of my favour. So great due to travelling Vietnam',
                     url: hieu2
                 },
                 {
