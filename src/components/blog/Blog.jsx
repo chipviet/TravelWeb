@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import "../styles.css"
 import Loading from '../loading/Loading';
-import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -29,7 +28,7 @@ class Blog extends Component {
                     "name": 'Thanh Hoa',
                     "url": "https://dulich.petrotimes.vn/stores/news_dataimages/thuyan/032019/23/16/1128_flc-sam-son-resort2a-min.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/92c952",
-                    "descriptions": "Dat nuoc rau ma"
+                    "descriptions": "An rau ma pha duong tau"
                 },
                 {
                     "name": 'Da Nang',

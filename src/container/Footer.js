@@ -24,9 +24,9 @@ class Footer extends Component {
                         </div>
                     </div>
                     <div className="social-contact">
-                        <a href="https://www.facebook.com/cauvangdinhbacho" target="_blank" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-google"></a>
+                        <a href="https://www.facebook.com/cauvangdinhbacho" target="_blank" className="fa fa-facebook"></a>
+                        <a href="#" className="fa fa-twitter"></a>
+                        <a href="#" className="fa fa-google"></a>
                         <p>Powered by Hieu US/UK</p>
                         <p>Telephone: (+84)123456789 / Hotline: 113</p>
                     </div>
