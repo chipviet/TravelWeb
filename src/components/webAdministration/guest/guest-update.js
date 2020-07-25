@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Row, Col, Label } from 'reactstrap';
-import { AvFeedback, AvForm, AvGroup, AvInput, AvField } from 'availity-reactstrap-validation';
+import { AvForm, AvGroup, AvField } from 'availity-reactstrap-validation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles.css';
 import { Link } from 'react-router-dom'
@@ -9,31 +9,31 @@ export class GuestUpdateAdmin extends Component {
   render() {
     return (
       <div>
-      <Row className="justify-content-center">
-        <Col md="8">
-          <h2>
-            Create or edit a Guest
+        <Row className="justify-content-center">
+          <Col md="8">
+            <h2>
+              Create or edit a Guest
           </h2>
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
-        <Col md="8">
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col md="8">
             <AvForm >
               <AvGroup>
                 <Label id="id-guest" for="card-type-name">
-                 ID
+                  ID
                 </Label>
                 <AvField id="card-type-name" type="string" name="name" />
               </AvGroup>
               <AvGroup>
                 <Label id="nameLabel">
-                 Name
+                  Name
                 </Label>
                 <AvField id="card-type-dailyMaxAmount" type="string" className="form-control" name="dailyMaxAmount" />
               </AvGroup>
               <AvGroup>
                 <Label id="maxNbDailyTransactionsLabel" for="card-type-maxNbDailyTransactions">
-                 username
+                  username
                 </Label>
                 <AvField id="card-type-maxNbDailyTransactions" type="string" className="form-control" name="maxNbDailyTransactions" />
               </AvGroup>
@@ -51,7 +51,7 @@ export class GuestUpdateAdmin extends Component {
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
                 <span className="d-none d-md-inline">
-                Back
+                  Back
                 </span>
               </Button>
               &nbsp;
@@ -61,11 +61,11 @@ export class GuestUpdateAdmin extends Component {
                Save
               </Button>
             </AvForm>
-        </Col>
-      </Row>
-    </div>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }
 
-export default GuestUpdateAdmin ;
+export default GuestUpdateAdmin;

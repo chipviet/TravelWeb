@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Row, Col, Label } from 'reactstrap';
-import { AvFeedback, AvForm, AvGroup, AvInput, AvField ,AvCheckbox} from 'availity-reactstrap-validation';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { AvForm, AvGroup, AvInput, AvField } from 'availity-reactstrap-validation';
 import '../styles.css';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';

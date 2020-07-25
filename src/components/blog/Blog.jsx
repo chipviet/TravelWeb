@@ -66,6 +66,11 @@ class Blog extends Component {
                     comments: 'Đụ mẹ lồn tanle',
                     url: abo
                 },
+                {
+                    name: 'Bổ',
+                    comments: 'Đụ mẹ lồn tanle',
+                    url: abo
+                },
             ]
         }
         this.myRef = React.createRef();

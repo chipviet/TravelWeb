@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Table } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button, Table } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../styles.css';
 import { Link } from 'react-router-dom'
@@ -16,8 +15,8 @@ export class FoodAdmin extends Component {
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    if(this.props.getAllFood() !== nextProps.getAllFood)
-    this.setState(nextProps)
+    if (this.props.getAllFood() !== nextProps.getAllFood)
+      this.setState(nextProps)
   }
 
   delete = (id) => {
@@ -76,7 +75,7 @@ export class FoodAdmin extends Component {
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`/food-details/${item._id}`} color="info" size="sm">
                           <span className="d-none d-md-inline">
-                              View
+                            View
                           </span>
                         </Button>
                         <Button tag={Link} to={`/food-update/${item._id}`} color="primary" size="sm">

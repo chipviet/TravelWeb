@@ -1,8 +1,5 @@
 import './tripStyle.css'
-import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import travel1 from '../../assets/travel1.jpg'
-import travel2 from '../../assets/travel2.jpg'
 import Loading from '../loading/Loading'
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
