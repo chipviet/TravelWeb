@@ -14,6 +14,7 @@ import thanhhuy from '../../assets/thanhhuy.jpg'
 import chipviet from '../../assets/chipviet.jpg'
 import hieu from '../../assets/hieu.jpg'
 import hung from '../../assets/hung2.jpg'
+import halong from '../../assets/vinhhalong.jpg'
 class Home extends Component {
     constructor(props) {
         super(props)
@@ -26,7 +27,7 @@ class Home extends Component {
                     <Slide arrows={false} duration={4000} transitionDuration={1000}>
                         <img src='https://www.pixel4k.com/wp-content/uploads/2018/11/man-tourist-backpack-mountains-travel-4k_1541115960.jpg' alt="" width="100%" />
                         <img src={travel1} alt="" width="100%" />
-                        <img src={travel2} alt="" width="100%" height="100%" />
+                        <img src={halong} alt="" width="100%" height="100%" />
                     </Slide>
                     <div className="aboutDescription">
                         <h1 style={{ fontSize: 50, fontWeight: 900, textShadow: '2px 2px black', fontFamily: 'Work Sans' }}>A More Rewarding Way To Travel</h1>
