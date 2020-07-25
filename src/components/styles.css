@@ -118,12 +118,12 @@
   opacity: 0.7;
 }
 
-.img-item:hover .place-name {
+.img-item:hover .place-name1 {
   visibility: visible;
   opacity: 1;
 }
 
-.place-name {
+.place-name1 {
   margin: 0 !important;
   position: absolute;
   display: flex;
@@ -148,7 +148,7 @@
   padding: 50px 100px;
   justify-content: center;
   align-items: center;
-  margin:0 100px;
+  margin: 0 100px;
   font-size: 20px;
 }
 

@@ -4,6 +4,7 @@ import GridList from '@material-ui/core/GridList';
 import '../combineStyle.css'
 export default function Place(props) {
     const { data } = props;
+    console.log("name: ", data)
     return (
         <GridList cellHeight={700} cols={4} style={{ overflowY: 'hidden' }}>
             {
