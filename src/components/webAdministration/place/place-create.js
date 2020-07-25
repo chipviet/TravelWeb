@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Row, Col, Label } from 'reactstrap';
-import { AvFeedback, AvForm, AvGroup, AvInput, AvField, AvCheckbox } from 'availity-reactstrap-validation';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { AvForm, AvGroup, AvInput } from 'availity-reactstrap-validation';
 import '../styles.css';
 import { connect } from 'react-redux';
 import { createNewPlace } from '../../../redux/actions/places';
@@ -22,8 +21,8 @@ export class PlaceCreateAdmin extends Component {
 
   saveEntity = () => {
     // const { placeId, name, country, urlImage } = this.state;
-    console.log("Vaoday", this.state.name, this.state.country, this.state.urlImage,this.state.description)
-    this.props.createNewPlace(this.state.name, this.state.country, this.state.urlImage,this.state.description);
+    console.log("Vaoday", this.state.name, this.state.country, this.state.urlImage, this.state.description)
+    this.props.createNewPlace(this.state.name, this.state.country, this.state.urlImage, this.state.description);
   }
 
   render() {
@@ -89,7 +88,7 @@ export class PlaceCreateAdmin extends Component {
                 </span>
               </Button>
               &nbsp;
-              <Button tag={Link} to= "/place" color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
+              <Button tag={Link} to="/place" color="primary" id="save-entity" type="submit" onClick={this.saveEntity}>
                 &nbsp;
                 Save
               </Button>

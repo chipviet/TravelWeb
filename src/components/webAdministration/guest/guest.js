@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Row, Table } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Table,Button } from 'reactstrap';
 import '../styles.css';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
@@ -30,8 +29,8 @@ class GuestAdmin extends Component {
     return (
       <div>
         <h2 id="ccp-user-heading"  >
-        <div className = "headerNavigation">
-            <h3 className="text-capitalize ">Guest </h3>    
+          <div className="headerNavigation">
+            <h3 className="text-capitalize ">Guest </h3>
             <Link to="/guest-update" className="button btn btn-primary">Create new guest</Link>
           </div>
                

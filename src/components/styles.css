@@ -216,25 +216,30 @@
 .staff-description {
   text-align: left;
 }
+
 .staff-post {
   margin: 30px 200px;
 }
+
 .comment-item {
   display: flex !important;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
 .comment-content {
   flex: 4;
   padding: 0 50px;
 }
+
 .image-comment {
   width: 250px;
   height: 250px;
   border-radius: 200px;
   flex: 1;
 }
+
 .image {
   width: 250px;
   height: 250px;
