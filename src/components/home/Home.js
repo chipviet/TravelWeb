@@ -25,8 +25,8 @@ class Home extends Component {
             <div className="body">
                 <div className="slide-container about">
                     <Slide arrows={false} duration={4000} transitionDuration={1000}>
-                        <img src='https://www.pixel4k.com/wp-content/uploads/2018/11/man-tourist-backpack-mountains-travel-4k_1541115960.jpg' alt="" width="100%" />
-                        <img src={travel1} alt="" width="100%" />
+                        <img src='https://www.pixel4k.com/wp-content/uploads/2018/11/man-tourist-backpack-mountains-travel-4k_1541115960.jpg' alt="" width="100%" height="100%" />
+                        <img src={travel1} alt="" width="100%" height="100%" />
                         <img src={halong} alt="" width="100%" height="100%" />
                     </Slide>
                     <div className="aboutDescription">
