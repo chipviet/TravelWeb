@@ -44,31 +44,38 @@ class Blog extends Component {
                 },
                 {
                     "name": 'Ha Noi',
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/VNU_lethanhtong_900x600.jpg/220px-VNU_lethanhtong_900x600.jpg",
+                    "url": "https://cdn.printgo.vn/uploads/media/774255/dia-diem-di-choi-30-4-ha-noi_1587472232.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/d32776",
                     "descriptions": "Capital of Vietnam"
                 },
                 {
-                    "name": 'Sai Gon',
+                    "name": 'Ho Chi Minh City',
                     "url": "https://vietjet.net/includes/uploads/2018/01/ve-may-bay-dong-hoi-sai-gon-600x376.png",
                     "thumbnailUrl": "https://via.placeholder.com/150/f66b97",
                     "descriptions": "The biggest city of Vietnam"
                 },
+                {
+                    "name": 'Sa Pa',
+                    "url": "https://tour.dulichvietnam.com.vn/uploads/tour/1552709004_du-lich-mien-bac-20.png",
+                    "thumbnailUrl": "https://via.placeholder.com/150/f66b97",
+                    "descriptions": "Forever Spring City"
+                },
+
             ],
             staffs: [
                 {
                     name: 'Hiếu 2 Mái',
-                    comments: 'For me, travelling is one of my favour. So great due to travelling Vietnam',
+                    comments: 'For me, travelling is one of my favour. So great due to travelling Vietnam, its my dream and i dont enough money',
                     url: hieu2
                 },
                 {
                     name: 'Hưng Nguyễn ',
-                    comments: 'Chủ tịch FPT hay đi du lịch',
-                    url: abo
+                    comments: 'Chairman of FPT and like traveling with my wife',
+                    url: hung
                 },
                 {
                     name: 'Bổ',
-                    comments: 'Đụ mẹ lồn tanle',
+                    comments: 'I love traveling, I love discovering new places, finding great experiences and I will make a lot of money to do it.',
                     url: abo
                 },
             ]

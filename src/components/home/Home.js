@@ -152,20 +152,21 @@ class Home extends Component {
                                 <img src={abo} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
                                     <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Lê Thái Bảo</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>JAVa Developer</p>
+                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Backend JAVA Developer</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p>Staff or Dev of JAVa backend and nodeJs copy paste.</p>
+                                    <p>Dislike of CODE but because of living a life of hard work, so be diligent and industrious</p>
                                 </div>
                             </div>
                             <div className="staff-list">
                                 <img src={thanhhuy} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
                                     <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Phan Thanh Huy</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Full-Stackoverflow Developer</p>
+                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Android JAVA developer</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p style={{ fontSize: 18 }}>Ctrl+C, Ctrl+V master</p>
+                                    <p style={{ fontSize: 18 }}>
+                                        A hardworking CODE who has a wonderful life with his wife and dislikes lonely people.</p>
                                 </div>
                             </div>
                             <div className="staff-list">
@@ -176,10 +177,7 @@ class Home extends Component {
                                 </div>
                                 <div className="staff-description">
                                     <p>An executive leader with strong business acumen, communication skills and a
-
-                                    genuine intellectual curiosity for new technologies
-                                    Motivated by teamwork, innovative strategic vision, structuring complex problems
-and creating useful solutions</p>
+                                    genuine intellectual curiosity for new technologies Motivated by teamwork and creating useful solutions</p>
                                 </div>
                             </div>
                             <div className="staff-list">
@@ -196,10 +194,10 @@ and creating useful solutions</p>
                                 <img src={hung} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
                                     <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Nguyễn Lê Phước Hưng</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Lady of team</p>
+                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>CEO of company</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p>1 tháng 30 ngày tới tháng 31 ngày.</p>
+                                    <p>Best CEO in Viet Nam</p>
                                 </div>
                             </div>
 
