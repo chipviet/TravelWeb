@@ -177,10 +177,7 @@ class Home extends Component {
                                 </div>
                                 <div className="staff-description">
                                     <p>An executive leader with strong business acumen, communication skills and a
-
-                                    genuine intellectual curiosity for new technologies
-                                    Motivated by teamwork, innovative strategic vision, structuring complex problems
-and creating useful solutions</p>
+                                    genuine intellectual curiosity for new technologies Motivated by teamwork, innovative strategic vision, structuring complex problems and creating useful solutions</p>
                                 </div>
                             </div>
                             <div className="staff-list">
