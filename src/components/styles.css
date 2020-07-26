@@ -107,7 +107,7 @@
 }
 
 .blog-container {
-  padding:50px;
+  padding: 50px;
 }
 
 .img-item {
@@ -135,7 +135,7 @@
   bottom: 0;
   height: 100px;
   color: white;
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
   visibility: hidden;
   opacity: 0;
   background-color: transparent;
@@ -227,6 +227,10 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.comment-item:focus {
+  outline: none;
 }
 
 .comment-content {

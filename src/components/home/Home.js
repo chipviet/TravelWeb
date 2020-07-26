@@ -152,20 +152,21 @@ class Home extends Component {
                                 <img src={abo} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
                                     <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Lê Thái Bảo</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>JAVa Developer</p>
+                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Backend JAVA Developer</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p>Staff or Dev of JAVa backend and nodeJs copy paste.</p>
+                                    <p>Dislike of CODE but because of living a life of hard work, so be diligent and industrious</p>
                                 </div>
                             </div>
                             <div className="staff-list">
                                 <img src={thanhhuy} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
                                     <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Phan Thanh Huy</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Full-Stackoverflow Developer</p>
+                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Android JAVA developer</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p style={{ fontSize: 18 }}>Ctrl+C, Ctrl+V master</p>
+                                    <p style={{ fontSize: 18 }}>
+                                        A hardworking CODE who has a wonderful life with his wife and dislikes lonely people.</p>
                                 </div>
                             </div>
                             <div className="staff-list">

@@ -59,7 +59,7 @@ class Trips extends Component {
                     </div>
                 </div>
                 <div className="list-item">
-                    {data ? (<GridList cellHeight={950} cols={3} style={{ overflow: 'hidden' }}>
+                    {data ? (<GridList cellHeight={650} cols={3} style={{ overflow: 'hidden' }}>
                         {searchTerm ? data.filter(item => item.Name.toLowerCase().includes(searchTerm.toLowerCase())).map((item, index) =>
                             <Link target="_top" style={{ textDecoration: 'none', color: 'black' }}
                                 to={`/details/${item._id}`} key={index}>
