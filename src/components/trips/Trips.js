@@ -61,9 +61,10 @@ class Trips extends Component {
                 <div className="list-item">
                     {data ? (<GridList cellHeight={650} cols={3} style={{ overflow: 'hidden' }}>
                         {searchTerm ? data.filter(item => item.Name.toLowerCase().includes(searchTerm.toLowerCase())).map((item, index) =>
-                            <Link target="_top" style={{ textDecoration: 'none', color: 'black' }}
-                                to={`/details/${item._id}`} key={index}>
-                                <div className="item1">
+
+                            <div className="item1">
+                                <Link target="_top" style={{ textDecoration: 'none', color: 'black' }}
+                                    to={`/details/${item._id}`} key={index}>
                                     <div className="place-image" >
                                         <img className="img-container1" src={item.URL_Image} alt='not available' width="250px" height="350px"></img>
                                     </div>
@@ -73,12 +74,14 @@ class Trips extends Component {
                                     <div className="place-description">
                                         <p>{item.Description}</p>
                                     </div>
-                                </div>
-                            </Link>
+                                </Link>
+                            </div>
+
                         ) : data.map((item, index) =>
-                            <Link target="_top" style={{ textDecoration: 'none', color: 'black' }}
-                                to={`/details/${item._id}`} key={index}>
-                                <div className="item1" >
+
+                            <div className="item1" >
+                                <Link target="_top" style={{ textDecoration: 'none', color: 'black' }}
+                                    to={`/details/${item._id}`} key={index}>
                                     <div className="place-image">
                                         <img className="img-container1" src={item.URL_Image} alt='loading...' width="250px" height="250px"></img>
                                     </div>
@@ -88,12 +91,12 @@ class Trips extends Component {
                                     <div className="place-description">
                                         <p>{item.Description}</p>
                                     </div>
-                                </div>
-                            </Link>
+                                </Link>
+                            </div>
                         )}
                     </GridList>) : (<Loading />)}
                 </div>
-            </div>
+            </div >
         )
     }
 }

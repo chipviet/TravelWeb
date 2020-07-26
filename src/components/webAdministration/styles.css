@@ -1,6 +1,10 @@
+:root {
+    font-family: "Open Sans";
+}
+
 .button {
     margin: 10px;
-    width: 150px;
+    width: 200px;
     height: 40px;
     float: right;
     display: inline;
