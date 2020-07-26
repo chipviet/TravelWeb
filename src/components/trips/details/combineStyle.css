@@ -1,6 +1,8 @@
 .item {
-    margin: 50px;
+    margin:20px 0;
     border-radius: 20px;
+    border:1px solid #cfd8dc;
+    background-color: #f5f5f5;
 }
 
 .checked {
@@ -25,7 +27,7 @@
 .place-rating-price {
     display: flex;
     flex-direction: column;
-    padding:0 90px;
+    padding:0 40px;
 }
 
 .plate-rating {

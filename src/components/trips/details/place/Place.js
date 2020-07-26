@@ -6,7 +6,7 @@ export default function Place(props) {
     const { data } = props;
     console.log("name: ", data)
     return (
-        <GridList cellHeight={650} cols={4} style={{ overflowY: 'hidden' }}>
+        <GridList cellHeight={850} cols={3} style={{ overflowY: 'hidden' }}>
             {
                 data ? (data.map((item, index) =>
                     <div className="item" key={index}>

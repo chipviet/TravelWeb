@@ -48,7 +48,7 @@ class Main extends Component {
     }
     render() {
         return (
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', fontFamily: "Open Sans" }}>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/trips" component={Trips} />

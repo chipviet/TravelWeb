@@ -29,7 +29,7 @@
 
 .aboutDescription {
   position: absolute;
-  width: 30%;
+  width: 40%;
   font-size: 20px;
   color: white;
   top: 15%;
@@ -45,7 +45,7 @@
   width: 25%;
   font-size: 20px;
   color: white;
-  bottom: 25%;
+  bottom: 45%;
   left: 15%;
   animation-name: display;
   animation-duration: 1s;
@@ -93,7 +93,7 @@
   width: 25%;
   font-size: 20px;
   color: white;
-  bottom: 45%;
+  bottom: 35%;
   left: 15%;
   animation-name: display;
   animation-duration: 1s;
@@ -107,7 +107,7 @@
 }
 
 .blog-container {
-  margin: 50px;
+  padding: 50px;
 }
 
 .img-item {
@@ -135,7 +135,7 @@
   bottom: 0;
   height: 100px;
   color: white;
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
   visibility: hidden;
   opacity: 0;
   background-color: transparent;
@@ -143,13 +143,12 @@
 }
 
 .blog-content {
+  padding: 50px;
   display: flex;
   flex-direction: row;
-  padding: 50px 100px;
   justify-content: center;
   align-items: center;
-  margin: 0 100px;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .blog-text {
@@ -178,7 +177,7 @@
   flex: 1;
   margin: 80px;
   animation-name: display1;
-  animation-duration: 4s;
+  animation-duration: 6s;
   animation-timing-function: ease-out;
 }
 
@@ -230,6 +229,10 @@
   align-items: center;
 }
 
+.comment-item:focus {
+  outline: none;
+}
+
 .comment-content {
   flex: 4;
   padding: 0 50px;
@@ -249,8 +252,8 @@
 }
 
 .image1 {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 200px;
 }
 

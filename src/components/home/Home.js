@@ -25,8 +25,8 @@ class Home extends Component {
             <div className="body">
                 <div className="slide-container about">
                     <Slide arrows={false} duration={4000} transitionDuration={1000}>
-                        <img src='https://www.pixel4k.com/wp-content/uploads/2018/11/man-tourist-backpack-mountains-travel-4k_1541115960.jpg' alt="" width="100%" />
-                        <img src={travel1} alt="" width="100%" />
+                        <img src='https://www.pixel4k.com/wp-content/uploads/2018/11/man-tourist-backpack-mountains-travel-4k_1541115960.jpg' alt="" width="100%" height="100%" />
+                        <img src={travel1} alt="" width="100%" height="100%" />
                         <img src={halong} alt="" width="100%" height="100%" />
                     </Slide>
                     <div className="aboutDescription">
@@ -50,7 +50,7 @@ class Home extends Component {
                         offset={[-100, 100]}
                         placeholder={<Loading />}>
                         <div className="blog-title">
-                            <p style={{ fontSize: 48, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>POPULAR DESTINATION</p>
+                            <p style={{ fontSize: 40, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>POPULAR DESTINATION</p>
                         </div>
                         <Slide pauseOnHover={true} duration={3000} transitionDuration={1000}>
                             <div className='blog-content'>
@@ -90,7 +90,7 @@ class Home extends Component {
                         offset={[-100, 100]}
                         placeholder={<Loading />}>
                         <div className="blog-title">
-                            <p style={{ fontSize: 48, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>POPULAR FOOD</p>
+                            <p style={{ fontSize: 40, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>POPULAR FOOD</p>
                         </div>
                         <Fade pauseOnHover={true} duration={3000} transitionDuration={1000}>
                             <div className='blog-content'>
@@ -152,20 +152,21 @@ class Home extends Component {
                                 <img src={abo} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
                                     <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Lê Thái Bảo</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>JAVa Developer</p>
+                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Backend JAVA Developer</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p>Staff or Dev of JAVa backend and nodeJs copy paste.</p>
+                                    <p>Dislike of CODE but because of living a life of hard work, so be diligent and industrious</p>
                                 </div>
                             </div>
                             <div className="staff-list">
                                 <img src={thanhhuy} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
                                     <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Phan Thanh Huy</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Full-Stackoverflow Developer</p>
+                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Android JAVA developer</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p style={{ fontSize: 18 }}>Ctrl+C, Ctrl+V master</p>
+                                    <p style={{ fontSize: 18 }}>
+                                        A hardworking CODE who has a wonderful life with his wife and dislikes lonely people.</p>
                                 </div>
                             </div>
                             <div className="staff-list">
@@ -175,11 +176,7 @@ class Home extends Component {
                                     <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Leader</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p>An executive leader with strong business acumen, communication skills and a
-
-                                    genuine intellectual curiosity for new technologies
-                                    Motivated by teamwork, innovative strategic vision, structuring complex problems
-and creating useful solutions</p>
+                                    <p>A leader with many years of experience in managing and leading the team to success in life and in love. Motivated by teamwork and creating useful solutions</p>
                                 </div>
                             </div>
                             <div className="staff-list">
@@ -196,10 +193,10 @@ and creating useful solutions</p>
                                 <img src={hung} className="image" alt='' width="250px" height="250px" />
                                 <div className="staff-name">
                                     <p style={{ fontSize: 24, flex: 1, fontWeight: 700 }}>Nguyễn Lê Phước Hưng</p>
-                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>Lady of team</p>
+                                    <p style={{ fontSize: 16, flex: 1, fontWeight: 'bold' }}>CEO of company</p>
                                 </div>
                                 <div className="staff-description">
-                                    <p>1 tháng 30 ngày tới tháng 31 ngày.</p>
+                                    <p>Best CEO in Viet Nam</p>
                                 </div>
                             </div>
 

@@ -10,11 +10,7 @@ import configureStore from '../src/redux/store';
 const store = configureStore()
 
 class App extends Component {
-  componentDidMount() {
-    const token = localStorage.getItem('AUTH_TOKEN_KEY');
-    if (token) {
-    }
-  }
+
   render() {
     return (
       <div>

@@ -17,7 +17,7 @@ export default class Header extends Component {
     render() {
         const { loggedIn } = this.state;
         return (
-            <div>
+            <div style={{ fontFamily: 'Open Sans' }}>
                 {loggedIn ? <AuthenHeader /> : <MainHeader />}
             </div>
         )

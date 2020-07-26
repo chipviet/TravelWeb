@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import "../styles.css"
 import Loading from '../loading/Loading';
-import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -29,47 +28,54 @@ class Blog extends Component {
                     "name": 'Thanh Hoa',
                     "url": "https://dulich.petrotimes.vn/stores/news_dataimages/thuyan/032019/23/16/1128_flc-sam-son-resort2a-min.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/92c952",
-                    "descriptions": "Dat nuoc rau ma"
+                    "descriptions": "An rau ma pha duong tau"
                 },
                 {
                     "name": 'Da Nang',
                     "url": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/17/b0/a8.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/771796",
-                    "descriptions": "Dat nuoc cua may loz dan ba"
+                    "descriptions": "Worth living city"
                 },
                 {
                     "name": 'Da Lat',
                     "url": "https://nhatrangtransferservices.com/wp-content/uploads/2017/08/Transfer-From-Mui-Ne-To-Da-Lat-By-Private-Car.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/24f355",
-                    "descriptions": "Noi chan rau tot nhat"
+                    "descriptions": "Popular city with many famous sights"
                 },
                 {
                     "name": 'Ha Noi',
-                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/VNU_lethanhtong_900x600.jpg/220px-VNU_lethanhtong_900x600.jpg",
+                    "url": "https://cdn.printgo.vn/uploads/media/774255/dia-diem-di-choi-30-4-ha-noi_1587472232.jpg",
                     "thumbnailUrl": "https://via.placeholder.com/150/d32776",
-                    "descriptions": "Ha noi khong voi duoc dau"
+                    "descriptions": "Capital of Vietnam"
                 },
                 {
-                    "name": 'Sai Gon',
+                    "name": 'Ho Chi Minh City',
                     "url": "https://vietjet.net/includes/uploads/2018/01/ve-may-bay-dong-hoi-sai-gon-600x376.png",
                     "thumbnailUrl": "https://via.placeholder.com/150/f66b97",
-                    "descriptions": "meo meo meo meo meo"
+                    "descriptions": "The biggest city of Vietnam"
                 },
+                {
+                    "name": 'Sa Pa',
+                    "url": "https://tour.dulichvietnam.com.vn/uploads/tour/1552709004_du-lich-mien-bac-20.png",
+                    "thumbnailUrl": "https://via.placeholder.com/150/f66b97",
+                    "descriptions": "Forever Spring City"
+                },
+
             ],
             staffs: [
                 {
                     name: 'Hiếu 2 Mái',
-                    comments: 'Xa hoi lay`, chi co lam thi moi co an',
+                    comments: 'For me, travelling is one of my favour. So great due to travelling Vietnam, its my dream and i dont enough money',
                     url: hieu2
                 },
                 {
-                    name: 'Bổ',
-                    comments: 'Đụ mẹ lồn tanle',
-                    url: abo
+                    name: 'Hưng Nguyễn ',
+                    comments: 'Chairman of FPT and like traveling with my wife',
+                    url: hung
                 },
                 {
                     name: 'Bổ',
-                    comments: 'Đụ mẹ lồn tanle',
+                    comments: 'I love traveling, I love discovering new places, finding great experiences and I will make a lot of money to do it.',
                     url: abo
                 },
             ]
