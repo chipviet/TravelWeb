@@ -59,13 +59,13 @@ class Trips extends Component {
                     </div>
                 </div>
                 <div className="list-item">
-                    {data ? (<GridList cellHeight={650} cols={4} style={{ overflowY: 'hidden' }}>
+                    {data ? (<GridList cellHeight={950} cols={3} style={{ overflow: 'hidden' }}>
                         {searchTerm ? data.filter(item => item.Name.toLowerCase().includes(searchTerm.toLowerCase())).map((item, index) =>
                             <Link target="_top" style={{ textDecoration: 'none', color: 'black' }}
                                 to={`/details/${item._id}`} key={index}>
-                                <div className="item" >
+                                <div className="item1">
                                     <div className="place-image" >
-                                        <img className="img-container1" src={item.URL_Image} alt='not available' width="350px" height="350px"></img>
+                                        <img className="img-container1" src={item.URL_Image} alt='not available' width="250px" height="350px"></img>
                                     </div>
                                     <div className="place-name">
                                         <p><b>{item.Name}</b></p>
@@ -78,9 +78,9 @@ class Trips extends Component {
                         ) : data.map((item, index) =>
                             <Link target="_top" style={{ textDecoration: 'none', color: 'black' }}
                                 to={`/details/${item._id}`} key={index}>
-                                <div className="item" >
+                                <div className="item1" >
                                     <div className="place-image">
-                                        <img className="img-container1" src={item.URL_Image} alt='loading...' width="350px" height="250px"></img>
+                                        <img className="img-container1" src={item.URL_Image} alt='loading...' width="250px" height="250px"></img>
                                     </div>
                                     <div className="place-name">
                                         <p><b>{item.Name}</b></p>

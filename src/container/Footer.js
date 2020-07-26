@@ -19,9 +19,6 @@ class Footer extends Component {
                         <div className="item-href">
                             <Link style={{ textDecoration: 'none', color: 'white' }} target="_top" to='/blog'>Blog</Link>
                         </div>
-                        <div className="item-href">
-                            <Link style={{ textDecoration: 'none', color: 'white' }} target="_top" to='/register'>Register</Link>
-                        </div>
                     </div>
                     <div className="social-contact">
                         <a href="https://www.facebook.com/cauvangdinhbacho" target="_blank" className="fa fa-facebook"></a>

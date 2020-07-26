@@ -50,7 +50,7 @@ class Home extends Component {
                         offset={[-100, 100]}
                         placeholder={<Loading />}>
                         <div className="blog-title">
-                            <p style={{ fontSize: 48, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>POPULAR DESTINATION</p>
+                            <p style={{ fontSize: 40, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>POPULAR DESTINATION</p>
                         </div>
                         <Slide pauseOnHover={true} duration={3000} transitionDuration={1000}>
                             <div className='blog-content'>
@@ -90,7 +90,7 @@ class Home extends Component {
                         offset={[-100, 100]}
                         placeholder={<Loading />}>
                         <div className="blog-title">
-                            <p style={{ fontSize: 48, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>POPULAR FOOD</p>
+                            <p style={{ fontSize: 40, fontWeight: 900, fontFamily: 'Work Sans, sans-serif' }}>POPULAR FOOD</p>
                         </div>
                         <Fade pauseOnHover={true} duration={3000} transitionDuration={1000}>
                             <div className='blog-content'>

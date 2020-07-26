@@ -5,7 +5,7 @@ import Loading from '../../../loading/Loading'
 export default function Hotel(props) {
     const { data } = props;
     return (
-        <GridList cellHeight={600} cols={4} style={{ overflowY: 'hidden' }}>
+        <GridList cellHeight={950} cols={3} style={{ overflowY: 'hidden' }}>
             {
                 data ? (data.map((item, index) =>
                     <div className="item" key={index}>
