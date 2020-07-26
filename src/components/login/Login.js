@@ -20,9 +20,10 @@ class Login extends Component {
         }
     }
     handleLogin = () => {
+        console.log("clicked")
         this.props.login(this.state.username, this.state.password);
         if (this.props.status === 'error') {
-            console.log("ngu")
+            alert("Wrong user or password !");
         }
         else {
             const token = localStorage.getItem('AUTH_TOKEN_KEY');
@@ -67,7 +68,7 @@ class Login extends Component {
                                 }}
                                 />
                             </div>
-                            <button type="submit" className="submit-button" onClick={this.handleLogin} >GO!</button>
+                            <button type="button" className="submit-button" onClick={this.handleLogin} >GO!</button>
                             <Link to="/register" ><button className="register-button">REGISTER</button></Link>
                         </div>
                     </div>
