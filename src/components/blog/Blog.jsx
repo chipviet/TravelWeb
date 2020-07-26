@@ -63,7 +63,7 @@ class Blog extends Component {
                 },
                 {
                     name: 'Hưng Nguyễn ',
-                    comments: 'Chủ tịch FPT hay đi du lịch',
+                    comments: 'Chairman of FPT and like traveling with my wife',
                     url: abo
                 },
                 {
