@@ -100,7 +100,7 @@ export const updateFood = (id,Name,placeId, Price, Star_Rating, Description, URL
     const Place = await http.get(`https://travel-love.herokuapp.com/places/${placeId}`)
     console.log('Place Object',Place);
     const PlaceID = placeId;
-    const data = await http.patch(`https://travel-love.herokuapp.com/hotels/${id}`, {
+    const data = await http.put(`https://travel-love.herokuapp.com/hotels/${id}`, {
       Name,
       PlaceID,
       Place,

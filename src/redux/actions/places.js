@@ -72,7 +72,7 @@ export const updatePlace = (_id,Name,Country,URL_Image,Description) => async dis
 dispatch(updatePlaceRequest());
 console.log("data Input",_id,Name,Country,URL_Image,Description)
 try {
-  const data = await http.patch(`https://travel-love.herokuapp.com/places/${_id}`, {
+  const data = await http.put(`https://travel-love.herokuapp.com/places/${_id}`, {
         Name,
         Country,
         URL_Image,
