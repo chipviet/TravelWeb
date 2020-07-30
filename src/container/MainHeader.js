@@ -24,6 +24,9 @@ class Header extends Component {
                 </Link>
                 <div className="tab-page">
                     <ul className="tab-ele">
+                    <li className="ele active">
+                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/register"></Link>
+                        </li>
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/">Home</Link>
                         </li>
@@ -36,9 +39,7 @@ class Header extends Component {
                         <li className="ele active" >
                             <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/contact">Contact</Link>
                         </li>
-                        <li className="ele active">
-                            <Link style={{ textDecoration: 'none', color: '#7C7C7C' }} target="_top" to="/register">Register</Link>
-                        </li>
+                        
                         <li className="ele login">
                             <Link style={{ textDecoration: 'none', color: 'white' }} to="/login">Login</Link>
                         </li>
