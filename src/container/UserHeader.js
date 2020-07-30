@@ -50,7 +50,7 @@ class Header extends Component {
                         </li>
                         <li className="ele logout" onClick={() => {
                             localStorage.clear();
-                            window.location.reload();
+                            this.setState({ isAuthenticated: null })
                         }}>
                             Log out
                         </li>
